@@ -10,7 +10,7 @@ rastreador.
 """
 from __future__ import annotations
 
-import shutil
+import re
 import sys
 from pathlib import Path
 
@@ -48,9 +48,26 @@ def esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;")
 
 
+_ABS = re.compile(r'\b(href|src)="/(?!/)')
+
+
+def rebase(html: str) -> str:
+    """Prefixa os caminhos internos com `shell.BASE`.
+
+    So mexe em href/src que comecam com uma barra: "https://..." e "#ancora"
+    passam intactos. Centralizar aqui e o que evita esquecer o prefixo num
+    link novo daqui a tres meses.
+    """
+    if not shell.BASE:
+        return html
+    return _ABS.sub(rf'\1="{shell.BASE}/', html)
+
+
 def write(rel: str, html: str) -> None:
     out = HERE / rel
     out.parent.mkdir(parents=True, exist_ok=True)
+    if rel.endswith(".html"):
+        html = rebase(html)
     out.write_text(html, encoding="utf-8")
     print(f"  {rel}  ({len(html) // 1024} KB)")
 
@@ -535,7 +552,7 @@ def build_home(lang: str) -> str:
     <div class="card glass"><ul>{ing}</ul></div>
     <div class="term glass">
       <div class="term-head"><span class="dots"><i></i><i></i><i></i></span>{t['ing_log']}</div>
-      <code class="path">/Volumes/DG&nbsp;REALTIME/<b>2026_08_21_JADE_PICON</b>/<b>CAM_A</b>/C0043.MP4</code>
+      <code class="path">/Volumes/DG&nbsp;REALTIME/<b>2026_08_21_WORK</b>/<b>CAM_A</b>/C0043.MP4</code>
       <div class="term-rows">
         {log_ok}
         <div class="same"><i>=</i><span>C0043.MP4</span><em>{t['ing_there']}</em></div>
