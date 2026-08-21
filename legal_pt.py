@@ -32,10 +32,10 @@ L = {
             "Ao instalar o Alinhavo você recebe uma licença de uso pessoal, "
             "permanente e não exclusiva do programa, na versão 1.x. A licença "
             "é sua para usar; o programa em si continua sendo nosso.",
-            "A licença <strong>Alinhavo</strong> cobre até dois computadores de "
-            "uso do mesmo titular. A licença <strong>Estúdio</strong> cobre "
-            "até cinco estações da mesma empresa. Trocar de máquina é "
-            "permitido: desative em uma e ative na outra.",
+            "A licença <strong>Alinhavo</strong> vale para um computador do "
+            "titular. A licença <strong>Estúdio</strong> cobre até três "
+            "estações da mesma empresa. Trocar de máquina é permitido: "
+            "desative em uma e ative na outra.",
             "A ativação acontece no seu computador. O Alinhavo funciona sem "
             "conexão com a internet, e não existe servidor que possa deixar "
             "de responder e impedir o seu trabalho.",

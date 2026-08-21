@@ -18,9 +18,9 @@ L = {
             "Installing Alinhavo grants you a personal, perpetual, "
             "non-exclusive license to use the program, version 1.x. The "
             "license is yours to use; the program itself remains ours.",
-            "The <strong>Alinhavo</strong> license covers up to two computers "
-            "belonging to the same holder. The <strong>Studio</strong> license "
-            "covers up to five workstations at the same company. Moving "
+            "The <strong>Alinhavo</strong> license covers one computer "
+            "belonging to the holder. The <strong>Studio</strong> license "
+            "covers up to three workstations at the same company. Moving "
             "machines is allowed: deactivate on one and activate on the other.",
             "Activation happens on your computer. Alinhavo works without an "
             "internet connection, and no server exists that could stop "

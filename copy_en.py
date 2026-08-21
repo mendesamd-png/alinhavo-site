@@ -191,21 +191,21 @@ T = {
                     "Download and open, no sign-up"],
     "plan1_cta": "Download for Mac",
     "plan2_name": "Alinhavo",
-    "plan2_price": "$69",
+    "plan2_price": "$49",
     "plan2_unit": "· one time",
-    "plan2_items": ["One license, two computers of your own",
+    "plan2_items": ["One license for your Mac",
                     "Sync, ingest, player and every export",
                     "DaVinci Resolve script included",
                     "Updates throughout version 1.x"],
     "plan2_cta": "Buy",
     "plan3_name": "Studio",
-    "plan3_price": "$179",
+    "plan3_price": "$119",
     "plan3_unit": "· one time",
-    "plan3_items": ["Up to five workstations",
+    "plan3_items": ["Up to three workstations",
                     "Company invoice",
                     "Priority email support"],
     "plan3_cta": "Get in touch",
-    "price_intl": "In Brazil: R$ 349 and R$ 899, with the same contents.",
+    "price_intl": "In Brazil: R$ 249 and R$ 599, with the same contents.",
     "soon_h": "Windows version in development.",
     "soon_p": "The engine already runs cross-platform. The packaged Windows "
               "version comes next.",
@@ -252,10 +252,10 @@ T = {
          "offline: no server exists that could stop responding and keep you "
          "from working."),
         ("Can I install it on more than one computer?",
-         "The Alinhavo license covers two computers of your own, and Studio "
-         "covers five workstations. Moving machines is free: you release a "
-         "Mac's seat from inside the app and activate on the other one. "
-         "Reinstalling the system on the same computer does not cost a seat."),
+         "The Alinhavo license covers one Mac, and Studio covers three. "
+         "Moving machines is free: you release the seat from inside the app "
+         "and activate on the other computer. Reinstalling the system on the "
+         "same Mac does not cost a seat."),
         ("Is there a Windows version?",
          "In development. The engine is already cross-platform, and the "
          "packaged Windows version comes next."),

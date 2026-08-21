@@ -201,21 +201,21 @@ T = {
                     "Baixe e abra, sem cadastro"],
     "plan1_cta": "Baixar para Mac",
     "plan2_name": "Alinhavo",
-    "plan2_price": "R$ 349",
+    "plan2_price": "R$ 249",
     "plan2_unit": "· uma vez",
-    "plan2_items": ["Uma licença, dois computadores seus",
+    "plan2_items": ["Uma licença para o seu Mac",
                     "Sync, ingest, player e todos os exports",
                     "Script do DaVinci Resolve incluído",
                     "Atualizações da versão 1.x"],
     "plan2_cta": "Comprar",
     "plan3_name": "Estúdio",
-    "plan3_price": "R$ 899",
+    "plan3_price": "R$ 599",
     "plan3_unit": "· uma vez",
-    "plan3_items": ["Até cinco estações",
+    "plan3_items": ["Até três estações",
                     "Nota fiscal em nome da empresa",
                     "Suporte por e-mail com prioridade"],
     "plan3_cta": "Falar com a gente",
-    "price_intl": "Fora do Brasil: US$ 69 e US$ 179, com o mesmo conteúdo.",
+    "price_intl": "Fora do Brasil: US$ 49 e US$ 119, com o mesmo conteúdo.",
     "soon_h": "Versão para Windows em desenvolvimento.",
     "soon_p": "O motor já roda multiplataforma. A versão empacotada para "
               "Windows entra em seguida.",
@@ -259,10 +259,10 @@ T = {
          "computador e o app abre offline: não existe servidor que possa "
          "deixar de responder e impedir o seu trabalho."),
         ("Posso instalar em mais de um computador?",
-         "A licença Alinhavo cobre dois computadores seus, e a Estúdio cobre "
-         "cinco estações. Trocar de máquina é livre: você libera a vaga de um "
-         "Mac dentro do próprio app e ativa no outro. Reinstalar o sistema no "
-         "mesmo computador não consome uma vaga nova."),
+         "A licença Alinhavo vale para um Mac, e a Estúdio para três. "
+         "Trocar de máquina é livre: você libera a vaga dentro do próprio app "
+         "e ativa no outro computador. Reinstalar o sistema no mesmo Mac não "
+         "consome uma vaga nova."),
         ("Tem versão para Windows?",
          "Em desenvolvimento. O motor já é multiplataforma, e a versão "
          "empacotada para Windows entra em seguida."),
