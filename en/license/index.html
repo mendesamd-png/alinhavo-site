@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sincro license agreement · Sincro</title>
+<meta name="description" content="Terms of the Sincro software license.">
+<link rel="canonical" href="https://mendesamd-png.github.io/sincro-site/en/license/">
+<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincro-site/en/license/">
+<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincro-site/licenca-de-uso/">
+<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincro-site/en/license/">
+<meta property="og:title" content="Sincro license agreement · Sincro">
+<meta property="og:description" content="Terms of the Sincro software license.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mendesamd-png.github.io/sincro-site/en/license/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
+<style>
+:root {
+  --ground: #F7F6F3;
+  --ground-2: #FFFFFF;
+  --glass: rgba(255, 255, 255, .78);
+  --glass-line: rgba(23, 23, 28, .09);
+  --ink: #17171C;
+  --ink-soft: #55555F;
+  --ink-faint: #8A8A95;
+  --g1: #8B5CF6;
+  --g2: #F472B6;
+  --g3: #38BDF8;
+  --g4: #FDE047;
+  --halo: .34;
+  --shadow-sm: 0 10px 30px rgba(23, 23, 28, .07), 0 2px 6px rgba(23, 23, 28, .04);
+  --radius: 26px;
+  --measure: 62ch;
+}
+/* claro e o padrao por decisao de produto: o escuro entra pela escolha do
+   visitante, nunca pelo tema do sistema */
+:root[data-theme="dark"] {
+  --ground: #0C0C11;
+  --ground-2: #14141B;
+  --glass: rgba(255, 255, 255, .06);
+  --glass-line: rgba(255, 255, 255, .12);
+  --ink: #F4F4F7;
+  --ink-soft: #A9A9B6;
+  --ink-faint: #75757F;
+  --halo: .42;
+  --shadow-sm: 0 10px 26px rgba(0, 0, 0, .4);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: Onest, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -.03em; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.04; font-weight: 600; }
+h2 { font-size: clamp(1.9rem, 3.7vw, 2.9rem); line-height: 1.09; }
+h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -.015em; }
+p { margin: 0; }
+a { color: inherit; }
+::selection { background: var(--g1); color: #fff; }
+:focus-visible { outline: 2px solid var(--g1); outline-offset: 3px; border-radius: 6px; }
+
+.wrap { width: min(1160px, 90vw); margin-inline: auto; position: relative; z-index: 1; }
+.col { max-width: var(--measure); }
+.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+.halo {
+  position: fixed; border-radius: 50%; filter: blur(110px);
+  opacity: var(--halo); pointer-events: none; z-index: 0;
+  animation: drift 26s ease-in-out infinite alternate;
+}
+.halo.a { width: 46vw; height: 46vw; left: -12vw; top: -10vw; background: var(--g1); }
+.halo.b { width: 38vw; height: 38vw; right: -8vw; top: 6vh; background: var(--g3); animation-delay: -8s; }
+.halo.c { width: 34vw; height: 34vw; left: 22vw; bottom: -14vw; background: var(--g2); animation-delay: -16s; }
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(4vw, 5vh, 0) scale(1.12); }
+}
+
+section { padding: clamp(52px, 6.5vw, 92px) 0; position: relative; }
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace; font-size: .74rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.lede { margin-top: 20px; color: var(--ink-soft); font-size: 1.1rem; max-width: 56ch; }
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 26px; border-radius: 999px;
+  font-size: .97rem; font-weight: 600; text-decoration: none;
+  color: #fff; position: relative; overflow: hidden;
+  /* o amarelo entra como brilho na borda: sob o texto ele derrubaria o
+     contraste do branco */
+  background-image:
+    radial-gradient(75% 130% at 112% 50%, rgba(253, 224, 71, .62), transparent 62%),
+    linear-gradient(110deg, var(--g1), var(--g2) 46%, var(--g3));
+  background-size: 100% 100%, 210% 100%;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, .32);
+  transition: background-position .6s ease, transform .16s ease, box-shadow .16s ease;
+}
+.btn:hover {
+  background-position: 0 0, 100% 0;
+  transform: translateY(-2px); box-shadow: 0 16px 38px rgba(139, 92, 246, .38);
+}
+.btn:active { transform: translateY(0); }
+.btn.quiet {
+  background: var(--glass); background-image: none; color: var(--ink);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-line); box-shadow: none;
+}
+.btn.quiet:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+/* ---------------------------------------------------------------- topo --- */
+header { position: sticky; top: 16px; z-index: 30; }
+.bar { display: flex; align-items: center; gap: 14px; padding: 10px 12px 10px 20px; border-radius: 999px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.bar nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+.bar nav a { color: var(--ink-soft); text-decoration: none; font-size: .92rem; }
+.bar nav a:hover, .bar nav a[aria-current] { color: var(--ink); }
+.bar .btn { padding: 10px 20px; font-size: .9rem; }
+.pillbtn {
+  height: 34px; padding: 0 12px; border-radius: 999px; cursor: pointer;
+  background: transparent; border: 1px solid var(--glass-line);
+  color: var(--ink); font: inherit; font-size: .82rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.pillbtn:hover { background: var(--glass); }
+@media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
+
+/* --------------------------------------------------------------- rodape --- */
+footer { padding: 48px 0 64px; color: var(--ink-faint); font-size: .88rem; }
+.foot-grid {
+  display: grid; gap: 30px; grid-template-columns: 1.4fr repeat(3, 1fr);
+  padding-bottom: 34px; border-bottom: 1px solid var(--glass-line);
+}
+@media (max-width: 780px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+.foot-grid h4 {
+  margin: 0 0 14px; font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.foot-grid a { text-decoration: none; color: var(--ink-soft); }
+.foot-grid a:hover { color: var(--ink); }
+.foot-end {
+  margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center;
+}
+.foot-end .spacer { flex: 1; }
+.made {
+  display: inline-flex; align-items: center; gap: 9px; font-weight: 500;
+  color: var(--ink-soft); padding: 7px 15px 7px 9px; border-radius: 999px;
+  border: 1px solid var(--glass-line); background: var(--glass);
+}
+.made svg { display: block; border-radius: 3px; }
+
+/* ------------------------------------------------------- paginas de texto --- */
+.doc { padding-top: 40px; }
+.doc-body { max-width: 72ch; }
+.doc-body h2 { font-size: 1.42rem; margin: 46px 0 14px; letter-spacing: -.02em; }
+.doc-body h2:first-child { margin-top: 0; }
+.doc-body p, .doc-body li { color: var(--ink-soft); }
+.doc-body p + p { margin-top: 14px; }
+.doc-body ul { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 9px; }
+.doc-body strong { color: var(--ink); font-weight: 600; }
+.doc-meta {
+  margin-top: 18px; font-family: "IBM Plex Mono", monospace;
+  font-size: .78rem; color: var(--ink-faint);
+}
+.notice {
+  margin-top: 30px; padding: 18px 22px; border-radius: 18px;
+  border: 1px solid var(--glass-line); background: var(--glass);
+  color: var(--ink-soft); font-size: .92rem;
+}
+</style>
+<style>
+.doc { padding-bottom: clamp(60px, 8vw, 110px); }
+</style>
+</head>
+<body>
+<div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
+<header><div class="wrap"><div class="bar glass">
+  <a class="brand" href="/en/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+    <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+</svg> Sincro</a>
+  <nav>
+    <a href="/en/how-it-works/" class="hide-sm">How it works</a>
+    <a href="/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
+    <a href="/en/whats-new/" class="hide-sm">What's new</a>
+    <a href="/en/#preco">Pricing</a>
+    <a class="pillbtn" href="/licenca-de-uso/" hreflang="pt"
+       aria-label="View this site in Portuguese">PT</a>
+    <button class="pillbtn" id="theme" type="button" aria-label="Switch between light and dark">&#9680;</button>
+    <a class="btn" href="/en/#preco">Download</a>
+  </nav>
+</div></div></header>
+<main>
+<section class="doc"><div class="wrap">
+  <div class="col">
+    <div class="eyebrow">Legal</div>
+    <h1 style="font-size:clamp(2.1rem,4vw,3.2rem)">License agreement</h1>
+    <p class="lede">This document covers what you may do with Sincro once it is installed. It applies to the trial and to the licensed version alike.</p>
+    <p class="doc-meta">Last updated: August 21, 2026</p>
+  </div>
+  <div class="doc-body" style="margin-top:44px">
+    <h2>1. What you get</h2><p>Installing Sincro grants you a personal, perpetual, non-exclusive license to use the program, version 1.x. The license is yours to use; the program itself remains ours.</p><p>The <strong>Sincro</strong> license covers up to two computers belonging to the same holder. The <strong>Studio</strong> license covers up to five workstations at the same company. Moving machines is allowed: deactivate on one and activate on the other.</p><p>Activation happens on your computer. Sincro works without an internet connection, and no server exists that could stop responding and keep you from working.</p><h2>2. What you produce with it</h2><p>Everything Sincro outputs is yours: the XML files, the reports, the copies ingest made. We claim no rights over your footage or over the results of your work.</p><p>You may use Sincro on commercial work at no cost beyond the license.</p><h2>3. What the license does not allow</h2><ul><li>Reselling, renting, sublicensing or distributing the program.</li><li>Sharing your license key beyond the machine count you bought.</li><li>Removing authorship notices or attempting to bypass activation.</li><li>Reverse engineering the program, except to the extent applicable law grants you that right despite this restriction.</li></ul><h2>4. Updates</h2><p>Updates throughout version 1.x are included. A future 2.0 may be a paid upgrade; if that happens, your 1.x license keeps working exactly as it always did.</p><h2>5. Third-party software</h2><p>Sincro uses ffmpeg to read media. ffmpeg is free third-party software and is not distributed inside the application: you install it separately. It carries its own license.</p><h2>6. Warranty and limits</h2><p>Sincro is provided as is. It has been tested against real production footage and measures its own results, but no sync software replaces the judgment of the person editing. <strong>Check the result before committing to a delivery.</strong></p><p>To the maximum extent permitted by applicable law, our liability for any claim related to the program is limited to what you paid for the license. This does not remove the consumer rights your country grants and that cannot be waived by contract.</p><h2>7. Ending the license</h2><p>The license ends if you materially breach these terms and do not correct it after notice. On termination you must uninstall the program. The files you already produced remain yours.</p><h2>8. Governing law</h2><p>This license is governed by the laws of the Federative Republic of Brazil. Consumers outside Brazil keep the mandatory rights of their own country.</p>
+    <h2>Contact</h2>
+    <p><a href="mailto:contato@sincro.app">contato@sincro.app</a></p>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="/en/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+    <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+</svg> Sincro</a>
+      <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">Syncs the whole shoot day by sound, organizes your cards and hands your editor a finished timeline.</p>
+    </div>
+    <div><h4>Product</h4><ul>
+      <li><a href="/en/how-it-works/">How it works</a></li>
+      <li><a href="/en/pluraleyes-alternative/">From PluralEyes</a></li>
+      <li><a href="/en/whats-new/">What's new</a></li>
+      <li><a href="/en/#preco">Pricing</a></li>
+    </ul></div>
+    <div><h4>Legal</h4><ul>
+      <li><a href="/en/license/">License</a></li>
+      <li><a href="/en/terms/">Terms</a></li>
+      <li><a href="/en/privacy/">Privacy</a></li>
+      <li><a href="/en/refunds/">Refunds</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a href="mailto:contato@sincro.app">contato@sincro.app</a></li>
+    </ul></div>
+  </div>
+  <div class="foot-end">
+    <span class="made"><svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true">
+  <rect width="28" height="20" fill="#009B3A"/>
+  <path d="M14 2.6 25.4 10 14 17.4 2.6 10Z" fill="#FEDF00"/>
+  <circle cx="14" cy="10" r="4.3" fill="#002776"/>
+  <path d="M9.9 8.6a4.3 4.3 0 0 0 8.2 1.5 9 9 0 0 0-8.2-1.5Z" fill="#fff"/>
+</svg> Made in Brazil</span>
+    <span class="spacer"></span>
+    <span class="mono">macOS 12 Monterey or later · Apple Silicon and Intel · Windows version in development</span>
+  </div>
+</div></footer>
+<script>
+(function () {
+  var btn = document.getElementById("theme");
+  var saved = localStorage.getItem("sincro-theme");
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  if (btn) btn.addEventListener("click", function () {
+    var atual = document.documentElement.getAttribute("data-theme") || "light";
+    var novo = atual === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", novo);
+    localStorage.setItem("sincro-theme", novo);
+    document.dispatchEvent(new CustomEvent("sincro:theme", {detail: novo}));
+  });
+})();
+</script>
+
+</body>
+</html>

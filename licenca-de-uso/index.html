@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Licença de uso do Sincro · Sincro</title>
+<meta name="description" content="Termos da licença de uso do software Sincro.">
+<link rel="canonical" href="https://mendesamd-png.github.io/sincro-site/licenca-de-uso/">
+<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincro-site/licenca-de-uso/">
+<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincro-site/en/license/">
+<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincro-site/en/license/">
+<meta property="og:title" content="Licença de uso do Sincro · Sincro">
+<meta property="og:description" content="Termos da licença de uso do software Sincro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mendesamd-png.github.io/sincro-site/licenca-de-uso/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
+<style>
+:root {
+  --ground: #F7F6F3;
+  --ground-2: #FFFFFF;
+  --glass: rgba(255, 255, 255, .78);
+  --glass-line: rgba(23, 23, 28, .09);
+  --ink: #17171C;
+  --ink-soft: #55555F;
+  --ink-faint: #8A8A95;
+  --g1: #8B5CF6;
+  --g2: #F472B6;
+  --g3: #38BDF8;
+  --g4: #FDE047;
+  --halo: .34;
+  --shadow-sm: 0 10px 30px rgba(23, 23, 28, .07), 0 2px 6px rgba(23, 23, 28, .04);
+  --radius: 26px;
+  --measure: 62ch;
+}
+/* claro e o padrao por decisao de produto: o escuro entra pela escolha do
+   visitante, nunca pelo tema do sistema */
+:root[data-theme="dark"] {
+  --ground: #0C0C11;
+  --ground-2: #14141B;
+  --glass: rgba(255, 255, 255, .06);
+  --glass-line: rgba(255, 255, 255, .12);
+  --ink: #F4F4F7;
+  --ink-soft: #A9A9B6;
+  --ink-faint: #75757F;
+  --halo: .42;
+  --shadow-sm: 0 10px 26px rgba(0, 0, 0, .4);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: Onest, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -.03em; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.04; font-weight: 600; }
+h2 { font-size: clamp(1.9rem, 3.7vw, 2.9rem); line-height: 1.09; }
+h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -.015em; }
+p { margin: 0; }
+a { color: inherit; }
+::selection { background: var(--g1); color: #fff; }
+:focus-visible { outline: 2px solid var(--g1); outline-offset: 3px; border-radius: 6px; }
+
+.wrap { width: min(1160px, 90vw); margin-inline: auto; position: relative; z-index: 1; }
+.col { max-width: var(--measure); }
+.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+.halo {
+  position: fixed; border-radius: 50%; filter: blur(110px);
+  opacity: var(--halo); pointer-events: none; z-index: 0;
+  animation: drift 26s ease-in-out infinite alternate;
+}
+.halo.a { width: 46vw; height: 46vw; left: -12vw; top: -10vw; background: var(--g1); }
+.halo.b { width: 38vw; height: 38vw; right: -8vw; top: 6vh; background: var(--g3); animation-delay: -8s; }
+.halo.c { width: 34vw; height: 34vw; left: 22vw; bottom: -14vw; background: var(--g2); animation-delay: -16s; }
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(4vw, 5vh, 0) scale(1.12); }
+}
+
+section { padding: clamp(52px, 6.5vw, 92px) 0; position: relative; }
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace; font-size: .74rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.lede { margin-top: 20px; color: var(--ink-soft); font-size: 1.1rem; max-width: 56ch; }
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 26px; border-radius: 999px;
+  font-size: .97rem; font-weight: 600; text-decoration: none;
+  color: #fff; position: relative; overflow: hidden;
+  /* o amarelo entra como brilho na borda: sob o texto ele derrubaria o
+     contraste do branco */
+  background-image:
+    radial-gradient(75% 130% at 112% 50%, rgba(253, 224, 71, .62), transparent 62%),
+    linear-gradient(110deg, var(--g1), var(--g2) 46%, var(--g3));
+  background-size: 100% 100%, 210% 100%;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, .32);
+  transition: background-position .6s ease, transform .16s ease, box-shadow .16s ease;
+}
+.btn:hover {
+  background-position: 0 0, 100% 0;
+  transform: translateY(-2px); box-shadow: 0 16px 38px rgba(139, 92, 246, .38);
+}
+.btn:active { transform: translateY(0); }
+.btn.quiet {
+  background: var(--glass); background-image: none; color: var(--ink);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-line); box-shadow: none;
+}
+.btn.quiet:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+/* ---------------------------------------------------------------- topo --- */
+header { position: sticky; top: 16px; z-index: 30; }
+.bar { display: flex; align-items: center; gap: 14px; padding: 10px 12px 10px 20px; border-radius: 999px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.bar nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+.bar nav a { color: var(--ink-soft); text-decoration: none; font-size: .92rem; }
+.bar nav a:hover, .bar nav a[aria-current] { color: var(--ink); }
+.bar .btn { padding: 10px 20px; font-size: .9rem; }
+.pillbtn {
+  height: 34px; padding: 0 12px; border-radius: 999px; cursor: pointer;
+  background: transparent; border: 1px solid var(--glass-line);
+  color: var(--ink); font: inherit; font-size: .82rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.pillbtn:hover { background: var(--glass); }
+@media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
+
+/* --------------------------------------------------------------- rodape --- */
+footer { padding: 48px 0 64px; color: var(--ink-faint); font-size: .88rem; }
+.foot-grid {
+  display: grid; gap: 30px; grid-template-columns: 1.4fr repeat(3, 1fr);
+  padding-bottom: 34px; border-bottom: 1px solid var(--glass-line);
+}
+@media (max-width: 780px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+.foot-grid h4 {
+  margin: 0 0 14px; font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.foot-grid a { text-decoration: none; color: var(--ink-soft); }
+.foot-grid a:hover { color: var(--ink); }
+.foot-end {
+  margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center;
+}
+.foot-end .spacer { flex: 1; }
+.made {
+  display: inline-flex; align-items: center; gap: 9px; font-weight: 500;
+  color: var(--ink-soft); padding: 7px 15px 7px 9px; border-radius: 999px;
+  border: 1px solid var(--glass-line); background: var(--glass);
+}
+.made svg { display: block; border-radius: 3px; }
+
+/* ------------------------------------------------------- paginas de texto --- */
+.doc { padding-top: 40px; }
+.doc-body { max-width: 72ch; }
+.doc-body h2 { font-size: 1.42rem; margin: 46px 0 14px; letter-spacing: -.02em; }
+.doc-body h2:first-child { margin-top: 0; }
+.doc-body p, .doc-body li { color: var(--ink-soft); }
+.doc-body p + p { margin-top: 14px; }
+.doc-body ul { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 9px; }
+.doc-body strong { color: var(--ink); font-weight: 600; }
+.doc-meta {
+  margin-top: 18px; font-family: "IBM Plex Mono", monospace;
+  font-size: .78rem; color: var(--ink-faint);
+}
+.notice {
+  margin-top: 30px; padding: 18px 22px; border-radius: 18px;
+  border: 1px solid var(--glass-line); background: var(--glass);
+  color: var(--ink-soft); font-size: .92rem;
+}
+</style>
+<style>
+.doc { padding-bottom: clamp(60px, 8vw, 110px); }
+</style>
+</head>
+<body>
+<div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
+<header><div class="wrap"><div class="bar glass">
+  <a class="brand" href="/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+    <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+</svg> Sincro</a>
+  <nav>
+    <a href="/como-funciona/" class="hide-sm">Como funciona</a>
+    <a href="/alternativa-pluraleyes/" class="hide-sm">Vem do PluralEyes</a>
+    <a href="/novidades/" class="hide-sm">Novidades</a>
+    <a href="/#preco">Preço</a>
+    <a class="pillbtn" href="/en/license/" hreflang="en"
+       aria-label="Ver este site em inglês">EN</a>
+    <button class="pillbtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">&#9680;</button>
+    <a class="btn" href="/#preco">Baixar</a>
+  </nav>
+</div></div></header>
+<main>
+<section class="doc"><div class="wrap">
+  <div class="col">
+    <div class="eyebrow">Legal</div>
+    <h1 style="font-size:clamp(2.1rem,4vw,3.2rem)">Licença de uso</h1>
+    <p class="lede">Este documento diz o que você pode fazer com o Sincro depois de instalar. Ele vale para a versão de teste e para a versão licenciada.</p>
+    <p class="doc-meta">Atualizado em: 21 de agosto de 2026</p>
+  </div>
+  <div class="doc-body" style="margin-top:44px">
+    <h2>1. O que você recebe</h2><p>Ao instalar o Sincro você recebe uma licença de uso pessoal, permanente e não exclusiva do programa, na versão 1.x. A licença é sua para usar; o programa em si continua sendo nosso.</p><p>A licença <strong>Sincro</strong> cobre até dois computadores de uso do mesmo titular. A licença <strong>Estúdio</strong> cobre até cinco estações da mesma empresa. Trocar de máquina é permitido: desative em uma e ative na outra.</p><p>A ativação acontece no seu computador. O Sincro funciona sem conexão com a internet, e não existe servidor que possa deixar de responder e impedir o seu trabalho.</p><h2>2. O que você produz com ele</h2><p>Tudo o que sai do Sincro é seu: os arquivos XML, os relatórios, as cópias que o ingest fez. Não reivindicamos nenhum direito sobre o seu material nem sobre o resultado do seu trabalho.</p><p>Você pode usar o Sincro em trabalho comercial sem pagar nada além da licença.</p><h2>3. O que a licença não permite</h2><ul><li>Revender, alugar, sublicenciar ou distribuir o programa.</li><li>Compartilhar a sua chave de licença com pessoas fora do limite de máquinas contratado.</li><li>Remover avisos de autoria ou tentar contornar a ativação.</li><li>Fazer engenharia reversa do programa, salvo na medida em que a lei aplicável garanta esse direito apesar desta restrição.</li></ul><h2>4. Atualizações</h2><p>As atualizações da versão 1.x estão incluídas. Uma futura versão 2.0 poderá ser paga; se isso acontecer, a sua licença 1.x continua funcionando como sempre funcionou.</p><h2>5. Programas de terceiros</h2><p>O Sincro usa o ffmpeg para ler mídia. O ffmpeg é um programa livre, de terceiros, e não é distribuído dentro do aplicativo: você o instala separadamente. Ele tem a própria licença.</p><h2>6. Garantia e limites</h2><p>O Sincro é entregue como está. Ele foi testado com material real de produção e mede o próprio resultado, mas nenhum software de sincronização substitui a conferência de quem edita. <strong>Confira o resultado antes de comprometer uma entrega.</strong></p><p>Na máxima extensão permitida pela lei aplicável, nossa responsabilidade por qualquer reclamação relacionada ao programa fica limitada ao valor que você pagou pela licença. Isso não afasta os direitos que a legislação de consumo do seu país garante e que não podem ser afastados por contrato.</p><h2>7. Fim da licença</h2><p>A licença termina se você descumprir estes termos de forma relevante e não corrigir depois de avisado. Terminando, você deve desinstalar o programa. Os arquivos que você já produziu continuam seus.</p><h2>8. Lei aplicável</h2><p>Esta licença é regida pelas leis da República Federativa do Brasil. Consumidores fora do Brasil mantêm os direitos obrigatórios do seu próprio país.</p>
+    <h2>Contato</h2>
+    <p><a href="mailto:contato@sincro.app">contato@sincro.app</a></p>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+    <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+</svg> Sincro</a>
+      <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">Sincroniza a diária pelo som, organiza os cartões e entrega a timeline pronta para o seu editor.</p>
+    </div>
+    <div><h4>Produto</h4><ul>
+      <li><a href="/como-funciona/">Como funciona</a></li>
+      <li><a href="/alternativa-pluraleyes/">Vem do PluralEyes</a></li>
+      <li><a href="/novidades/">Novidades</a></li>
+      <li><a href="/#preco">Preço</a></li>
+    </ul></div>
+    <div><h4>Legal</h4><ul>
+      <li><a href="/licenca-de-uso/">Licença de uso</a></li>
+      <li><a href="/termos/">Termos</a></li>
+      <li><a href="/privacidade/">Privacidade</a></li>
+      <li><a href="/reembolso/">Reembolso</a></li>
+    </ul></div>
+    <div><h4>Contato</h4><ul>
+      <li><a href="mailto:contato@sincro.app">contato@sincro.app</a></li>
+    </ul></div>
+  </div>
+  <div class="foot-end">
+    <span class="made"><svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true">
+  <rect width="28" height="20" fill="#009B3A"/>
+  <path d="M14 2.6 25.4 10 14 17.4 2.6 10Z" fill="#FEDF00"/>
+  <circle cx="14" cy="10" r="4.3" fill="#002776"/>
+  <path d="M9.9 8.6a4.3 4.3 0 0 0 8.2 1.5 9 9 0 0 0-8.2-1.5Z" fill="#fff"/>
+</svg> Feito no Brasil</span>
+    <span class="spacer"></span>
+    <span class="mono">macOS 12 Monterey ou superior · Apple Silicon e Intel · versão para Windows em desenvolvimento</span>
+  </div>
+</div></footer>
+<script>
+(function () {
+  var btn = document.getElementById("theme");
+  var saved = localStorage.getItem("sincro-theme");
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  if (btn) btn.addEventListener("click", function () {
+    var atual = document.documentElement.getAttribute("data-theme") || "light";
+    var novo = atual === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", novo);
+    localStorage.setItem("sincro-theme", novo);
+    document.dispatchEvent(new CustomEvent("sincro:theme", {detail: novo}));
+  });
+})();
+</script>
+
+</body>
+</html>

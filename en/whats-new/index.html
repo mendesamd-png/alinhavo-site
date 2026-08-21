@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's new in Sincro · Sincro</title>
+<meta name="description" content="What changed in each version of Sincro.">
+<link rel="canonical" href="https://mendesamd-png.github.io/sincro-site/en/whats-new/">
+<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincro-site/en/whats-new/">
+<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincro-site/novidades/">
+<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincro-site/en/whats-new/">
+<meta property="og:title" content="What's new in Sincro · Sincro">
+<meta property="og:description" content="What changed in each version of Sincro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mendesamd-png.github.io/sincro-site/en/whats-new/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
+<style>
+:root {
+  --ground: #F7F6F3;
+  --ground-2: #FFFFFF;
+  --glass: rgba(255, 255, 255, .78);
+  --glass-line: rgba(23, 23, 28, .09);
+  --ink: #17171C;
+  --ink-soft: #55555F;
+  --ink-faint: #8A8A95;
+  --g1: #8B5CF6;
+  --g2: #F472B6;
+  --g3: #38BDF8;
+  --g4: #FDE047;
+  --halo: .34;
+  --shadow-sm: 0 10px 30px rgba(23, 23, 28, .07), 0 2px 6px rgba(23, 23, 28, .04);
+  --radius: 26px;
+  --measure: 62ch;
+}
+/* claro e o padrao por decisao de produto: o escuro entra pela escolha do
+   visitante, nunca pelo tema do sistema */
+:root[data-theme="dark"] {
+  --ground: #0C0C11;
+  --ground-2: #14141B;
+  --glass: rgba(255, 255, 255, .06);
+  --glass-line: rgba(255, 255, 255, .12);
+  --ink: #F4F4F7;
+  --ink-soft: #A9A9B6;
+  --ink-faint: #75757F;
+  --halo: .42;
+  --shadow-sm: 0 10px 26px rgba(0, 0, 0, .4);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: Onest, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -.03em; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.04; font-weight: 600; }
+h2 { font-size: clamp(1.9rem, 3.7vw, 2.9rem); line-height: 1.09; }
+h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -.015em; }
+p { margin: 0; }
+a { color: inherit; }
+::selection { background: var(--g1); color: #fff; }
+:focus-visible { outline: 2px solid var(--g1); outline-offset: 3px; border-radius: 6px; }
+
+.wrap { width: min(1160px, 90vw); margin-inline: auto; position: relative; z-index: 1; }
+.col { max-width: var(--measure); }
+.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+.halo {
+  position: fixed; border-radius: 50%; filter: blur(110px);
+  opacity: var(--halo); pointer-events: none; z-index: 0;
+  animation: drift 26s ease-in-out infinite alternate;
+}
+.halo.a { width: 46vw; height: 46vw; left: -12vw; top: -10vw; background: var(--g1); }
+.halo.b { width: 38vw; height: 38vw; right: -8vw; top: 6vh; background: var(--g3); animation-delay: -8s; }
+.halo.c { width: 34vw; height: 34vw; left: 22vw; bottom: -14vw; background: var(--g2); animation-delay: -16s; }
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(4vw, 5vh, 0) scale(1.12); }
+}
+
+section { padding: clamp(52px, 6.5vw, 92px) 0; position: relative; }
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace; font-size: .74rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.lede { margin-top: 20px; color: var(--ink-soft); font-size: 1.1rem; max-width: 56ch; }
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 26px; border-radius: 999px;
+  font-size: .97rem; font-weight: 600; text-decoration: none;
+  color: #fff; position: relative; overflow: hidden;
+  /* o amarelo entra como brilho na borda: sob o texto ele derrubaria o
+     contraste do branco */
+  background-image:
+    radial-gradient(75% 130% at 112% 50%, rgba(253, 224, 71, .62), transparent 62%),
+    linear-gradient(110deg, var(--g1), var(--g2) 46%, var(--g3));
+  background-size: 100% 100%, 210% 100%;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, .32);
+  transition: background-position .6s ease, transform .16s ease, box-shadow .16s ease;
+}
+.btn:hover {
+  background-position: 0 0, 100% 0;
+  transform: translateY(-2px); box-shadow: 0 16px 38px rgba(139, 92, 246, .38);
+}
+.btn:active { transform: translateY(0); }
+.btn.quiet {
+  background: var(--glass); background-image: none; color: var(--ink);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-line); box-shadow: none;
+}
+.btn.quiet:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+/* ---------------------------------------------------------------- topo --- */
+header { position: sticky; top: 16px; z-index: 30; }
+.bar { display: flex; align-items: center; gap: 14px; padding: 10px 12px 10px 20px; border-radius: 999px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.bar nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+.bar nav a { color: var(--ink-soft); text-decoration: none; font-size: .92rem; }
+.bar nav a:hover, .bar nav a[aria-current] { color: var(--ink); }
+.bar .btn { padding: 10px 20px; font-size: .9rem; }
+.pillbtn {
+  height: 34px; padding: 0 12px; border-radius: 999px; cursor: pointer;
+  background: transparent; border: 1px solid var(--glass-line);
+  color: var(--ink); font: inherit; font-size: .82rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.pillbtn:hover { background: var(--glass); }
+@media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
+
+/* --------------------------------------------------------------- rodape --- */
+footer { padding: 48px 0 64px; color: var(--ink-faint); font-size: .88rem; }
+.foot-grid {
+  display: grid; gap: 30px; grid-template-columns: 1.4fr repeat(3, 1fr);
+  padding-bottom: 34px; border-bottom: 1px solid var(--glass-line);
+}
+@media (max-width: 780px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+.foot-grid h4 {
+  margin: 0 0 14px; font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.foot-grid a { text-decoration: none; color: var(--ink-soft); }
+.foot-grid a:hover { color: var(--ink); }
+.foot-end {
+  margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center;
+}
+.foot-end .spacer { flex: 1; }
+.made {
+  display: inline-flex; align-items: center; gap: 9px; font-weight: 500;
+  color: var(--ink-soft); padding: 7px 15px 7px 9px; border-radius: 999px;
+  border: 1px solid var(--glass-line); background: var(--glass);
+}
+.made svg { display: block; border-radius: 3px; }
+
+/* ------------------------------------------------------- paginas de texto --- */
+.doc { padding-top: 40px; }
+.doc-body { max-width: 72ch; }
+.doc-body h2 { font-size: 1.42rem; margin: 46px 0 14px; letter-spacing: -.02em; }
+.doc-body h2:first-child { margin-top: 0; }
+.doc-body p, .doc-body li { color: var(--ink-soft); }
+.doc-body p + p { margin-top: 14px; }
+.doc-body ul { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 9px; }
+.doc-body strong { color: var(--ink); font-weight: 600; }
+.doc-meta {
+  margin-top: 18px; font-family: "IBM Plex Mono", monospace;
+  font-size: .78rem; color: var(--ink-faint);
+}
+.notice {
+  margin-top: 30px; padding: 18px 22px; border-radius: 18px;
+  border: 1px solid var(--glass-line); background: var(--glass);
+  color: var(--ink-soft); font-size: .92rem;
+}
+</style>
+<style>
+.hero { padding-top: clamp(46px, 7vw, 84px); padding-bottom: 0; }
+.hero h1 span {
+  background: linear-gradient(100deg, var(--g1), var(--g2) 45%, var(--g3));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 34px; }
+.cta-note { font-size: .88rem; color: var(--ink-faint); }
+.stage { margin-top: clamp(40px, 5vw, 66px); padding: 20px; }
+.stage-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.pill {
+  font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--ink-soft);
+  border: 1px solid var(--glass-line); padding: 5px 12px; border-radius: 999px;
+}
+.replay {
+  margin-left: auto; cursor: pointer; font: inherit; font-size: .87rem;
+  color: var(--ink-soft); background: transparent;
+  border: 1px solid var(--glass-line); padding: 7px 16px; border-radius: 999px;
+}
+.replay:hover { color: var(--ink); }
+canvas#tl { display: block; width: 100%; height: 280px; border-radius: 16px; }
+@media (max-width: 720px) { canvas#tl { height: 220px; } }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 26px; padding: 32px 30px; }
+.stat .v { font-size: 2.1rem; font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+.stat .v.grad {
+  background: linear-gradient(100deg, var(--g1), var(--g3));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stat .k { color: var(--ink-soft); font-size: .9rem; margin-top: 8px; }
+
+.steps { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin-top: 46px; }
+.step { padding: 30px 28px; }
+.step .dot { width: 34px; height: 34px; border-radius: 12px; margin-bottom: 18px; }
+.step:nth-child(1) .dot { background: linear-gradient(140deg, var(--g1), var(--g2)); }
+.step:nth-child(2) .dot { background: linear-gradient(140deg, var(--g2), var(--g4)); }
+.step:nth-child(3) .dot { background: linear-gradient(140deg, var(--g3), var(--g1)); }
+.step p { margin-top: 10px; color: var(--ink-soft); font-size: .97rem; }
+.more { display: inline-block; margin-top: 26px; color: var(--ink); font-weight: 500; }
+
+.migra { display: grid; gap: 20px; grid-template-columns: 1.15fr 1fr; margin-top: 46px; }
+@media (max-width: 860px) { .migra { grid-template-columns: 1fr; } }
+.migra .card { padding: 34px 32px; }
+.migra ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 14px; }
+.migra li { padding-left: 26px; position: relative; color: var(--ink-soft); font-size: .97rem; }
+.migra li::before {
+  content: ""; position: absolute; left: 0; top: .5em; width: 13px; height: 13px;
+  border-radius: 5px; background: linear-gradient(140deg, var(--g1), var(--g3));
+}
+
+.feats { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 46px; }
+.feat { padding: 30px 28px; }
+.feat .tag {
+  display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: .68rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px;
+}
+.feat p { margin-top: 10px; color: var(--ink-soft); font-size: .96rem; }
+
+.ingest { display: grid; gap: 20px; grid-template-columns: 1fr 1.05fr; margin-top: 46px; }
+@media (max-width: 900px) { .ingest { grid-template-columns: 1fr; } }
+.ingest .card { padding: 30px 28px; }
+.ingest ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+.ingest li h3 { margin-bottom: 6px; }
+.ingest li p { color: var(--ink-soft); font-size: .96rem; }
+.term { padding: 24px 26px; font-family: "IBM Plex Mono", monospace; font-size: .82rem; display: flex; flex-direction: column; }
+.term-head { display: flex; align-items: center; gap: 10px; color: var(--ink-faint); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
+.term-head .dots { display: flex; gap: 5px; }
+.term-head .dots i { width: 9px; height: 9px; border-radius: 50%; display: block; }
+.term-head .dots i:nth-child(1) { background: var(--g2); }
+.term-head .dots i:nth-child(2) { background: var(--g4); }
+.term-head .dots i:nth-child(3) { background: var(--g3); }
+.term .path { display: block; color: var(--ink); line-height: 1.9; word-break: break-all; margin-bottom: 20px; }
+.term .path b { font-weight: 500; background: linear-gradient(100deg, var(--g1), var(--g3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.term-rows { display: grid; gap: 11px; align-content: start; flex: 1; border-top: 1px solid var(--glass-line); padding-top: 18px; }
+.term-rows div { display: grid; grid-template-columns: 18px 1fr auto; gap: 12px; align-items: baseline; }
+.term-rows span { color: var(--ink-soft); }
+.term-rows em { font-style: normal; color: var(--ink-faint); font-size: .76rem; }
+.term-rows .ok i { color: #16A34A; font-style: normal; }
+.term-rows .same i { color: var(--g3); font-style: normal; }
+.term-rows .warn i { color: #D97706; font-style: normal; }
+.term-foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--glass-line); color: var(--ink-faint); font-size: .76rem; }
+
+.exports { margin-top: 46px; display: grid; gap: 14px; }
+.exp { display: grid; grid-template-columns: 210px 1fr; gap: 22px; align-items: baseline; padding: 24px 28px; }
+.exp b { font-weight: 600; font-size: 1.04rem; }
+.exp .fmt { display: block; font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--ink-faint); margin-top: 4px; }
+.exp p { color: var(--ink-soft); font-size: .96rem; }
+@media (max-width: 660px) { .exp { grid-template-columns: 1fr; gap: 8px; } }
+
+.plans { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); margin-top: 46px; }
+.plan { padding: 32px 30px; display: flex; flex-direction: column; }
+.plan.hi { position: relative; }
+.plan.hi::before {
+  content: ""; position: absolute; inset: -1px; border-radius: var(--radius); padding: 1.5px;
+  background: linear-gradient(130deg, var(--g1), var(--g2), var(--g3), var(--g4));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.plan .name { font-weight: 600; font-size: 1.06rem; }
+.plan .price { font-size: 2.5rem; font-weight: 600; letter-spacing: -.045em; margin: 14px 0 2px; }
+.plan .price small { font-size: .92rem; font-weight: 400; color: var(--ink-soft); letter-spacing: 0; }
+.plan ul { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 11px; }
+.plan li { color: var(--ink-soft); font-size: .94rem; padding-left: 22px; position: relative; }
+.plan li::before { content: ""; position: absolute; left: 0; top: .58em; width: 12px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--g1), var(--g3)); }
+.plan .btn { justify-content: center; margin-top: auto; }
+.intl { margin-top: 22px; color: var(--ink-faint); font-size: .92rem; }
+.soon { margin-top: 24px; padding: 22px 26px; display: flex; gap: 18px; align-items: flex-start; }
+.soon-mark { flex: none; width: 12px; height: 12px; border-radius: 4px; margin-top: 6px; background: linear-gradient(140deg, var(--g4), var(--g2)); }
+.soon b { font-weight: 600; }
+.soon p { color: var(--ink-soft); font-size: .95rem; margin-top: 4px; }
+
+.faq { margin-top: 42px; }
+details { border-bottom: 1px solid var(--glass-line); }
+details:first-child { border-top: 1px solid var(--glass-line); }
+summary { cursor: pointer; list-style: none; padding: 22px 0; font-weight: 500; font-size: 1.05rem; letter-spacing: -.015em; display: flex; align-items: center; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; margin-left: auto; color: var(--ink-faint); font-family: "IBM Plex Mono", monospace; font-size: 1.2rem; }
+details[open] summary::after { content: "\2013"; }
+details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measure); }
+
+.closing { text-align: center; padding: clamp(70px, 9vw, 120px) 0; }
+.closing .cta-row { justify-content: center; }
+
+.toc { margin-top: 40px; padding: 24px 28px; }
+.toc h4 { margin: 0 0 14px; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+.toc ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.toc a { color: var(--ink-soft); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+
+.part-kicker {
+  display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: .72rem;
+  letter-spacing: .14em; text-transform: uppercase; color: #fff; margin-bottom: 16px;
+  padding: 5px 13px; border-radius: 999px;
+  background: linear-gradient(110deg, var(--g1), var(--g2));
+}
+.steps-list { list-style: none; margin: 44px 0 0; padding: 0; display: grid; gap: 4px; }
+.step-row { display: grid; grid-template-columns: 74px 1fr; gap: 22px; padding: 24px 0; border-top: 1px solid var(--glass-line); }
+.step-row:last-child { border-bottom: 1px solid var(--glass-line); }
+.step-num span {
+  font-family: "IBM Plex Mono", monospace; font-size: 1.5rem; font-weight: 500;
+  background: linear-gradient(140deg, var(--g1), var(--g3));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.step-txt p { margin-top: 8px; color: var(--ink-soft); font-size: .98rem; max-width: 62ch; }
+@media (max-width: 620px) { .step-row { grid-template-columns: 1fr; gap: 6px; } }
+
+.shot { margin: 40px 0 0; padding: 14px; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.shot figcaption { margin-top: 14px; padding: 0 8px 4px; color: var(--ink-faint); font-size: .86rem; }
+
+.tip { margin-top: 34px; padding: 24px 28px; border-left: 3px solid var(--g1); border-radius: 0 20px 20px 0; }
+.tip h3 { margin-bottom: 8px; }
+.tip p { color: var(--ink-soft); font-size: .96rem; }
+
+.legend { display: grid; gap: 16px; margin-top: 34px; }
+.legend div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 24px; align-items: baseline; }
+.legend b { font-weight: 600; }
+.legend p { color: var(--ink-soft); font-size: .95rem; }
+@media (max-width: 640px) { .legend div { grid-template-columns: 1fr; gap: 6px; } }
+.legend .sw { display: inline-block; width: 13px; height: 13px; border-radius: 4px; margin-right: 9px; vertical-align: -1px; }
+
+.grid2 { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 34px; }
+.grid2 > div { padding: 26px 28px; }
+.grid2 p { margin-top: 8px; color: var(--ink-soft); font-size: .95rem; }
+
+.rel { margin-top: 44px; padding: 32px 34px; }
+.rel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; }
+.rel-v {
+  font-family: "IBM Plex Mono", monospace; font-size: 1.05rem; font-weight: 500;
+  color: #fff; padding: 4px 14px; border-radius: 999px;
+  background: linear-gradient(110deg, var(--g1), var(--g2));
+}
+.rel-date { color: var(--ink-faint); font-size: .84rem; font-family: "IBM Plex Mono", monospace; }
+.rel h3 { margin-top: 18px; }
+.rel ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 13px; }
+.rel li { padding-left: 26px; position: relative; color: var(--ink-soft); font-size: .96rem; }
+.rel li::before { content: ""; position: absolute; left: 0; top: .55em; width: 13px; height: 13px; border-radius: 5px; background: linear-gradient(140deg, var(--g1), var(--g3)); }
+.next li::before { background: linear-gradient(140deg, var(--g4), var(--g2)); }
+</style>
+</head>
+<body>
+<div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
+<header><div class="wrap"><div class="bar glass">
+  <a class="brand" href="/en/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+    <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+</svg> Sincro</a>
+  <nav>
+    <a href="/en/how-it-works/" class="hide-sm">How it works</a>
+    <a href="/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
+    <a href="/en/whats-new/" class="hide-sm" aria-current="page">What's new</a>
+    <a href="/en/#preco">Pricing</a>
+    <a class="pillbtn" href="/novidades/" hreflang="pt"
+       aria-label="View this site in Portuguese">PT</a>
+    <button class="pillbtn" id="theme" type="button" aria-label="Switch between light and dark">&#9680;</button>
+    <a class="btn" href="/en/#preco">Download</a>
+  </nav>
+</div></div></header>
+<main>
+<section class="doc"><div class="wrap">
+  <div class="col">
+    <div class="eyebrow">Changelog</div>
+    <h1>What's new</h1>
+    <p class="lede">Each version and what it brought. Fixes worth noting are here too.</p>
+  </div>
+  <div class="rel glass">
+  <div class="rel-head"><span class="rel-v">1.0</span>
+    <span class="rel-date">August 21, 2026</span></div>
+  <h3>First public release</h3><ul><li>Two-stage audio sync: an onset envelope to find the alignment and phase-correlation refinement to land on the millisecond.</li><li>Three-state triage (locked, review, out of sync), marked on the timeline and carried into the XML.</li><li>SMPTE timecode reading, drop-frame included, used to cross-check the audio result.</li><li>Clock drift detection between devices.</li><li>Ingest with verified copy, organization by date, job and camera, and a space check before the first byte is written.</li><li>A player that mixes the clips under the cursor in real time.</li><li>Export to FCP7 XML (Premiere and DaVinci Resolve), FCPXML (Final Cut), CSV and JSON.</li><li>A DaVinci Resolve script, installed under Workspace &rsaquo; Scripts, that syncs the open bin without leaving the program.</li><li>An option to match timecode across cameras so the editor's native multicam can group them, without touching the original files.</li><li>Interface in Portuguese and English, with light and dark themes.</li></ul>
+</div>
+  <div class="rel glass next" style="margin-top:20px">
+    <h3>On the way</h3><ul><li>Windows version.</li><li>Drift correction, on top of the detection that already exists.</li><li>Configurable project name for exported files.</li></ul>
+    <p class="doc-meta">Dates for future items are not a delivery promise.</p>
+  </div>
+</div></section>
+
+<section class="closing"><div class="wrap">
+  <h2>Your next shoot day can start already assembled.</h2>
+  <p class="lede" style="margin-inline:auto">Download it, drop the folders, and watch the footage fall into place.</p>
+  <div class="cta-row"><a class="btn" href="/en/#preco">Download for Mac</a><span class="cta-note">7 days fully unlocked · macOS 12+</span></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="/en/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+    <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+</svg> Sincro</a>
+      <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">Syncs the whole shoot day by sound, organizes your cards and hands your editor a finished timeline.</p>
+    </div>
+    <div><h4>Product</h4><ul>
+      <li><a href="/en/how-it-works/">How it works</a></li>
+      <li><a href="/en/pluraleyes-alternative/">From PluralEyes</a></li>
+      <li><a href="/en/whats-new/">What's new</a></li>
+      <li><a href="/en/#preco">Pricing</a></li>
+    </ul></div>
+    <div><h4>Legal</h4><ul>
+      <li><a href="/en/license/">License</a></li>
+      <li><a href="/en/terms/">Terms</a></li>
+      <li><a href="/en/privacy/">Privacy</a></li>
+      <li><a href="/en/refunds/">Refunds</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a href="mailto:contato@sincro.app">contato@sincro.app</a></li>
+    </ul></div>
+  </div>
+  <div class="foot-end">
+    <span class="made"><svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true">
+  <rect width="28" height="20" fill="#009B3A"/>
+  <path d="M14 2.6 25.4 10 14 17.4 2.6 10Z" fill="#FEDF00"/>
+  <circle cx="14" cy="10" r="4.3" fill="#002776"/>
+  <path d="M9.9 8.6a4.3 4.3 0 0 0 8.2 1.5 9 9 0 0 0-8.2-1.5Z" fill="#fff"/>
+</svg> Made in Brazil</span>
+    <span class="spacer"></span>
+    <span class="mono">macOS 12 Monterey or later · Apple Silicon and Intel · Windows version in development</span>
+  </div>
+</div></footer>
+<script>
+(function () {
+  var btn = document.getElementById("theme");
+  var saved = localStorage.getItem("sincro-theme");
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  if (btn) btn.addEventListener("click", function () {
+    var atual = document.documentElement.getAttribute("data-theme") || "light";
+    var novo = atual === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", novo);
+    localStorage.setItem("sincro-theme", novo);
+    document.dispatchEvent(new CustomEvent("sincro:theme", {detail: novo}));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sincro · sincroniza a diaria pelo som</title>
-<meta name="description" content="Sincronize a diária inteira pelo som e importe no Premiere, DaVinci Resolve ou Final Cut com a timeline pronta. Para macOS, licença única.">
-<link rel="canonical" href="https://mendesamd-png.github.io/sincro-site/">
-<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincro-site/">
-<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincro-site/en/">
-<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincro-site/en/">
-<meta property="og:title" content="Sincro · sincroniza a diaria pelo som">
-<meta property="og:description" content="Sincronize a diária inteira pelo som e importe no Premiere, DaVinci Resolve ou Final Cut com a timeline pronta. Para macOS, licença única.">
+<title>Como funciona o Sincro · Sincro</title>
+<meta name="description" content="Passo a passo do Sincro: copiar os cartões com verificação, sincronizar a diária pelo som e exportar a timeline para Premiere, DaVinci Resolve ou Final Cut.">
+<link rel="canonical" href="https://mendesamd-png.github.io/sincro-site/como-funciona/">
+<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincro-site/como-funciona/">
+<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincro-site/en/how-it-works/">
+<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincro-site/en/how-it-works/">
+<meta property="og:title" content="Como funciona o Sincro · Sincro">
+<meta property="og:description" content="Passo a passo do Sincro: copiar os cartões com verificação, sincronizar a diária pelo som e exportar a timeline para Premiere, DaVinci Resolve ou Final Cut.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mendesamd-png.github.io/sincro-site/">
+<meta property="og:url" content="https://mendesamd-png.github.io/sincro-site/como-funciona/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
@@ -314,6 +314,62 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
 
 .closing { text-align: center; padding: clamp(70px, 9vw, 120px) 0; }
 .closing .cta-row { justify-content: center; }
+
+.toc { margin-top: 40px; padding: 24px 28px; }
+.toc h4 { margin: 0 0 14px; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+.toc ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.toc a { color: var(--ink-soft); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+
+.part-kicker {
+  display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: .72rem;
+  letter-spacing: .14em; text-transform: uppercase; color: #fff; margin-bottom: 16px;
+  padding: 5px 13px; border-radius: 999px;
+  background: linear-gradient(110deg, var(--g1), var(--g2));
+}
+.steps-list { list-style: none; margin: 44px 0 0; padding: 0; display: grid; gap: 4px; }
+.step-row { display: grid; grid-template-columns: 74px 1fr; gap: 22px; padding: 24px 0; border-top: 1px solid var(--glass-line); }
+.step-row:last-child { border-bottom: 1px solid var(--glass-line); }
+.step-num span {
+  font-family: "IBM Plex Mono", monospace; font-size: 1.5rem; font-weight: 500;
+  background: linear-gradient(140deg, var(--g1), var(--g3));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.step-txt p { margin-top: 8px; color: var(--ink-soft); font-size: .98rem; max-width: 62ch; }
+@media (max-width: 620px) { .step-row { grid-template-columns: 1fr; gap: 6px; } }
+
+.shot { margin: 40px 0 0; padding: 14px; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.shot figcaption { margin-top: 14px; padding: 0 8px 4px; color: var(--ink-faint); font-size: .86rem; }
+
+.tip { margin-top: 34px; padding: 24px 28px; border-left: 3px solid var(--g1); border-radius: 0 20px 20px 0; }
+.tip h3 { margin-bottom: 8px; }
+.tip p { color: var(--ink-soft); font-size: .96rem; }
+
+.legend { display: grid; gap: 16px; margin-top: 34px; }
+.legend div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 24px; align-items: baseline; }
+.legend b { font-weight: 600; }
+.legend p { color: var(--ink-soft); font-size: .95rem; }
+@media (max-width: 640px) { .legend div { grid-template-columns: 1fr; gap: 6px; } }
+.legend .sw { display: inline-block; width: 13px; height: 13px; border-radius: 4px; margin-right: 9px; vertical-align: -1px; }
+
+.grid2 { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 34px; }
+.grid2 > div { padding: 26px 28px; }
+.grid2 p { margin-top: 8px; color: var(--ink-soft); font-size: .95rem; }
+
+.rel { margin-top: 44px; padding: 32px 34px; }
+.rel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; }
+.rel-v {
+  font-family: "IBM Plex Mono", monospace; font-size: 1.05rem; font-weight: 500;
+  color: #fff; padding: 4px 14px; border-radius: 999px;
+  background: linear-gradient(110deg, var(--g1), var(--g2));
+}
+.rel-date { color: var(--ink-faint); font-size: .84rem; font-family: "IBM Plex Mono", monospace; }
+.rel h3 { margin-top: 18px; }
+.rel ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 13px; }
+.rel li { padding-left: 26px; position: relative; color: var(--ink-soft); font-size: .96rem; }
+.rel li::before { content: ""; position: absolute; left: 0; top: .55em; width: 13px; height: 13px; border-radius: 5px; background: linear-gradient(140deg, var(--g1), var(--g3)); }
+.next li::before { background: linear-gradient(140deg, var(--g4), var(--g2)); }
 </style>
 </head>
 <body>
@@ -330,124 +386,120 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
 </svg> Sincro</a>
   <nav>
-    <a href="/como-funciona/" class="hide-sm">Como funciona</a>
+    <a href="/como-funciona/" class="hide-sm" aria-current="page">Como funciona</a>
     <a href="/alternativa-pluraleyes/" class="hide-sm">Vem do PluralEyes</a>
     <a href="/novidades/" class="hide-sm">Novidades</a>
     <a href="/#preco">Preço</a>
-    <a class="pillbtn" href="/en/" hreflang="en"
+    <a class="pillbtn" href="/en/how-it-works/" hreflang="en"
        aria-label="Ver este site em inglês">EN</a>
     <button class="pillbtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">&#9680;</button>
     <a class="btn" href="/#preco">Baixar</a>
   </nav>
 </div></div></header>
 <main>
-<section class="hero"><div class="wrap">
+<section class="doc"><div class="wrap">
   <div class="col">
-    <h1>Toda a diária,<br><span>sincronizada pelo som.</span></h1>
-    <p class="lede">Solte as pastas das câmeras e dos gravadores, aperte Sync e importe o XML no Premiere ou no DaVinci Resolve. O material chega organizado, cada câmera na sua faixa, pronto para cortar.</p>
-    <div class="cta-row">
-      <a class="btn" href="#preco">Baixar para Mac</a>
-      <a class="btn quiet" href="/como-funciona/">Ver o passo a passo</a>
-      <span class="cta-note">macOS 12+ · Apple Silicon e Intel</span>
-    </div>
+    <div class="eyebrow">Passo a passo</div>
+    <h1>Do cartão no leitor até o corte</h1>
+    <p class="lede">Duas metades do mesmo dia. A primeira tira a mídia do cartão com prova de que chegou inteira. A segunda alinha tudo pelo som e entrega a timeline montada. Você pode usar só uma delas.</p>
   </div>
-  <div class="stage glass">
-    <div class="stage-head">
-      <span class="pill">242 clipes</span>
-      <span class="pill">2 câmeras · 2 gravadores</span>
-      <span class="pill mono">7,6 h de material</span>
-      <button class="replay" id="replay" type="button">Sincronizar de novo</button>
-    </div>
-    <canvas id="tl" aria-label="Clipes de duas câmeras e dois gravadores deslizando das posições brutas para as posições sincronizadas"></canvas>
-  </div>
-</div></section>
-
-<section><div class="wrap"><div class="stats glass"><div class="stat"><div class="v grad mono">242</div><div class="k">clipes numa diária real</div></div><div class="stat"><div class="v grad mono">100%</div><div class="k">linkados no Premiere e no Resolve</div></div><div class="stat"><div class="v mono">&le; &frac12;</div><div class="k">quadro de desvio, medido pela API do Resolve</div></div><div class="stat"><div class="v mono">0,5 ms</div><div class="k">precisão do motor em material controlado</div></div></div></div></section>
-
-<section id="fluxo"><div class="wrap">
-  <div class="eyebrow">O fluxo</div>
-  <div class="col"><h2>Três passos entre o cartão e o corte</h2><p class="lede">O caminho que um assistente faria à mão, feito por uma máquina que mantém a mesma atenção no clipe 1 e no clipe 242.</p></div>
-  <div class="steps"><div class="step glass"><div class="dot"></div><h3>Solte o material</h3><p>Pastas inteiras, taxas de quadro misturadas, câmeras e gravadores juntos. O Sincro lê os metadados na hora e desenha a timeline antes de analisar.</p></div><div class="step glass"><div class="dot"></div><h3>Aperte Sync</h3><p>O motor compara as formas de onda e alinha cada clipe com precisão de milissegundo. Cada par recebe uma nota de confiança, e a triagem separa o que está travado, o que merece revisão e o que ficou de fora.</p></div><div class="step glass"><div class="dot"></div><h3>Exporte o XML</h3><p>Uma timeline com uma faixa por câmera, áudio embaixo e as pastas do bruto viradas em bins. Abre no seu editor com a mídia online.</p></div></div>
-  <a class="more" href="/como-funciona/">Ver o passo a passo completo &rarr;</a>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow">Continuidade</div>
-  <div class="col"><h2>Você já conhece este fluxo</h2><p class="lede">O PluralEyes ensinou uma geração de editores a confiar no som para sincronizar. O Sincro segue esse caminho e roda nativo nos Macs de hoje.</p></div>
-  <div class="migra">
-    <div class="card glass"><h3>O que continua igual</h3><ul><li>Solte a diária inteira e deixe o áudio resolver o alinhamento</li><li>Uma timeline por bloco de gravação, cada ângulo na sua faixa</li><li>XML que abre direto no Premiere e no DaVinci Resolve</li></ul></div>
-    <div class="card glass"><h3>O que o Sincro traz</h3><ul><li>Nativo em Apple Silicon, com o áudio processado no seu Mac</li><li>Backup verificado dos cartões dentro do mesmo aplicativo</li><li>Player para conferir o sync de ouvido antes de exportar</li><li>Licença única, comprada uma vez</li></ul></div>
-  </div>
-  <a class="more" href="/alternativa-pluraleyes/">Ler a página completa &rarr;</a>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow">Dentro do app</div>
-  <div class="col"><h2>Uma janela para o dia inteiro</h2><p class="lede">O que costuma exigir três programas diferentes acontece em um lugar só.</p></div>
-  <div class="feats"><div class="feat glass"><span class="tag">Taxas mistas</span><h3>23,976 e 59,94 no mesmo projeto</h3><p>Cada arquivo entra no XML na taxa em que foi gravado, que é justamente o que mantém a mídia online quando o projeto tem câmeras diferentes.</p></div><div class="feat glass"><span class="tag">Revisão</span><h3>Ouça antes de exportar</h3><p>Clique em qualquer ponto da timeline e dê play: o Sincro mixa as câmeras sob o cursor em tempo real. Alinhado soa junto, e o ouvido confirma o sync antes de o material chegar no NLE.</p></div><div class="feat glass"><span class="tag">Triagem</span><h3>Três estados, uma cor cada</h3><p>Travado, revisar e fora do sync, marcados na timeline e no XML. Você olha direto para os poucos clipes que pedem atenção.</p></div><div class="feat glass"><span class="tag">DaVinci Resolve</span><h3>Script nativo incluído</h3><p>Um comando em Workspace &rsaquo; Scripts sincroniza o bin aberto e monta as timelines por dentro do Resolve, com os clipes linkados ao Media Pool e a triagem pintada.</p></div><div class="feat glass"><span class="tag">Timecode</span><h3>Igualar TC para multicam</h3><p>Na exportação, o Sincro escreve o mesmo timecode para todas as câmeras e o multicam nativo do seu editor agrupa sozinho. Seus arquivos permanecem intactos.</p></div><div class="feat glass"><span class="tag">Privacidade</span><h3>Tudo acontece no seu Mac</h3><p>O material é lido do disco, processado na sua CPU e devolvido em XML. O relatório de suporte, quando você escolhe enviar, leva apenas números e apelidos.</p></div></div>
+  <div class="toc glass col"><h4>Nesta página</h4><ol><li><a href="#ingest">Do cartão para o storage</a></li><li><a href="#sync">Do storage para a timeline</a></li><li><a href="#ler">O que a tela está dizendo</a></li><li><a href="#fora">Quando algo fica de fora</a></li><li><a href="#exportar">Como cada editor importa</a></li></ol></div>
 </div></section>
 
 <section id="ingest"><div class="wrap">
-  <div class="eyebrow">Passo zero</div>
-  <div class="col"><h2>O cartão chega inteiro, e você tem prova disso</h2><p class="lede">Antes de sincronizar existe o momento mais frágil da diária: a mídia mora num cartão só. O Sincro copia, confere byte a byte e registra o que aconteceu com cada arquivo.</p></div>
-  <div class="ingest">
-    <div class="card glass"><ul><li><h3>Verificação byte a byte</h3><p>Cada arquivo é lido de volta do destino e comparado com a origem. Cartão com defeito devolve o tamanho certo e os bytes errados, e a leitura de volta é o que revela isso enquanto o cartão ainda está no leitor.</p></li><li><h3>Espaço conferido antes do primeiro byte</h3><p>O Sincro soma o volume a copiar e compara com o disco antes de começar. Descobrir disco cheio no arquivo 15 de 63 é o pior momento possível, então a conta vem primeiro.</p></li><li><h3>Estrutura montada no ato</h3><p>Escolha data, job e câmera, e o caminho real aparece na tela enquanto você digita. O que você vê é literalmente a pasta que vai nascer no storage.</p></li><li><h3>Erro em português, na linha do arquivo</h3><p>Disco cheio, permissão negada, cartão com defeito. O log diz o motivo no arquivo em que ele aconteceu e resume o motivo dominante no topo, então você sabe o que consertar antes de tentar de novo.</p></li></ul></div>
-    <div class="term glass">
-      <div class="term-head"><span class="dots"><i></i><i></i><i></i></span>Log da cópia</div>
-      <code class="path">/Volumes/DG&nbsp;REALTIME/<b>2026_08_21_JADE_PICON</b>/<b>CAM_A</b>/C0043.MP4</code>
-      <div class="term-rows">
-        <div class="ok"><i>&#10003;</i><span>C0041.MP4</span><em>copiado e verificado</em></div><div class="ok"><i>&#10003;</i><span>C0042.MP4</span><em>copiado e verificado</em></div>
-        <div class="same"><i>=</i><span>C0043.MP4</span><em>já estava lá</em></div>
-        <div class="ok"><i>&#10003;</i><span>ZOOM0007.WAV</span><em>copiado e verificado</em></div><div class="ok"><i>&#10003;</i><span>ZOOM0008.WAV</span><em>copiado e verificado</em></div><div class="ok"><i>&#10003;</i><span>C0044.MP4</span><em>copiado e verificado</em></div><div class="ok"><i>&#10003;</i><span>C0045.MP4</span><em>copiado e verificado</em></div>
-        <div class="warn"><i>&#9888;</i><span>C0046.MP4</span><em>sem espaço no destino</em></div>
-      </div>
-      <div class="term-foot">63 arquivos · 61 copiados · 1 já estava lá · 1 problema · 248 GB</div>
-    </div>
+  <span class="part-kicker">Parte 1</span>
+  <div class="col"><h2>Do cartão para o storage</h2>
+    <p class="lede">A aba Ingest existe porque o momento em que a diária só tem uma cópia é o momento em que ela pode desaparecer. Quatro passos, e o cartão sai do leitor com o trabalho conferido.</p></div>
+  <ol class="steps-list" aria-label="Do cartão para o storage"><li class="step-row">
+  <div class="step-num"><span>01</span></div>
+  <div class="step-txt"><h3>Escolha o destino e nomeie o job</h3><p>Aponte o volume onde o material vai morar e escreva o nome do job. Enquanto você digita, o Sincro mostra o caminho real que vai nascer no disco, já com a data na frente. O que aparece na tela é literalmente a pasta que vai existir.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>02</span></div>
+  <div class="step-txt"><h3>Solte os cartões</h3><p>Arraste um cartão, vários, ou pastas já copiadas. O Sincro lê a árvore inteira, soma o volume e compara com o espaço livre do destino antes de escrever qualquer coisa.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>03</span></div>
+  <div class="step-txt"><h3>Copie com verificação</h3><p>Cada arquivo é copiado e depois lido de volta do destino para ser comparado com a origem. É o passo que separa uma cópia de um backup: cartão com defeito devolve o tamanho certo com os bytes errados, e só a leitura de volta revela isso.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>04</span></div>
+  <div class="step-txt"><h3>Leia o relatório</h3><p>Cada linha traz um símbolo e um estado. O rodapé resume arquivos, copiados, já existentes, problemas e volume. Quando algo falha, o motivo aparece na linha do arquivo, em português, e o motivo dominante sobe para o topo.</p></div>
+</li></ol>
+  <figure class="shot glass">
+  <img src="/img/app-ingest-pt.png" alt="A aba Ingest com o destino, o job e o caminho real aparecendo em tempo real." width="1440" height="860" loading="lazy">
+  <figcaption>A aba Ingest com o destino, o job e o caminho real aparecendo em tempo real.</figcaption>
+</figure>
+  <div class="tip glass">
+    <h3>Sobre mover em vez de copiar</h3><p>O Sincro copia, sempre. Mover apaga a origem antes de você ter conferido o destino, e a única hora em que isso importa é a hora em que dá errado. Formate o cartão você mesmo, depois de ver o relatório.</p>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="eyebrow">Exportação</div>
-  <div class="col"><h2>Chega pronto no seu editor</h2></div>
-  <div class="exports"><div class="exp glass"><div><b>Adobe Premiere Pro</b><span class="fmt">XML do FCP7</span></div><p>Abra o arquivo no Premiere: a mídia linka sozinha e as pastas do bruto viram bins organizados.</p></div><div class="exp glass"><div><b>DaVinci Resolve</b><span class="fmt">XML do FCP7 · ou script nativo</span></div><p>File &rsaquo; Import &rsaquo; Timeline e a mídia linka sozinha, do mesmo jeito. O script incluído faz o caminho inteiro de dentro do Resolve.</p></div><div class="exp glass"><div><b>Final Cut Pro</b><span class="fmt">FCPXML</span></div><p>Arquivo no formato nativo do Final Cut, com as faixas e os offsets do sync.</p></div><div class="exp glass"><div><b>Planilha e dados</b><span class="fmt">CSV · JSON</span></div><p>Offsets, confiança e triagem de cada clipe, para conferir a olho ou alimentar seu próprio script.</p></div></div>
+<section id="sync"><div class="wrap">
+  <span class="part-kicker">Parte 2</span>
+  <div class="col"><h2>Do storage para a timeline</h2>
+    <p class="lede">Aqui o som faz o trabalho. Você entrega o material bruto e recebe uma timeline com cada câmera na sua faixa, o áudio embaixo e o que ficou de fora separado.</p></div>
+  <figure class="shot glass">
+  <img src="/img/app-prescan-pt.png" alt="O material carregado antes do Sync: cada fonte na sua linha, na ordem de gravação." width="1440" height="860" loading="lazy">
+  <figcaption>O material carregado antes do Sync: cada fonte na sua linha, na ordem de gravação.</figcaption>
+</figure>
+  <ol class="steps-list" aria-label="Do storage para a timeline"><li class="step-row">
+  <div class="step-num"><span>01</span></div>
+  <div class="step-txt"><h3>Organize o bruto em pastas por fonte</h3><p>Uma pasta por câmera, uma por gravador. O Sincro usa a pasta para saber que aqueles arquivos vieram do mesmo equipamento, e isso melhora tanto o agrupamento quanto a leitura da timeline. Se o material já veio do Ingest, a estrutura já está pronta.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>02</span></div>
+  <div class="step-txt"><h3>Solte tudo de uma vez</h3><p>Arraste a pasta da diária inteira. O Sincro faz um reconhecimento rápido, sem decodificar áudio, e já desenha o material na timeline com a forma de onda de cada clipe. O resumo no topo diz quantos clipes, quantas câmeras e quantos gravadores entraram.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>03</span></div>
+  <div class="step-txt"><h3>Confira a contagem antes de sincronizar</h3><p>É o momento barato de perceber que um cartão ficou de fora. Se o número de câmeras estiver errado, corrija agora: adicionar material depois significa rodar o sync de novo.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>04</span></div>
+  <div class="step-txt"><h3>Aperte Sync</h3><p>O motor compara as formas de onda de todos os pares plausíveis, escolhe o melhor alinhamento de cada par e resolve o conjunto inteiro de uma vez. Ao terminar, os clipes deslizam para a posição e um som confirma o fim.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>05</span></div>
+  <div class="step-txt"><h3>Leia a timeline</h3><p>Cada linha é uma fonte. As câmeras ficam em cima, os gravadores embaixo. A distância horizontal entre os blocos é o tempo real entre as gravações, então o espaço vazio também é informação.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>06</span></div>
+  <div class="step-txt"><h3>Ouça antes de exportar</h3><p>Clique em qualquer ponto e dê play. O Sincro mixa em tempo real todos os clipes sob o cursor. Alinhado soa como uma fonte só; fora de sync produz eco. É a conferência mais rápida que existe, e ela acontece antes de o material chegar no editor.</p></div>
+</li><li class="step-row">
+  <div class="step-num"><span>07</span></div>
+  <div class="step-txt"><h3>Exporte para o seu editor</h3><p>Escolha o destino no menu Export. Cada opção já traz a instrução de importação que aquele programa espera, porque cada um deles importa de um jeito.</p></div>
+</li></ol>
+  <figure class="shot glass">
+  <img src="/img/app-synced-pt.png" alt="Depois do Sync: os grupos alinhados, o clipe amarelo pedindo revisão e o laranja fora do sync." width="1440" height="860" loading="lazy">
+  <figcaption>Depois do Sync: os grupos alinhados, o clipe amarelo pedindo revisão e o laranja fora do sync.</figcaption>
+</figure>
 </div></section>
 
-<section id="preco"><div class="wrap">
-  <div class="eyebrow">Licença</div>
-  <div class="col"><h2>Compra uma vez, é seu</h2><p class="lede">Licença perpétua com ativação local. Você instala uma vez e o app abre sempre, com ou sem internet.</p></div>
-  <div class="plans"><div class="plan glass">
-  <span class="name">Teste</span>
-  <div class="price">Grátis <small>· 7 dias</small></div>
-  <ul><li>Todos os recursos liberados</li><li>XML limpo, pronto para produção</li><li>Baixe e abra, o teste começa sozinho</li></ul>
-  <a class="btn quiet" href="#">Baixar para Mac</a>
-</div><div class="plan glass hi">
-  <span class="name">Sincro</span>
-  <div class="price">R$ 349 <small>· uma vez</small></div>
-  <ul><li>Uma licença, dois computadores seus</li><li>Sync, ingest, player e todos os exports</li><li>Script do DaVinci Resolve incluído</li><li>Atualizações da versão 1.x</li></ul>
-  <a class="btn" href="#">Comprar</a>
-</div><div class="plan glass">
-  <span class="name">Estúdio</span>
-  <div class="price">R$ 899 <small>· uma vez</small></div>
-  <ul><li>Até cinco estações</li><li>Nota fiscal em nome da empresa</li><li>Suporte por e-mail com prioridade</li></ul>
-  <a class="btn quiet" href="#">Falar com a gente</a>
-</div></div>
-  <p class="intl">Fora do Brasil: US$ 69 e US$ 179, com o mesmo conteúdo.</p>
-  <div class="soon glass">
-    <span class="soon-mark"></span>
-    <div><b>Versão para Windows em desenvolvimento.</b><p>O motor já roda multiplataforma. A versão empacotada para Windows entra em seguida.</p></div>
+<section id="ler"><div class="wrap">
+  <div class="col"><h2>O que a tela está dizendo</h2>
+    <p class="lede">Três coisas carregam informação: as cores, os números do rodapé e a posição horizontal.</p></div>
+  <h3 style="margin-top:40px">As cores</h3>
+  <div class="legend"><div class="glass"><b>Roxo, rosa, azul, ciano</b><p>Uma cor por fonte. São as câmeras e os gravadores, e a cor se mantém a mesma do início ao fim da diária.</p></div><div class="glass"><b>Amarelo</b><p>Sincronizou, mas com confiança abaixo do limiar de travamento. O alinhamento provavelmente está certo; vale conferir com o player.</p></div><div class="glass"><b>Laranja</b><p>Ficou fora do sync. Nenhuma sobreposição de áudio confiável com o resto do material. Vai para o fim da timeline, separado.</p></div></div>
+  <h3 style="margin-top:44px">Os números do rodapé</h3>
+  <div class="legend"><div class="glass"><b class="mono">files</b><p>Quantos clipes entraram no total.</p></div><div class="glass"><b class="mono">locked</b><p>Alinhados com confiança acima do limiar. Pode confiar.</p></div><div class="glass"><b class="mono">review</b><p>Alinhados, mas abaixo do limiar. Confira estes.</p></div><div class="glass"><b class="mono">out of sync</b><p>Sem par confiável. Ficaram no fim, em laranja.</p></div><div class="glass"><b class="mono">groups</b><p>Blocos de gravação encontrados. Costuma bater com o número de tomadas do dia.</p></div><div class="glass"><b class="mono">sync time</b><p>Quanto tempo o motor levou.</p></div></div>
+  <div class="tip glass">
+    <h3>Se a triagem estiver conservadora demais</h3><p>A engrenagem no topo abre dois limiares. <strong>Sync threshold</strong> é o mínimo para o Sincro aceitar um alinhamento. <strong>Lock threshold</strong> é o mínimo para ele parar de pedir revisão. Material com muito ruído de set ou sobreposição curta pede um limiar mais baixo; material limpo suporta um limiar mais alto.</p>
   </div>
 </div></section>
 
+<section id="fora"><div class="wrap">
+  <div class="col"><h2>Quando algo fica de fora</h2>
+    <p class="lede">Um clipe em laranja quase sempre tem uma destas causas.</p></div>
+  <div class="grid2"><div class="glass"><h3>Não há sobreposição real</h3><p>O clipe foi gravado quando mais nada estava rodando. Nesse caso o laranja está certo: não existe com o que sincronizar.</p></div><div class="glass"><h3>A sobreposição é curta demais</h3><p>Poucos segundos em comum produzem correlação que parece boa e não é. O Sincro pesa a evidência pelo tamanho da sobreposição justamente para não cair nisso.</p></div><div class="glass"><h3>O áudio não tem eventos</h3><p>Um trecho de silêncio, de vento ou de tom contínuo não dá ao motor nada para comparar. O alinhamento usa os instantes dos ataques sonoros, e onde não há ataque não há âncora.</p></div><div class="glass"><h3>A câmera gravou sem áudio</h3><p>Sem faixa de áudio não há sincronização por som. O timecode ainda pode posicionar o clipe, se existir.</p></div></div>
+</div></section>
+
+<section id="exportar"><div class="wrap">
+  <div class="col"><h2>Como cada editor importa</h2></div>
+  <div class="grid2"><div class="glass"><h3>Adobe Premiere Pro</h3><p>Exporte <strong>XML do FCP7</strong> e abra o arquivo pelo Premiere (File &rsaquo; Open). Ele converte num projeto com as sequências montadas, a mídia online e o áudio linkado ao vídeo. As pastas do material bruto viram bins.</p></div><div class="glass"><h3>DaVinci Resolve</h3><p>Exporte <strong>XML do FCP7</strong> e use File &rsaquo; Import &rsaquo; Timeline. A mídia linka sozinha. Como alternativa, o Sincro instala um script em Workspace &rsaquo; Scripts que sincroniza o bin aberto e monta as timelines sem sair do Resolve.</p></div><div class="glass"><h3>Final Cut Pro</h3><p>Exporte <strong>FCPXML</strong> e importe pelo Final Cut. O arquivo leva as faixas e os offsets do sync.</p></div><div class="glass"><h3>Multicam nativo</h3><p>Ligue <strong>Matching timecode</strong> no menu de exportação. O Sincro escreve o mesmo timecode para todas as câmeras no XML, e a função de multicam do seu editor agrupa sozinha. Seus arquivos originais não são tocados.</p></div></div>
+</div></section>
+
 <section><div class="wrap">
-  <div class="eyebrow">Perguntas</div>
-  <div class="col"><h2>Antes de baixar</h2></div>
-  <div class="faq col"><details><summary>Preciso de claquete ou de timecode casado?</summary><p>O Sincro trabalha com o som que as câmeras e o gravador captaram do mesmo evento, então basta que cada arquivo tenha áudio. Quando há timecode, ele entra como conferência e avisa se discordar do áudio.</p></details><details><summary>E se o áudio da câmera for ruim?</summary><p>É o caso comum, e o motor foi feito para ele. A comparação usa os instantes dos ataques sonoros, que são iguais em qualquer microfone da sala, independentes de ganho, distância e resposta de frequência. Depois disso um segundo estágio refina o alinhamento com precisão de amostra.</p></details><details><summary>Funciona com taxas de quadro diferentes?</summary><p>Sim. A diária usada na validação tinha 23,976 e 59,94 no mesmo projeto, com áudio a 48 kHz. O XML declara cada arquivo na taxa dele, que é o que garante o link dentro do NLE.</p></details><details><summary>O que acontece com o que fica fora do sync?</summary><p>Vai para o fim da timeline, marcado em cor, separado do material que fechou. O Sincro prefere apontar o clipe duvidoso a entregar um alinhamento que você descobriria errado na sala de exibição.</p></details><details><summary>Quantos clipes ele aguenta de uma vez?</summary><p>A validação mais pesada até agora foi uma diária de 242 clipes, 7,6 horas de material, duas câmeras e dois gravadores, processada de uma vez num MacBook.</p></details><details><summary>Preciso instalar mais alguma coisa?</summary><p>O ffmpeg, que faz a leitura de mídia e costuma já estar na máquina de quem edita. Um comando instala: <span class="mono">brew install ffmpeg</span>.</p></details><details><summary>Tem versão para Windows?</summary><p>Em desenvolvimento. O motor já é multiplataforma, e a versão empacotada para Windows entra em seguida.</p></details><details><summary>Meu material sobe para algum servidor?</summary><p>O processamento é inteiramente local: o app lê os arquivos do seu disco e escreve o XML de volta nele. Tudo acontece dentro da sua máquina, offline.</p></details></div>
+  <div class="col"><h2>Dúvidas do caminho</h2></div>
+  <div class="faq col"><details><summary>Posso rodar só o Ingest, sem sincronizar?</summary><p>Pode. As duas abas são independentes. Muita gente usa o Ingest na volta da diária e o Sync só no dia seguinte, já com o material no storage.</p></details><details><summary>Posso sincronizar material que não passou pelo Ingest?</summary><p>Pode. O Sync lê qualquer pasta. O Ingest existe para o caminho do cartão, e não é pré-requisito.</p></details><details><summary>O Sincro altera meus arquivos?</summary><p>Não. Ele lê a mídia e escreve um XML separado. Nem a opção de igualar timecode toca nos arquivos: o timecode novo vive dentro do XML.</p></details><details><summary>Quantas câmeras cabem?</summary><p>Não há limite fixo. O custo cresce com o número de pares plausíveis, e uma diária de duas câmeras com dois gravadores e mais de duzentos clipes roda de uma vez num MacBook.</p></details><details><summary>E se eu tiver um gravador de várias faixas?</summary><p>Cada arquivo vira uma fonte. Se o gravador escreve um arquivo por canal, coloque-os na mesma pasta: o Sincro os trata como o mesmo equipamento e não tenta sincronizar um contra o outro.</p></details></div>
 </div></section>
 
 <section class="closing"><div class="wrap">
-  <h2>A próxima diária pode começar já montada.</h2>
-  <p class="lede" style="margin-inline:auto">Baixe, solte as pastas e veja o material se encaixar.</p>
-  <div class="cta-row"><a class="btn" href="/#preco">Baixar para Mac</a><span class="cta-note">7 dias com tudo liberado · macOS 12+</span></div>
+  <h2>Pronto para experimentar no seu material?</h2>
+  <p class="lede" style="margin-inline:auto">Sete dias com tudo liberado, sem cadastro.</p>
+  <div class="cta-row"><a class="btn" href="/#preco">Baixar para Mac</a></div>
 </div></section>
 </main>
 <footer><div class="wrap">
@@ -506,115 +558,6 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   });
 })();
 </script>
-<script>
-(function () {
-  var cv = document.getElementById("tl");
-  if (!cv) return;
-  var ctx = cv.getContext("2d");
-  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var seed = 20260819;
-  function rnd() { return (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296; }
-  var G = ["#8B5CF6", "#F472B6", "#38BDF8", "#FDE047"];
-  var SRC = [
-    { label: "V2", g: 0, clips: [[.02,.17],[.23,.16],[.44,.19],[.68,.13],[.85,.12]] },
-    { label: "V1", g: 2, clips: [[.00,.19],[.24,.14],[.42,.21],[.70,.15],[.88,.10]] },
-    { label: "A1", g: 1, clips: [[.05,.22],[.30,.18],[.55,.17],[.78,.16]] },
-    { label: "A2", g: 3, clips: [[.03,.24],[.31,.16],[.54,.20],[.79,.14]] }
-  ];
-  var DRIFT = [.085, -.055, .13, -.10];
-  var waves = SRC.map(function (s) {
-    return s.clips.map(function () {
-      var a = []; for (var i = 0; i < 90; i++) a.push(.25 + rnd() * .75); return a;
-    });
-  });
-  var t = 0, raf = null, start = null, DUR = 1600, HOLD = 700;
-  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
-  function size() {
-    var dpr = Math.min(devicePixelRatio || 1, 2);
-    cv.width = cv.clientWidth * dpr; cv.height = cv.clientHeight * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw();
-  }
-  function draw() {
-    var w = cv.clientWidth, h = cv.clientHeight;
-    var pad = 36, rowH = (h - 28) / SRC.length, barH = Math.min(38, rowH - 10);
-    var faint = css("--ink-faint"), line = css("--glass-line");
-    ctx.clearRect(0, 0, w, h);
-    ctx.font = '11px "IBM Plex Mono", monospace';
-    for (var i = 0; i <= 6; i++) {
-      var x = Math.round(pad + (w - pad - 10) * i / 6) + .5;
-      ctx.strokeStyle = line; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(x, 18); ctx.lineTo(x, h); ctx.stroke();
-      if (i < 6) {
-        ctx.fillStyle = faint;
-        var min = i * 76;
-        var hh = String(Math.floor(min / 60)); while (hh.length < 2) hh = "0" + hh;
-        var mm = String(min % 60); while (mm.length < 2) mm = "0" + mm;
-        ctx.fillText(hh + ":" + mm + ":00:00", x + 7, 12);
-      }
-    }
-    SRC.forEach(function (src, r) {
-      var y = 28 + r * rowH + (rowH - barH) / 2;
-      ctx.save(); ctx.beginPath(); ctx.rect(pad - 6, 0, w, h); ctx.clip();
-      src.clips.forEach(function (c, i) {
-        var drift = DRIFT[r] * (1 - t);
-        var x = pad + (c[0] + drift) * (w - pad - 10);
-        var bw = Math.max(12, c[1] * (w - pad - 10));
-        var orfao = (r === 3 && i === 3);
-        var g = ctx.createLinearGradient(x, y, x + bw, y + barH);
-        if (orfao && t > .5) { g.addColorStop(0, "#FDE047"); g.addColorStop(1, "#FB923C"); }
-        else { g.addColorStop(0, G[src.g]); g.addColorStop(1, G[(src.g + 2) % 4]); }
-        ctx.fillStyle = g; ctx.globalAlpha = .92;
-        var rr = 9;
-        ctx.beginPath(); ctx.moveTo(x + rr, y);
-        ctx.arcTo(x + bw, y, x + bw, y + barH, rr);
-        ctx.arcTo(x + bw, y + barH, x, y + barH, rr);
-        ctx.arcTo(x, y + barH, x, y, rr);
-        ctx.arcTo(x, y, x + bw, y, rr);
-        ctx.closePath(); ctx.fill();
-        ctx.save(); ctx.clip();
-        ctx.fillStyle = "rgba(255,255,255,.55)";
-        var wv = waves[r][i], step = Math.max(2, bw / 44);
-        for (var k = 0, px = x + 4; px < x + bw - 4; k++, px += step) {
-          var a = wv[k % wv.length] * (barH / 2 - 5);
-          ctx.fillRect(px, y + barH / 2 - a, Math.max(1, step - 1.5), a * 2);
-        }
-        ctx.restore(); ctx.globalAlpha = 1;
-      });
-      ctx.restore();
-      ctx.fillStyle = faint;
-      ctx.font = '500 10px "IBM Plex Mono", monospace';
-      ctx.fillText(src.label, 4, y + barH / 2 + 3);
-    });
-    var px = Math.round(pad + (cv.clientWidth - pad - 10) * .02) + .5;
-    ctx.strokeStyle = "#FF4D6D"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(px, 18); ctx.lineTo(px, cv.clientHeight); ctx.stroke();
-  }
-  function frame(now) {
-    if (start === null) start = now;
-    var e = now - start;
-    if (e < HOLD) t = 0;
-    else {
-      var p = Math.min(1, (e - HOLD) / DUR);
-      t = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-    }
-    draw();
-    if (e < HOLD + DUR) raf = requestAnimationFrame(frame);
-  }
-  function play() {
-    if (reduced) { t = 1; draw(); return; }
-    cancelAnimationFrame(raf); start = null; t = 0;
-    raf = requestAnimationFrame(frame);
-  }
-  addEventListener("resize", size);
-  document.addEventListener("sincro:theme", draw);
-  var rb = document.getElementById("replay");
-  if (rb) rb.addEventListener("click", play);
-  size();
-  if (reduced) { t = 1; draw(); }
-  else new IntersectionObserver(function (es, o) {
-    if (es[0].isIntersecting) { play(); o.disconnect(); }
-  }, { threshold: .3 }).observe(cv);
-})();
-</script>
+
 </body>
 </html>
