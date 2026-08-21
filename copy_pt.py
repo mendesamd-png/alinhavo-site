@@ -33,7 +33,7 @@ T = {
     "url_terms": "/termos/",
     "url_privacy": "/privacidade/",
     "url_refunds": "/reembolso/",
-    "email": "contato@sincro.app",
+    "email": "contato@alinhavo.app",
 
     # ---------------------------------------------------------- rodapé -----
     "foot_tagline": "Sincroniza a diária pelo som, organiza os cartões e "
@@ -46,7 +46,8 @@ T = {
     "made_in": "Feito no Brasil",
 
     # =========================================================== HOME =======
-    "home_title": "Sincro",
+    "home_title": "Alinhavo",
+    "home_tagline": "sincroniza a diária pelo som",
     "home_desc": "Sincronize a diária inteira pelo som e importe no Premiere, "
                  "DaVinci Resolve ou Final Cut com a timeline pronta. Para "
                  "macOS, licença única.",
@@ -78,7 +79,7 @@ T = {
                  "máquina que mantém a mesma atenção no clipe 1 e no clipe 242.",
     "flow1_h": "Solte o material",
     "flow1_p": "Pastas inteiras, taxas de quadro misturadas, câmeras e "
-               "gravadores juntos. O Sincro lê os metadados na hora e desenha "
+               "gravadores juntos. O Alinhavo lê os metadados na hora e desenha "
                "a timeline antes de analisar.",
     "flow2_h": "Aperte Sync",
     "flow2_p": "O motor compara as formas de onda e alinha cada clipe com "
@@ -94,13 +95,13 @@ T = {
     "pe_eyebrow": "Continuidade",
     "pe_h2": "Você já conhece este fluxo",
     "pe_lede": "O PluralEyes ensinou uma geração de editores a confiar no som "
-               "para sincronizar. O Sincro segue esse caminho e roda nativo "
+               "para sincronizar. O Alinhavo segue esse caminho e roda nativo "
                "nos Macs de hoje.",
     "pe_same_h": "O que continua igual",
     "pe_same": ["Solte a diária inteira e deixe o áudio resolver o alinhamento",
                 "Uma timeline por bloco de gravação, cada ângulo na sua faixa",
                 "XML que abre direto no Premiere e no DaVinci Resolve"],
-    "pe_new_h": "O que o Sincro traz",
+    "pe_new_h": "O que o Alinhavo traz",
     "pe_new": ["Nativo em Apple Silicon, com o áudio processado no seu Mac",
                "Backup verificado dos cartões dentro do mesmo aplicativo",
                "Player para conferir o sync de ouvido antes de exportar",
@@ -117,7 +118,7 @@ T = {
          "justamente o que mantém a mídia online quando o projeto tem câmeras "
          "diferentes."),
         ("Revisão", "Ouça antes de exportar",
-         "Clique em qualquer ponto da timeline e dê play: o Sincro mixa as "
+         "Clique em qualquer ponto da timeline e dê play: o Alinhavo mixa as "
          "câmeras sob o cursor em tempo real. Alinhado soa junto, e o ouvido "
          "confirma o sync antes de o material chegar no NLE."),
         ("Triagem", "Três estados, uma cor cada",
@@ -128,7 +129,7 @@ T = {
          "monta as timelines por dentro do Resolve, com os clipes linkados ao "
          "Media Pool e a triagem pintada."),
         ("Timecode", "Igualar TC para multicam",
-         "Na exportação, o Sincro escreve o mesmo timecode para todas as "
+         "Na exportação, o Alinhavo escreve o mesmo timecode para todas as "
          "câmeras e o multicam nativo do seu editor agrupa sozinho. Seus "
          "arquivos permanecem intactos."),
         ("Privacidade", "Tudo acontece no seu Mac",
@@ -140,7 +141,7 @@ T = {
     "ing_eyebrow": "Passo zero",
     "ing_h2": "O cartão chega inteiro, e você tem prova disso",
     "ing_lede": "Antes de sincronizar existe o momento mais frágil da diária: "
-                "a mídia mora num cartão só. O Sincro copia, confere byte a "
+                "a mídia mora num cartão só. O Alinhavo copia, confere byte a "
                 "byte e registra o que aconteceu com cada arquivo.",
     "ing_items": [
         ("Verificação byte a byte",
@@ -149,7 +150,7 @@ T = {
          "leitura de volta é o que revela isso enquanto o cartão ainda está "
          "no leitor."),
         ("Espaço conferido antes do primeiro byte",
-         "O Sincro soma o volume a copiar e compara com o disco antes de "
+         "O Alinhavo soma o volume a copiar e compara com o disco antes de "
          "começar. Descobrir disco cheio no arquivo 15 de 63 é o pior momento "
          "possível, então a conta vem primeiro."),
         ("Estrutura montada no ato",
@@ -188,7 +189,7 @@ T = {
     "price_eyebrow": "Licença",
     "price_h2": "Compra uma vez, é seu",
     "price_lede": "Comece pelos sete dias com tudo liberado. Quando eles "
-                  "acabam o Sincro continua seu, sincronizando projetos de "
+                  "acabam o Alinhavo continua seu, sincronizando projetos de "
                   "até 20 clipes, sem prazo para expirar. A licença tira o "
                   "teto e é comprada uma vez só.",
     "plan1_name": "Grátis",
@@ -199,7 +200,7 @@ T = {
                     "XML limpo, pronto para produção",
                     "Baixe e abra, sem cadastro"],
     "plan1_cta": "Baixar para Mac",
-    "plan2_name": "Sincro",
+    "plan2_name": "Alinhavo",
     "plan2_price": "R$ 349",
     "plan2_unit": "· uma vez",
     "plan2_items": ["Uma licença, dois computadores seus",
@@ -223,7 +224,7 @@ T = {
     "faq_h2": "Antes de baixar",
     "faq": [
         ("Preciso de claquete ou de timecode casado?",
-         "O Sincro trabalha com o som que as câmeras e o gravador captaram do "
+         "O Alinhavo trabalha com o som que as câmeras e o gravador captaram do "
          "mesmo evento, então basta que cada arquivo tenha áudio. Quando há "
          "timecode, ele entra como conferência e avisa se discordar do áudio."),
         ("E se o áudio da câmera for ruim?",
@@ -238,7 +239,7 @@ T = {
          "dele, que é o que garante o link dentro do NLE."),
         ("O que acontece com o que fica fora do sync?",
          "Vai para o fim da timeline, marcado em cor, separado do material que "
-         "fechou. O Sincro prefere apontar o clipe duvidoso a entregar um "
+         "fechou. O Alinhavo prefere apontar o clipe duvidoso a entregar um "
          "alinhamento que você descobriria errado na sala de exibição."),
         ("Quantos clipes ele aguenta de uma vez?",
          "A validação mais pesada até agora foi uma diária de 242 clipes, 7,6 "
@@ -249,7 +250,7 @@ T = {
          "de quem edita. Um comando instala: <span class=\"mono\">brew install "
          "ffmpeg</span>."),
         ("O que acontece quando os 7 dias acabam?",
-         "O Sincro continua funcionando. Ele passa para o modo gratuito, que "
+         "O Alinhavo continua funcionando. Ele passa para o modo gratuito, que "
          "sincroniza projetos de até 20 clipes por vez, sem prazo e sem marca "
          "no XML. Diárias maiores pedem a licença, e ela é comprada uma vez."),
         ("A licença expira ou vira assinatura?",
@@ -258,7 +259,7 @@ T = {
          "computador e o app abre offline: não existe servidor que possa "
          "deixar de responder e impedir o seu trabalho."),
         ("Posso instalar em mais de um computador?",
-         "A licença Sincro cobre dois computadores seus, e a Estúdio cobre "
+         "A licença Alinhavo cobre dois computadores seus, e a Estúdio cobre "
          "cinco estações. Trocar de máquina é livre: você libera a vaga de um "
          "Mac dentro do próprio app e ativa no outro. Reinstalar o sistema no "
          "mesmo computador não consome uma vaga nova."),

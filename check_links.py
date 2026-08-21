@@ -5,7 +5,7 @@
 
 Existe por causa de um erro concreto: a primeira verificacao comparava os
 hrefs com o sistema de arquivos, onde `/como-funciona/` existe. No ar, o
-GitHub Pages serve o repositorio sob `/sincro-site/`, e o mesmo href caia
+GitHub Pages serve o repositorio sob `/alinhavo-site/`, e o mesmo href caia
 fora do site inteiro e devolvia 404. Comparar com o disco nao pega isso;
 comparar com a URL, sim.
 

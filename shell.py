@@ -7,14 +7,14 @@ monta o texto depois do script chega vazia no rastreador.
 """
 from __future__ import annotations
 
-SITE = "https://mendesamd-png.github.io/sincro-site"
+SITE = "https://mendesamd-png.github.io/alinhavo-site"
 
 # Prefixo de TODO caminho interno. O GitHub Pages serve um repositorio de
 # projeto sob /nome-do-repo/, entao um href="/como-funciona/" cai fora do
-# site e devolve 404. Num dominio proprio (sincro.app) isto vira "" e nada
+# site e devolve 404. Num dominio proprio (alinhavo.app) isto vira "" e nada
 # mais precisa mudar: `build.rebase()` reescreve os caminhos na hora de
 # gravar, em vez de espalhar o prefixo por cada link.
-BASE = "/sincro-site"
+BASE = "/alinhavo-site"
 
 # ---------------------------------------------------------------- paleta ---
 CSS = """
@@ -197,14 +197,14 @@ footer { padding: 48px 0 64px; color: var(--ink-faint); font-size: .88rem; }
 JS = """
 (function () {
   var btn = document.getElementById("theme");
-  var saved = localStorage.getItem("sincro-theme");
+  var saved = localStorage.getItem("alinhavo-theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
   if (btn) btn.addEventListener("click", function () {
     var atual = document.documentElement.getAttribute("data-theme") || "light";
     var novo = atual === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", novo);
-    localStorage.setItem("sincro-theme", novo);
-    document.dispatchEvent(new CustomEvent("sincro:theme", {detail: novo}));
+    localStorage.setItem("alinhavo-theme", novo);
+    document.dispatchEvent(new CustomEvent("alinhavo:theme", {detail: novo}));
   });
 })();
 """
@@ -257,7 +257,7 @@ def header(t: dict, base: str, alt_url: str, here: str = "") -> str:
         mark = ' aria-current="page"' if here == key else ""
         return f'<a href="{base}{url}" class="{cls}"{mark}>{t["nav_" + key]}</a>'
     return f"""<header><div class="wrap"><div class="bar glass">
-  <a class="brand" href="{base}/">{LOGO} Sincro</a>
+  <a class="brand" href="{base}/">{LOGO} Alinhavo</a>
   <nav>
     {link("howto", t["url_howto"])}
     {link("pluraleyes", t["url_pluraleyes"])}
@@ -277,7 +277,7 @@ def footer(t: dict, base: str) -> str:
     return f"""<footer><div class="wrap">
   <div class="foot-grid">
     <div>
-      <a class="brand" href="{base}/" style="font-size:.98rem">{LOGO} Sincro</a>
+      <a class="brand" href="{base}/" style="font-size:.98rem">{LOGO} Alinhavo</a>
       <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">{t["foot_tagline"]}</p>
     </div>
     <div><h4>{t["foot_product"]}</h4><ul>

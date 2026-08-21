@@ -14,37 +14,37 @@ ENTITY = {
     "name": "",          # razão social
     "id": "",            # CNPJ
     "address": "",       # endereço completo
-    "email": "contato@sincro.app",
+    "email": "contato@alinhavo.app",
 }
 
 UPDATED = "21 de agosto de 2026"
 
 L = {
     # ============================================================ EULA ======
-    "eula_title": "Licença de uso do Sincro",
-    "eula_desc": "Termos da licença de uso do software Sincro.",
+    "eula_title": "Licença de uso do Alinhavo",
+    "eula_desc": "Termos da licença de uso do software Alinhavo.",
     "eula_h1": "Licença de uso",
-    "eula_lede": "Este documento diz o que você pode fazer com o Sincro depois "
+    "eula_lede": "Este documento diz o que você pode fazer com o Alinhavo depois "
                  "de instalar. Ele vale para a versão de teste e para a versão "
                  "licenciada.",
     "eula_body": [
         ("1. O que você recebe", [
-            "Ao instalar o Sincro você recebe uma licença de uso pessoal, "
+            "Ao instalar o Alinhavo você recebe uma licença de uso pessoal, "
             "permanente e não exclusiva do programa, na versão 1.x. A licença "
             "é sua para usar; o programa em si continua sendo nosso.",
-            "A licença <strong>Sincro</strong> cobre até dois computadores de "
+            "A licença <strong>Alinhavo</strong> cobre até dois computadores de "
             "uso do mesmo titular. A licença <strong>Estúdio</strong> cobre "
             "até cinco estações da mesma empresa. Trocar de máquina é "
             "permitido: desative em uma e ative na outra.",
-            "A ativação acontece no seu computador. O Sincro funciona sem "
+            "A ativação acontece no seu computador. O Alinhavo funciona sem "
             "conexão com a internet, e não existe servidor que possa deixar "
             "de responder e impedir o seu trabalho.",
         ]),
         ("2. O que você produz com ele", [
-            "Tudo o que sai do Sincro é seu: os arquivos XML, os relatórios, "
+            "Tudo o que sai do Alinhavo é seu: os arquivos XML, os relatórios, "
             "as cópias que o ingest fez. Não reivindicamos nenhum direito "
             "sobre o seu material nem sobre o resultado do seu trabalho.",
-            "Você pode usar o Sincro em trabalho comercial sem pagar nada "
+            "Você pode usar o Alinhavo em trabalho comercial sem pagar nada "
             "além da licença.",
         ]),
         ("3. O que a licença não permite", [
@@ -61,12 +61,12 @@ L = {
             "continua funcionando como sempre funcionou.",
         ]),
         ("5. Programas de terceiros", [
-            "O Sincro usa o ffmpeg para ler mídia. O ffmpeg é um programa "
+            "O Alinhavo usa o ffmpeg para ler mídia. O ffmpeg é um programa "
             "livre, de terceiros, e não é distribuído dentro do aplicativo: "
             "você o instala separadamente. Ele tem a própria licença.",
         ]),
         ("6. Garantia e limites", [
-            "O Sincro é entregue como está. Ele foi testado com material real "
+            "O Alinhavo é entregue como está. Ele foi testado com material real "
             "de produção e mede o próprio resultado, mas nenhum software de "
             "sincronização substitui a conferência de quem edita. "
             "<strong>Confira o resultado antes de comprometer uma "
@@ -92,14 +92,14 @@ L = {
 
     # =========================================================== TERMOS =====
     "terms_title": "Termos de uso",
-    "terms_desc": "Termos de uso do site e condições de venda do Sincro.",
+    "terms_desc": "Termos de uso do site e condições de venda do Alinhavo.",
     "terms_h1": "Termos de uso",
     "terms_lede": "Estes termos valem para este site e para a compra de "
-                  "licenças do Sincro. A licença do programa em si está em "
+                  "licenças do Alinhavo. A licença do programa em si está em "
                   "documento próprio.",
     "terms_body": [
         ("1. Este site", [
-            "Este site apresenta o Sincro, distribui a versão de teste e vende "
+            "Este site apresenta o Alinhavo, distribui a versão de teste e vende "
             "licenças. Ao usá-lo, você concorda com estes termos.",
             "Os números de desempenho publicados aqui vêm de medições feitas "
             "com material de produção real e estão descritos junto ao número. "
@@ -143,7 +143,7 @@ L = {
 
     # ====================================================== PRIVACIDADE =====
     "privacy_title": "Privacidade",
-    "privacy_desc": "O que o Sincro coleta e o que ele nunca coleta. "
+    "privacy_desc": "O que o Alinhavo coleta e o que ele nunca coleta. "
                     "Processamento local, sem upload de mídia.",
     "privacy_h1": "Privacidade",
     "privacy_lede": "A resposta curta: o seu material nunca sai do seu "
@@ -151,7 +151,7 @@ L = {
                     "acontece fora dele.",
     "privacy_body": [
         ("O que o aplicativo faz com o seu material", [
-            "<strong>Nada sai da sua máquina.</strong> O Sincro lê os arquivos "
+            "<strong>Nada sai da sua máquina.</strong> O Alinhavo lê os arquivos "
             "do seu disco, processa o áudio na sua CPU e escreve o XML de "
             "volta no seu disco. Não há upload, não há conta para criar e não "
             "há nuvem envolvida no processamento.",
@@ -198,7 +198,7 @@ L = {
 
     # ======================================================== REEMBOLSO =====
     "refunds_title": "Reembolso",
-    "refunds_desc": "Política de reembolso do Sincro: quatorze dias, sem "
+    "refunds_desc": "Política de reembolso do Alinhavo: quatorze dias, sem "
                     "necessidade de justificar.",
     "refunds_h1": "Reembolso",
     "refunds_lede": "Teste sete dias antes de pagar. Se mesmo assim a compra "

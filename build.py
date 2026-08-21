@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera o site estatico do Sincro nos dois idiomas.
+"""Gera o site estatico do Alinhavo nos dois idiomas.
 
     python3 site/build.py
 
@@ -145,7 +145,7 @@ def doc_page(lang: str, t: dict, L: dict, updated: str, key: str,
   </div>
 </div></section>"""
     return page(t, lang=lang, path=f"{base}{t['url_' + url_key]}",
-                alt_path=alt_url, title=f"{L[f'{key}_title']} · Sincro",
+                alt_path=alt_url, title=f"{L[f'{key}_title']} · Alinhavo",
                 desc=L[f"{key}_desc"], body=body, extra_css=DOC_CSS)
 
 
@@ -436,7 +436,7 @@ TL_JS = r"""
     raf = requestAnimationFrame(frame);
   }
   addEventListener("resize", size);
-  document.addEventListener("sincro:theme", draw);
+  document.addEventListener("alinhavo:theme", draw);
   var rb = document.getElementById("replay");
   if (rb) rb.addEventListener("click", play);
   size();
@@ -590,10 +590,7 @@ def build_home(lang: str) -> str:
 {cta(t, base, t['close_h2'], t['close_lede'], t['close_note'])}"""
 
     return page(t, lang=lang, path=f"{base}/", alt_path=alt,
-                title=f"Sincro · {t['home_title'] if lang == 'pt' else 'sync by sound'}"
-                      if False else ("Sincro · sincroniza a diaria pelo som"
-                                     if lang == "pt"
-                                     else "Sincro · sync your shoot day by sound"),
+                title=f"Alinhavo · {t['home_tagline']}",
                 desc=t["home_desc"], body=body, here="home",
                 extra_css=HOME_CSS, extra_js=TL_JS)
 
@@ -684,7 +681,7 @@ def build_howto(lang: str) -> str:
 {cta(t, base, P['howto_cta_h'], P['howto_cta_p'])}"""
 
     return page(t, lang=lang, path=f"{base}{t['url_howto']}", alt_path=alt,
-                title=f"{P['howto_title']} · Sincro", desc=P["howto_desc"],
+                title=f"{P['howto_title']} · Alinhavo", desc=P["howto_desc"],
                 body=body, here="howto", extra_css=HOWTO_CSS)
 
 
@@ -729,7 +726,7 @@ def build_pluraleyes(lang: str) -> str:
 {cta(t, base, P['pe_page_cta_h'], P['pe_page_cta_p'])}"""
 
     return page(t, lang=lang, path=f"{base}{t['url_pluraleyes']}", alt_path=alt,
-                title=f"{P['pe_title']} · Sincro", desc=P["pe_desc"],
+                title=f"{P['pe_title']} · Alinhavo", desc=P["pe_desc"],
                 body=body, here="pluraleyes", extra_css=HOWTO_CSS)
 
 
@@ -764,7 +761,7 @@ def build_whatsnew(lang: str) -> str:
 {cta(t, base, t['close_h2'], t['close_lede'], t['close_note'])}"""
 
     return page(t, lang=lang, path=f"{base}{t['url_whatsnew']}", alt_path=alt,
-                title=f"{P['wn_title']} · Sincro", desc=P["wn_desc"],
+                title=f"{P['wn_title']} · Alinhavo", desc=P["wn_desc"],
                 body=body, here="whatsnew", extra_css=HOWTO_CSS)
 
 

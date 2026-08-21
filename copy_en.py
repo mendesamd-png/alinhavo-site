@@ -24,7 +24,7 @@ T = {
     "url_terms": "/terms/",
     "url_privacy": "/privacy/",
     "url_refunds": "/refunds/",
-    "email": "contato@sincro.app",
+    "email": "contato@alinhavo.app",
 
     # --------------------------------------------------------- footer ------
     "foot_tagline": "Syncs the whole shoot day by sound, organizes your cards "
@@ -37,7 +37,8 @@ T = {
     "made_in": "Made in Brazil",
 
     # =========================================================== HOME =======
-    "home_title": "Sincro",
+    "home_title": "Alinhavo",
+    "home_tagline": "sync your shoot day by sound",
     "home_desc": "Sync a whole shoot day by sound and import into Premiere, "
                  "DaVinci Resolve or Final Cut with the timeline already "
                  "built. For macOS, one-time license.",
@@ -67,7 +68,7 @@ T = {
                  "that pays the same attention to clip 1 and clip 242.",
     "flow1_h": "Drop the footage",
     "flow1_p": "Whole folders, mixed frame rates, cameras and recorders "
-               "together. Sincro reads the metadata right away and draws the "
+               "together. Alinhavo reads the metadata right away and draws the "
                "timeline before analyzing anything.",
     "flow2_h": "Press Sync",
     "flow2_p": "The engine compares waveforms and aligns every clip to the "
@@ -83,13 +84,13 @@ T = {
     "pe_eyebrow": "Continuity",
     "pe_h2": "You already know this flow",
     "pe_lede": "PluralEyes taught a generation of editors to trust sound for "
-               "syncing. Sincro follows that path and runs native on today's "
+               "syncing. Alinhavo follows that path and runs native on today's "
                "Macs.",
     "pe_same_h": "What stays the same",
     "pe_same": ["Drop the whole day and let the audio resolve the alignment",
                 "One timeline per recording block, every angle on its own track",
                 "XML that opens straight into Premiere and DaVinci Resolve"],
-    "pe_new_h": "What Sincro adds",
+    "pe_new_h": "What Alinhavo adds",
     "pe_new": ["Native on Apple Silicon, with audio processed on your own Mac",
                "Verified card backup inside the same application",
                "A player to check the sync by ear before exporting",
@@ -105,7 +106,7 @@ T = {
          "Every file enters the XML at the rate it was shot, which is exactly "
          "what keeps media online when a project mixes cameras."),
         ("Review", "Listen before you export",
-         "Click anywhere on the timeline and hit play: Sincro mixes the "
+         "Click anywhere on the timeline and hit play: Alinhavo mixes the "
          "cameras under the cursor in real time. Aligned sounds like one "
          "source, and your ear confirms the sync before the footage ever "
          "reaches the NLE."),
@@ -117,7 +118,7 @@ T = {
          "builds the timelines from inside Resolve, with clips linked to the "
          "Media Pool and triage already colored."),
         ("Timecode", "Matching TC for multicam",
-         "On export, Sincro writes the same timecode across every camera and "
+         "On export, Alinhavo writes the same timecode across every camera and "
          "your editor's native multicam groups them on its own. Your files "
          "stay untouched."),
         ("Privacy", "Everything happens on your Mac",
@@ -129,7 +130,7 @@ T = {
     "ing_eyebrow": "Step zero",
     "ing_h2": "The card arrives whole, and you have proof",
     "ing_lede": "Before any syncing comes the most fragile moment of the day: "
-                "the footage lives on a single card. Sincro copies it, checks "
+                "the footage lives on a single card. Alinhavo copies it, checks "
                 "it byte for byte, and records what happened to every file.",
     "ing_items": [
         ("Byte-for-byte verification",
@@ -138,7 +139,7 @@ T = {
          "bytes, and reading back is what reveals that while the card is still "
          "in the reader."),
         ("Space checked before the first byte",
-         "Sincro adds up what it is about to copy and compares it against the "
+         "Alinhavo adds up what it is about to copy and compares it against the "
          "disk before starting. Finding out the drive is full on file 15 of 63 "
          "is the worst possible moment, so the math comes first."),
         ("Structure built as you type",
@@ -178,7 +179,7 @@ T = {
     "price_eyebrow": "License",
     "price_h2": "Buy once, it's yours",
     "price_lede": "Start with seven days fully unlocked. When they run out "
-                  "Sincro stays yours, syncing projects of up to 20 clips, "
+                  "Alinhavo stays yours, syncing projects of up to 20 clips, "
                   "with no expiry date. The license lifts the cap and is "
                   "bought once.",
     "plan1_name": "Free",
@@ -189,7 +190,7 @@ T = {
                     "Clean XML, production ready",
                     "Download and open, no sign-up"],
     "plan1_cta": "Download for Mac",
-    "plan2_name": "Sincro",
+    "plan2_name": "Alinhavo",
     "plan2_price": "$69",
     "plan2_unit": "· one time",
     "plan2_items": ["One license, two computers of your own",
@@ -213,7 +214,7 @@ T = {
     "faq_h2": "Before you download",
     "faq": [
         ("Do I need a slate or jam-synced timecode?",
-         "Sincro works with the sound your cameras and recorder captured from "
+         "Alinhavo works with the sound your cameras and recorder captured from "
          "the same event, so all it needs is audio on every file. When "
          "timecode exists, it comes in as a cross-check and warns you if it "
          "disagrees with the audio."),
@@ -229,7 +230,7 @@ T = {
          "own rate, which is what guarantees the link inside the NLE."),
         ("What happens to footage that falls out of sync?",
          "It goes to the end of the timeline, marked in color, separate from "
-         "the material that locked. Sincro would rather point at a doubtful "
+         "the material that locked. Alinhavo would rather point at a doubtful "
          "clip than hand you an alignment you'd discover was wrong in the "
          "screening room."),
         ("How many clips can it handle at once?",
@@ -241,7 +242,7 @@ T = {
          "editor's machine. One command installs it: <span class=\"mono\">brew "
          "install ffmpeg</span>."),
         ("What happens when the 7 days are up?",
-         "Sincro keeps working. It moves to free mode, which syncs projects "
+         "Alinhavo keeps working. It moves to free mode, which syncs projects "
          "of up to 20 clips at a time, with no deadline and no watermark on "
          "the XML. Bigger shoot days call for the license, and that is bought "
          "once."),
@@ -251,7 +252,7 @@ T = {
          "offline: no server exists that could stop responding and keep you "
          "from working."),
         ("Can I install it on more than one computer?",
-         "The Sincro license covers two computers of your own, and Studio "
+         "The Alinhavo license covers two computers of your own, and Studio "
          "covers five workstations. Moving machines is free: you release a "
          "Mac's seat from inside the app and activate on the other one. "
          "Reinstalling the system on the same computer does not cost a seat."),
