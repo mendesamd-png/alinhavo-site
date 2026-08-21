@@ -1,301 +1,312 @@
+<meta charset="utf-8">
 <title>Sincro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
 
 <style>
-  /* ---- tokens: dark-first, porque o lugar do editor e a sala escura ---- */
+  /* ---------- tokens: claro por padrao, escuro por escolha ---------- */
   :root {
-    --ground: #0B0C0E;
-    --surface: #16181C;
-    --surface-2: #1E2126;
-    --line: #2A2E35;
-    --ink: #F2F3F5;
-    --ink-soft: #9BA1AB;
-    --ink-faint: #6B7280;
-    --accent: #30D158;
-    --accent-ink: #06240F;
-    --warn: #FF9F0A;
-    --review: #FFD60A;
-    --camA: #64D2FF;
-    --camB: #5E9EED;
-    --camC: #66D28C;
-    --rec: #7FD4C8;
-    --shadow: 0 18px 50px rgba(0, 0, 0, .45);
-    --radius: 14px;
-    --measure: 63ch;
+    --ground: #F7F6F3;
+    --ground-2: #FFFFFF;
+    --glass: rgba(255, 255, 255, .78);
+    --glass-line: rgba(23, 23, 28, .09);
+    --ink: #17171C;
+    --ink-soft: #55555F;
+    --ink-faint: #8A8A95;
+    --g1: #8B5CF6;   /* roxo   */
+    --g2: #F472B6;   /* rosa   */
+    --g3: #38BDF8;   /* azul   */
+    --g4: #FDE047;   /* amarelo*/
+    --halo: .34;
+    --shadow: 0 24px 60px rgba(23, 23, 28, .10);
+    --shadow-sm: 0 10px 30px rgba(23, 23, 28, .07),
+                   0 2px 6px rgba(23, 23, 28, .04);
+    --radius: 26px;
+    --measure: 62ch;
   }
-  @media (prefers-color-scheme: light) {
-    :root:not([data-theme="dark"]) {
-      --ground: #F3F4F7;
-      --surface: #FFFFFF;
-      --surface-2: #EDEFF3;
-      --line: #DCDFE6;
-      --ink: #14161A;
-      --ink-soft: #545B66;
-      --ink-faint: #7B828D;
-      --accent: #1FA94A;
-      --accent-ink: #FFFFFF;
-      --warn: #C97400;
-      --review: #A98600;
-      --camA: #2C9FD6;
-      --camB: #3F72C4;
-      --camC: #37A661;
-      --rec: #3EA396;
-      --shadow: 0 16px 40px rgba(15, 20, 30, .12);
-    }
-  }
-  :root[data-theme="light"] {
-    --ground: #F3F4F7;
-    --surface: #FFFFFF;
-    --surface-2: #EDEFF3;
-    --line: #DCDFE6;
-    --ink: #14161A;
-    --ink-soft: #545B66;
-    --ink-faint: #7B828D;
-    --accent: #1FA94A;
-    --accent-ink: #FFFFFF;
-    --warn: #C97400;
-    --review: #A98600;
-    --camA: #2C9FD6;
-    --camB: #3F72C4;
-    --camC: #37A661;
-    --rec: #3EA396;
-    --shadow: 0 16px 40px rgba(15, 20, 30, .12);
+  :root[data-theme="dark"] {
+    --ground: #0C0C11;
+    --ground-2: #14141B;
+    --glass: rgba(255, 255, 255, .06);
+    --glass-line: rgba(255, 255, 255, .12);
+    --ink: #F4F4F7;
+    --ink-soft: #A9A9B6;
+    --ink-faint: #75757F;
+    --halo: .42;
+    --shadow: 0 26px 70px rgba(0, 0, 0, .5);
+    --shadow-sm: 0 10px 26px rgba(0, 0, 0, .4);
   }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
   }
   body {
     margin: 0;
     background: var(--ground);
     color: var(--ink);
-    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
+    font-family: Onest, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 17px; line-height: 1.6; font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-  h1, h2, h3 {
-    font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: -0.025em;
-    text-wrap: balance;
-    margin: 0;
-  }
+  h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -.03em; text-wrap: balance; }
+  h1 { font-size: clamp(2.7rem, 6.4vw, 5rem); line-height: 1.03; font-weight: 600; }
+  h2 { font-size: clamp(2rem, 3.9vw, 3.1rem); line-height: 1.08; }
+  h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -.015em; }
+  p { margin: 0; }
   a { color: inherit; }
-  ::selection { background: var(--accent); color: var(--accent-ink); }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: var(--g1); color: #fff; }
+  :focus-visible { outline: 2px solid var(--g1); outline-offset: 3px; border-radius: 6px; }
 
-  .wrap { width: min(1180px, 92vw); margin-inline: auto; }
+  .wrap { width: min(1160px, 90vw); margin-inline: auto; position: relative; z-index: 1; }
   .col { max-width: var(--measure); }
-  .mono {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-variant-numeric: tabular-nums;
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .soft { color: var(--ink-soft); }
+
+  /* halos de cor: o "vidro colorido" que atravessa a pagina */
+  .halo {
+    position: fixed; border-radius: 50%; filter: blur(110px);
+    opacity: var(--halo); pointer-events: none; z-index: 0;
+    animation: drift 26s ease-in-out infinite alternate;
+  }
+  .halo.a { width: 46vw; height: 46vw; left: -12vw; top: -10vw; background: var(--g1); }
+  .halo.b { width: 38vw; height: 38vw; right: -8vw; top: 6vh; background: var(--g3); animation-delay: -8s; }
+  .halo.c { width: 34vw; height: 34vw; left: 22vw; bottom: -14vw; background: var(--g2); animation-delay: -16s; }
+  @keyframes drift {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(4vw, 5vh, 0) scale(1.12); }
   }
 
-  /* eyebrow de secao: timecode crescente = o fluxo real de trabalho */
-  .tc {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: .78rem; letter-spacing: .08em; color: var(--ink-faint);
-    display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
-  }
-  .tc::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-
-  section { padding: clamp(64px, 9vw, 118px) 0; }
-  section + section { border-top: 1px solid var(--line); }
-  h2 { font-size: clamp(1.85rem, 3.6vw, 2.7rem); font-weight: 700; line-height: 1.12; }
-  h2 + p.lede { margin-top: 16px; color: var(--ink-soft); font-size: 1.08rem; }
-  h3 { font-size: 1.06rem; font-weight: 600; letter-spacing: -0.01em; }
-
-  /* ---------------------------------------------------------- topo ---- */
-  header {
-    position: sticky; top: 0; z-index: 20;
-    backdrop-filter: saturate(160%) blur(14px);
-    background: color-mix(in srgb, var(--ground) 82%, transparent);
-    border-bottom: 1px solid var(--line);
-  }
-  .bar { display: flex; align-items: center; gap: 14px; padding: 13px 0; }
-  .brand { display: flex; align-items: center; gap: 10px; font-family: Archivo; font-weight: 800; letter-spacing: -.02em; font-size: 1.08rem; }
-  .bar nav { margin-left: auto; display: flex; align-items: center; gap: 22px; }
-  .bar nav a { color: var(--ink-soft); text-decoration: none; font-size: .93rem; }
-  .bar nav a:hover { color: var(--ink); }
-  @media (max-width: 720px) { .bar nav a.hide-sm { display: none; } }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 9px;
-    background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 82%, #fff), var(--accent));
-    color: var(--accent-ink); text-decoration: none;
-    font-weight: 600; font-size: .95rem;
-    padding: 10px 20px; border-radius: 999px;
-    border: 1px solid color-mix(in srgb, var(--accent) 60%, #fff);
-    box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 30%, transparent);
-    transition: transform .12s ease, box-shadow .12s ease;
-  }
-  .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 26px color-mix(in srgb, var(--accent) 34%, transparent); }
-  .btn:active { transform: translateY(1px); box-shadow: none; }
-  .btn.ghost {
-    background: transparent; color: var(--ink);
-    border: 1px solid var(--line); box-shadow: none;
-  }
-  .btn.ghost:hover { border-color: var(--ink-faint); }
-
-  /* ---------------------------------------------------------- hero ---- */
-  .hero { padding-top: clamp(48px, 7vw, 86px); padding-bottom: 0; }
-  .hero h1 {
-    font-size: clamp(2.4rem, 6.2vw, 4.3rem);
-    font-weight: 800; line-height: 1.02; letter-spacing: -0.038em;
-  }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero p.lede {
-    margin: 22px 0 0; max-width: 54ch;
-    font-size: clamp(1.05rem, 1.7vw, 1.24rem); color: var(--ink-soft);
-  }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; }
-  .cta-note { font-size: .86rem; color: var(--ink-faint); }
-
-  /* faixa da timeline: sangra de ponta a ponta, como no NLE */
-  .stage {
-    margin-top: clamp(38px, 5vw, 62px);
-    background: var(--surface);
-    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-    padding: 18px 0 14px;
-  }
-  .stage-head {
-    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-    padding-bottom: 12px;
-  }
-  .stage-head .chip {
+  section { padding: clamp(52px, 6.5vw, 92px) 0; position: relative; }
+  .eyebrow {
     font-family: "IBM Plex Mono", monospace; font-size: .74rem;
-    color: var(--ink-soft); border: 1px solid var(--line);
-    padding: 4px 10px; border-radius: 999px;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .lede { margin-top: 20px; color: var(--ink-soft); font-size: 1.1rem; max-width: 56ch; }
+
+  /* ---------------------------- vidro e botoes ---------------------------- */
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid var(--glass-line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 26px; border-radius: 999px;
+    font-size: .97rem; font-weight: 600; text-decoration: none;
+    color: #fff; position: relative; overflow: hidden;
+    /* o amarelo entra como brilho na borda: sob o texto ele derrubaria o
+       contraste do branco, e a faixa quente e onde o gradiente respira */
+    background-image:
+      radial-gradient(120% 140% at 100% 50%, rgba(253, 224, 71, .60), transparent 52%),
+      linear-gradient(110deg, var(--g1), var(--g2) 46%, var(--g3));
+    background-size: 100% 100%, 210% 100%;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, .32);
+    transition: background-position .6s ease, transform .16s ease, box-shadow .16s ease;
+  }
+  .btn:hover {
+    background-position: 0 0, 100% 0;
+    transform: translateY(-2px); box-shadow: 0 16px 38px rgba(139, 92, 246, .38);
+  }
+  .btn:active { transform: translateY(0); box-shadow: 0 6px 18px rgba(139, 92, 246, .3); }
+  .btn.quiet {
+    background: var(--glass); color: var(--ink);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-line); box-shadow: none;
+  }
+  .btn.quiet:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+  /* ------------------------------- topo ---------------------------------- */
+  header { position: sticky; top: 16px; z-index: 30; }
+  .bar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 10px 12px 10px 20px; border-radius: 999px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.02em; }
+  .bar nav { margin-left: auto; display: flex; align-items: center; gap: 24px; }
+  .bar nav a { color: var(--ink-soft); text-decoration: none; font-size: .92rem; }
+  .bar nav a:hover { color: var(--ink); }
+  .bar .btn { padding: 10px 20px; font-size: .9rem; }
+  .theme-btn {
+    width: 38px; height: 38px; border-radius: 999px; cursor: pointer;
+    background: transparent; border: 1px solid var(--glass-line);
+    color: var(--ink); font-size: 15px; line-height: 1;
+  }
+  @media (max-width: 780px) { .bar nav a.hide-sm { display: none; } }
+
+  /* ------------------------------- hero ---------------------------------- */
+  .hero { padding-top: clamp(56px, 8vw, 92px); padding-bottom: 0; }
+  .hero h1 span {
+    background: linear-gradient(100deg, var(--g1), var(--g2) 45%, var(--g3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 34px; }
+  .cta-note { font-size: .88rem; color: var(--ink-faint); }
+
+  .stage { margin-top: clamp(44px, 6vw, 74px); padding: 20px; }
+  .stage-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .pill {
+    font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--ink-soft);
+    border: 1px solid var(--glass-line); padding: 5px 12px; border-radius: 999px;
   }
   .replay {
-    margin-left: auto; background: none; border: 1px solid var(--line);
-    color: var(--ink-soft); font: inherit; font-size: .85rem;
-    padding: 6px 14px; border-radius: 999px; cursor: pointer;
+    margin-left: auto; cursor: pointer; font: inherit; font-size: .87rem;
+    color: var(--ink-soft); background: transparent;
+    border: 1px solid var(--glass-line); padding: 7px 16px; border-radius: 999px;
   }
-  .replay:hover { color: var(--ink); border-color: var(--ink-faint); }
-  canvas#tl { display: block; width: 100%; height: 268px; }
-  @media (max-width: 720px) { canvas#tl { height: 210px; } }
+  .replay:hover { color: var(--ink); }
+  canvas#tl { display: block; width: 100%; height: 280px; border-radius: 16px; }
+  @media (max-width: 720px) { canvas#tl { height: 220px; } }
 
-  /* ------------------------------------------------------- passos ---- */
-  .steps { display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 42px; }
-  .step .n {
-    font-family: "IBM Plex Mono", monospace; font-size: .8rem;
-    color: var(--accent); letter-spacing: .06em;
+  /* ------------------------------ numeros --------------------------------- */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 26px; padding: 32px 30px; }
+  .stat .v { font-size: 2.1rem; font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+  .stat .v.grad {
+    background: linear-gradient(100deg, var(--g1), var(--g3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .step h3 { margin: 10px 0 7px; }
-  .step p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+  .stat .k { color: var(--ink-soft); font-size: .9rem; margin-top: 8px; }
 
-  /* --------------------------------------------------------- prova ---- */
-  .proof {
-    display: grid; gap: 1px; background: var(--line);
-    border: 1px solid var(--line); border-radius: var(--radius);
-    overflow: hidden; margin-top: 42px;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  }
-  .proof div { background: var(--surface); padding: 22px 20px; }
-  .proof .v {
-    font-family: Archivo; font-weight: 700; font-size: 1.9rem;
-    letter-spacing: -.03em; font-variant-numeric: tabular-nums;
-  }
-  .proof .v.ok { color: var(--accent); }
-  .proof .v.warn { color: var(--warn); }
-  .proof .k { color: var(--ink-soft); font-size: .87rem; margin-top: 2px; }
-  .caption { margin-top: 16px; color: var(--ink-faint); font-size: .87rem; }
+  /* ------------------------------- passos --------------------------------- */
+  .steps { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin-top: 46px; }
+  .step { padding: 30px 28px; }
+  .step .dot { width: 34px; height: 34px; border-radius: 12px; margin-bottom: 18px; }
+  .step:nth-child(1) .dot { background: linear-gradient(140deg, var(--g1), var(--g2)); }
+  .step:nth-child(2) .dot { background: linear-gradient(140deg, var(--g2), var(--g4)); }
+  .step:nth-child(3) .dot { background: linear-gradient(140deg, var(--g3), var(--g1)); }
+  .step p { margin-top: 10px; color: var(--ink-soft); font-size: .97rem; }
 
-  /* ------------------------------------------------------ recursos ---- */
-  .feats { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); margin-top: 42px; }
-  .feat {
-    background: var(--surface); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 24px;
+  /* ---------------------------- pluraleyes -------------------------------- */
+  .migra { display: grid; gap: 20px; grid-template-columns: 1.15fr 1fr; align-items: stretch; margin-top: 46px; }
+  @media (max-width: 860px) { .migra { grid-template-columns: 1fr; } }
+  .migra .card { padding: 34px 32px; }
+  .migra ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 14px; }
+  .migra li { padding-left: 26px; position: relative; color: var(--ink-soft); font-size: .97rem; }
+  .migra li::before {
+    content: ""; position: absolute; left: 0; top: .5em; width: 13px; height: 13px;
+    border-radius: 5px; background: linear-gradient(140deg, var(--g1), var(--g3));
   }
-  .feat h3 { margin-bottom: 8px; }
-  .feat p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+  .migra .quote { font-size: 1.22rem; line-height: 1.45; font-weight: 500; letter-spacing: -.02em; }
+
+  /* ------------------------------ recursos -------------------------------- */
+  .feats { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 46px; }
+  .feat { padding: 30px 28px; }
   .feat .tag {
-    display: inline-block; font-family: "IBM Plex Mono", monospace;
-    font-size: .7rem; letter-spacing: .07em; text-transform: uppercase;
-    color: var(--ink-faint); margin-bottom: 12px;
+    display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: .68rem;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px;
   }
+  .feat p { margin-top: 10px; color: var(--ink-soft); font-size: .96rem; }
 
-  /* -------------------------------------------------------- export ---- */
-  .exports { margin-top: 42px; display: grid; gap: 14px; }
-  .exp {
-    display: grid; grid-template-columns: 190px 1fr; gap: 20px;
-    align-items: baseline; padding: 20px 22px;
-    background: var(--surface); border: 1px solid var(--line);
-    border-radius: var(--radius);
-  }
-  .exp b { font-family: Archivo; font-weight: 600; font-size: 1.02rem; }
-  .exp .fmt { display: block; font-family: "IBM Plex Mono", monospace; font-size: .76rem; color: var(--ink-faint); margin-top: 3px; }
-  .exp p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
-  .exp .state { color: var(--accent); font-weight: 500; }
-  .exp .state.pending { color: var(--ink-faint); }
-  @media (max-width: 640px) { .exp { grid-template-columns: 1fr; gap: 8px; } }
+  /* ------------------------------- export --------------------------------- */
+  .exports { margin-top: 46px; display: grid; gap: 14px; }
+  .exp { display: grid; grid-template-columns: 210px 1fr; gap: 22px; align-items: baseline; padding: 24px 28px; }
+  .exp b { font-weight: 600; font-size: 1.04rem; }
+  .exp .fmt { display: block; font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--ink-faint); margin-top: 4px; }
+  .exp p { color: var(--ink-soft); font-size: .96rem; }
+  @media (max-width: 660px) { .exp { grid-template-columns: 1fr; gap: 8px; } }
 
-  /* --------------------------------------------------------- preco ---- */
-  .plans { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); margin-top: 42px; }
-  .plan {
-    background: var(--surface); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column;
+  /* -------------------------------- preco --------------------------------- */
+  .plans { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); margin-top: 46px; }
+  .plan { padding: 32px 30px; display: flex; flex-direction: column; }
+  .plan.hi { position: relative; }
+  .plan.hi::before {
+    content: ""; position: absolute; inset: -1px; border-radius: var(--radius); padding: 1.5px;
+    background: linear-gradient(130deg, var(--g1), var(--g2), var(--g3), var(--g4));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
   }
-  .plan.hi { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: var(--shadow); }
-  .plan .name { font-family: Archivo; font-weight: 700; font-size: 1.1rem; }
-  .plan .price { font-family: Archivo; font-weight: 800; font-size: 2.4rem; letter-spacing: -.035em; margin: 10px 0 2px; }
-  .plan .price small { font-size: .95rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; }
-  .plan ul { list-style: none; padding: 0; margin: 18px 0 24px; display: grid; gap: 9px; }
-  .plan li { color: var(--ink-soft); font-size: .93rem; padding-left: 22px; position: relative; }
+  .plan .name { font-weight: 600; font-size: 1.06rem; }
+  .plan .price { font-size: 2.5rem; font-weight: 600; letter-spacing: -.045em; margin: 14px 0 2px; }
+  .plan .price small { font-size: .92rem; font-weight: 400; color: var(--ink-soft); letter-spacing: 0; }
+  .plan ul { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 11px; }
+  .plan li { color: var(--ink-soft); font-size: .94rem; padding-left: 22px; position: relative; }
   .plan li::before {
-    content: ""; position: absolute; left: 0; top: .55em;
-    width: 11px; height: 2px; background: var(--accent); border-radius: 2px;
+    content: ""; position: absolute; left: 0; top: .58em; width: 12px; height: 2px;
+    border-radius: 2px; background: linear-gradient(90deg, var(--g1), var(--g3));
   }
   .plan .btn { justify-content: center; margin-top: auto; }
 
-  /* ----------------------------------------------------------- faq ---- */
-  .faq { margin-top: 40px; display: grid; gap: 0; border-top: 1px solid var(--line); }
-  details { border-bottom: 1px solid var(--line); }
+  .soon {
+    margin-top: 24px; padding: 22px 26px;
+    display: flex; gap: 18px; align-items: flex-start;
+  }
+  .soon-mark {
+    flex: none; width: 12px; height: 12px; border-radius: 4px; margin-top: 6px;
+    background: linear-gradient(140deg, var(--g4), var(--g2));
+  }
+  .soon b { font-weight: 600; }
+  .soon p { color: var(--ink-soft); font-size: .95rem; margin-top: 4px; }
+
+  /* --------------------------------- faq ---------------------------------- */
+  .faq { margin-top: 42px; }
+  details { border-bottom: 1px solid var(--glass-line); }
+  details:first-child { border-top: 1px solid var(--glass-line); }
   summary {
-    cursor: pointer; list-style: none; padding: 18px 0;
-    font-family: Archivo; font-weight: 600; font-size: 1.02rem;
-    display: flex; align-items: center; gap: 14px;
+    cursor: pointer; list-style: none; padding: 22px 0;
+    font-weight: 500; font-size: 1.05rem; letter-spacing: -.015em;
+    display: flex; align-items: center; gap: 16px;
   }
   summary::-webkit-details-marker { display: none; }
   summary::after {
     content: "+"; margin-left: auto; color: var(--ink-faint);
-    font-family: "IBM Plex Mono", monospace; font-size: 1.15rem;
+    font-family: "IBM Plex Mono", monospace; font-size: 1.2rem;
   }
   details[open] summary::after { content: "–"; }
-  details p { margin: 0 0 20px; color: var(--ink-soft); max-width: var(--measure); }
+  details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measure); }
 
-  /* -------------------------------------------------------- rodape ---- */
-  footer { border-top: 1px solid var(--line); padding: 44px 0 60px; color: var(--ink-faint); font-size: .89rem; }
-  .foot { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: baseline; }
+  /* ------------------------------- fechamento ------------------------------ */
+  .closing { text-align: center; padding: clamp(84px, 11vw, 150px) 0; }
+  .closing .cta-row { justify-content: center; }
+  footer { padding: 40px 0 64px; color: var(--ink-faint); font-size: .88rem; }
+  .foot { display: flex; flex-wrap: wrap; gap: 16px 36px; align-items: center; }
   .foot .spacer { flex: 1; }
-  .req { margin-top: 26px; font-size: .84rem; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
 </style>
 
+<div class="halo a"></div>
+<div class="halo b"></div>
+<div class="halo c"></div>
+
 <header>
-  <div class="wrap bar">
-    <span class="brand">
-      <svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
-        <rect x="190" y="330" width="620" height="110" rx="55" fill="#5FB3B3"/>
-        <rect x="300" y="470" width="560" height="110" rx="55" fill="#4A90D9"/>
-        <rect x="410" y="610" width="450" height="110" rx="55" fill="#50B36A"/>
-        <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
-        <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
-      </svg>
-      Sincro
-    </span>
-    <nav>
-      <a href="#como" class="hide-sm">Como funciona</a>
-      <a href="#prova" class="hide-sm">Precisão</a>
-      <a href="#preco">Preço</a>
-      <a class="btn" href="#preco">Baixar para Mac</a>
-    </nav>
+  <div class="wrap">
+    <div class="bar glass">
+      <span class="brand">
+        <svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
+              <stop offset="1" stop-color="#38BDF8"/>
+            </linearGradient>
+          </defs>
+          <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
+          <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
+          <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
+          <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
+          <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+        </svg>
+        Sincro
+      </span>
+      <nav>
+        <a href="#fluxo" class="hide-sm">Como funciona</a>
+        <a href="#pluraleyes" class="hide-sm">Vem do PluralEyes</a>
+        <a href="#preco">Preço</a>
+        <button class="theme-btn" id="theme" type="button" aria-label="Alternar tema claro e escuro">◐</button>
+        <a class="btn" href="#preco">Baixar</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -303,144 +314,158 @@
   <section class="hero">
     <div class="wrap">
       <div class="col">
-        <h1>Suas câmeras já estão<br>sincronizadas. <em>Você é que ainda não sabe.</em></h1>
+        <h1>Toda a diária,<br><span>sincronizada pelo som.</span></h1>
         <p class="lede">
-          O Sincro alinha câmeras e gravadores pelo som — sem claquete, sem timecode
-          casado, sem arrastar clipe por clipe. Solte a diária inteira, aperte Sync,
-          importe o XML no Premiere ou no Resolve com tudo no lugar.
+          Solte as pastas das câmeras e dos gravadores, aperte Sync e importe o XML
+          no Premiere ou no DaVinci Resolve. O material chega organizado, cada câmera
+          na sua faixa, pronto para cortar.
         </p>
         <div class="cta-row">
           <a class="btn" href="#preco">Baixar para Mac</a>
-          <a class="btn ghost" href="#como">Ver como funciona</a>
+          <a class="btn quiet" href="#fluxo">Ver o fluxo</a>
           <span class="cta-note">macOS 12+ · Apple Silicon e Intel</span>
         </div>
       </div>
-    </div>
 
-    <div class="stage">
-      <div class="wrap">
+      <div class="stage glass">
         <div class="stage-head">
-          <span class="chip">242 clipes · 2 cam · 2 rec</span>
-          <span class="chip mono">45 s</span>
+          <span class="pill">242 clipes</span>
+          <span class="pill">2 câmeras · 2 gravadores</span>
+          <span class="pill mono">7,6 h de material</span>
           <button class="replay" id="replay" type="button">Sincronizar de novo</button>
         </div>
-      </div>
-      <div class="wrap">
         <canvas id="tl" aria-label="Clipes de duas câmeras e dois gravadores deslizando das posições brutas para as posições sincronizadas"></canvas>
       </div>
     </div>
   </section>
 
-  <section id="como">
+  <section>
     <div class="wrap">
-      <div class="tc">00:01:00:00 — do cartão à timeline</div>
+      <div class="stats glass">
+        <div class="stat"><div class="v grad mono">242</div><div class="k">clipes numa diária real</div></div>
+        <div class="stat"><div class="v grad mono">100%</div><div class="k">linkados no Premiere e no Resolve</div></div>
+        <div class="stat"><div class="v mono">≤ ½</div><div class="k">quadro de desvio, medido pela API do Resolve</div></div>
+        <div class="stat"><div class="v mono">0,5 ms</div><div class="k">precisão do motor em material controlado</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fluxo">
+    <div class="wrap">
+      <div class="eyebrow">O fluxo</div>
       <div class="col">
-        <h2>Três passos, e o material está montado</h2>
+        <h2>Três passos entre o cartão e o corte</h2>
         <p class="lede">
-          O mesmo caminho que um assistente faria à mão, feito por uma máquina que
-          não se cansa no clipe 180.
+          O caminho que um assistente faria à mão, feito por uma máquina que mantém
+          a mesma atenção no clipe 1 e no clipe 242.
         </p>
       </div>
       <div class="steps">
-        <div class="step">
-          <span class="n mono">01</span>
+        <div class="step glass">
+          <div class="dot"></div>
           <h3>Solte o material</h3>
           <p>Pastas inteiras, taxas de quadro misturadas, câmeras e gravadores juntos.
-             O Sincro lê os metadados na hora e já desenha a timeline antes de analisar.</p>
+             O Sincro lê os metadados na hora e desenha a timeline antes de analisar.</p>
         </div>
-        <div class="step">
-          <span class="n mono">02</span>
+        <div class="step glass">
+          <div class="dot"></div>
           <h3>Aperte Sync</h3>
-          <p>O motor compara as formas de onda — não o timecode, que mente quando não
-             há jam sync. Cada par recebe uma nota de confiança, e o que não fecha
-             fica de fora, em laranja, em vez de entrar torto.</p>
+          <p>O motor compara as formas de onda e alinha cada clipe com precisão de
+             milissegundo. Cada par recebe uma nota de confiança, e a triagem separa
+             o que está travado, o que merece revisão e o que ficou de fora.</p>
         </div>
-        <div class="step">
-          <span class="n mono">03</span>
+        <div class="step glass">
+          <div class="dot"></div>
           <h3>Exporte o XML</h3>
-          <p>Uma timeline com uma faixa por câmera, áudio embaixo, tudo linkado.
-             Abre no Premiere e no DaVinci Resolve com a mídia online.</p>
+          <p>Uma timeline com uma faixa por câmera, áudio embaixo e as pastas do bruto
+             viradas em bins. Abre no seu editor com a mídia online.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="prova">
+  <section id="pluraleyes">
     <div class="wrap">
-      <div class="tc">00:02:00:00 — medido, não prometido</div>
+      <div class="eyebrow">Continuidade</div>
       <div class="col">
-        <h2>Uma diária real, do começo ao fim</h2>
+        <h2>Você já conhece este fluxo</h2>
         <p class="lede">
-          Evento de um dia inteiro: duas câmeras Sony gravando em taxas diferentes,
-          dois gravadores de áudio, música alta no set — o cenário que costuma
-          quebrar sincronizador automático.
+          O PluralEyes ensinou uma geração de editores a confiar no som para
+          sincronizar. O Sincro segue esse caminho e roda nativo nos Macs de hoje.
         </p>
       </div>
-      <div class="proof">
-        <div><div class="v mono">242</div><div class="k">clipes na diária</div></div>
-        <div><div class="v mono ok">100%</div><div class="k">linkados no Premiere e no Resolve</div></div>
-        <div><div class="v mono">≤ ½</div><div class="k">quadro de desvio, conferido pela API do Resolve</div></div>
-        <div><div class="v mono">7,6 h</div><div class="k">de material processados localmente</div></div>
+      <div class="migra">
+        <div class="card glass">
+          <h3>O que continua igual</h3>
+          <ul>
+            <li>Solte a diária inteira e deixe o áudio resolver o alinhamento</li>
+            <li>Uma timeline por bloco de gravação, cada ângulo na sua faixa</li>
+            <li>XML que abre direto no Premiere e no DaVinci Resolve</li>
+          </ul>
+        </div>
+        <div class="card glass">
+          <h3>O que o Sincro traz</h3>
+          <ul>
+            <li>Nativo em Apple Silicon, com o áudio processado no seu Mac</li>
+            <li>Backup verificado dos cartões dentro do mesmo aplicativo</li>
+            <li>Player para conferir o sync de ouvido antes de exportar</li>
+            <li>Licença única, comprada uma vez</li>
+          </ul>
+        </div>
       </div>
-      <p class="caption">
-        Em material controlado, com offsets conhecidos, o erro medido do motor fica
-        abaixo de <strong>0,5 ms</strong> — cerca de um centésimo de quadro. A timeline
-        do NLE arredonda para o quadro; o resíduo exato fica registrado no relatório.
-      </p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <div class="tc">00:03:00:00 — o que mais tem dentro</div>
+      <div class="eyebrow">Dentro do app</div>
       <div class="col">
-        <h2>Não é só sincronizar</h2>
+        <h2>Uma janela para o dia inteiro</h2>
         <p class="lede">
-          O que normalmente exige três programas diferentes acontece numa janela só.
+          O que costuma exigir três programas diferentes acontece em um lugar só.
         </p>
       </div>
       <div class="feats">
-        <div class="feat">
+        <div class="feat glass">
           <span class="tag">Ingest</span>
           <h3>Backup do cartão, verificado</h3>
-          <p>Copia para o storage organizando por data e câmera, conferindo cada
+          <p>Copia para o storage organizando por data, job e câmera, conferindo cada
              arquivo por checksum. Cartão com defeito devolve o tamanho certo e os
-             bytes errados — só a verificação pega isso. Nada é sobrescrito.</p>
+             bytes errados, e a verificação pega isso na hora.</p>
         </div>
-        <div class="feat">
+        <div class="feat glass">
           <span class="tag">Revisão</span>
           <h3>Ouça antes de exportar</h3>
           <p>Clique em qualquer ponto da timeline e dê play: o Sincro mixa as câmeras
-             sob o cursor em tempo real. Alinhado soa junto; fora de sync, ecoa.
-             Você confere com o ouvido, sem abrir o NLE.</p>
+             sob o cursor em tempo real. Alinhado soa junto, e o ouvido confirma o
+             sync antes de o material chegar no NLE.</p>
         </div>
-        <div class="feat">
+        <div class="feat glass">
           <span class="tag">Triagem</span>
-          <h3>Três estados, não dois</h3>
-          <p>Confiante, "sincronizou mas confira" e fora do sync — cada um com sua cor,
-             na timeline e no XML. Você sabe onde olhar em vez de conferir 242 clipes
-             um a um.</p>
+          <h3>Três estados, uma cor cada</h3>
+          <p>Travado, revisar e fora do sync, marcados na timeline e no XML. Você olha
+             direto para os poucos clipes que pedem atenção.</p>
         </div>
-        <div class="feat">
+        <div class="feat glass">
           <span class="tag">DaVinci Resolve</span>
-          <h3>Script nativo, sem XML</h3>
-          <p>Um comando em Workspace ▸ Scripts sincroniza o bin aberto e monta as
-             timelines por dentro do Resolve, com os clipes já linkados ao Media Pool
-             e a triagem pintada nos clipes.</p>
+          <h3>Script nativo incluído</h3>
+          <p>Um comando em Workspace › Scripts sincroniza o bin aberto e monta as
+             timelines por dentro do Resolve, com os clipes linkados ao Media Pool e
+             a triagem pintada.</p>
         </div>
-        <div class="feat">
+        <div class="feat glass">
           <span class="tag">Timecode</span>
           <h3>Igualar TC para multicam</h3>
-          <p>Na exportação, o Sincro pode escrever o mesmo timecode para todas as
-             câmeras — assim o multicam nativo do seu editor agrupa sozinho.
-             Seus arquivos nunca são alterados.</p>
+          <p>Na exportação, o Sincro escreve o mesmo timecode para todas as câmeras e
+             o multicam nativo do seu editor agrupa sozinho. Seus arquivos permanecem
+             intactos.</p>
         </div>
-        <div class="feat">
-          <span class="tag">Local</span>
-          <h3>Nada sai da sua máquina</h3>
-          <p>Sem nuvem, sem upload, sem conta. O material é lido do disco, processado
-             na sua CPU e devolvido em XML. O relatório de suporte, quando você
-             escolhe enviar, não leva mídia nem nome de arquivo.</p>
+        <div class="feat glass">
+          <span class="tag">Privacidade</span>
+          <h3>Tudo acontece no seu Mac</h3>
+          <p>O material é lido do disco, processado na sua CPU e devolvido em XML.
+             O relatório de suporte, quando você escolhe enviar, leva apenas números
+             e apelidos.</p>
         </div>
       </div>
     </div>
@@ -448,33 +473,27 @@
 
   <section>
     <div class="wrap">
-      <div class="tc">00:04:00:00 — para onde vai</div>
+      <div class="eyebrow">Exportação</div>
       <div class="col">
-        <h2>Exporta para o seu editor</h2>
-        <p class="lede">
-          Cada destino com a instrução que ele precisa — aprendida testando em
-          projeto real, não lida na documentação.
-        </p>
+        <h2>Chega pronto no seu editor</h2>
       </div>
       <div class="exports">
-        <div class="exp">
+        <div class="exp glass">
           <div><b>Adobe Premiere Pro</b><span class="fmt">XML do FCP7</span></div>
-          <p><span class="state">Validado</span> — abra o arquivo direto no Premiere:
-             a mídia linka sozinha e as pastas do bruto viram bins.</p>
+          <p>Abra o arquivo no Premiere: a mídia linka sozinha e as pastas do bruto
+             viram bins organizados.</p>
         </div>
-        <div class="exp">
+        <div class="exp glass">
           <div><b>DaVinci Resolve</b><span class="fmt">XML do FCP7 · ou script nativo</span></div>
-          <p><span class="state">Validado</span> — importe a mídia no pool e traga a
-             timeline com “automatically import source clips” desmarcado. Ou use o
-             script, que faz tudo de dentro do Resolve.</p>
+          <p>File › Import › Timeline e a mídia linka sozinha, do mesmo jeito. O script
+             incluído faz o caminho inteiro de dentro do Resolve.</p>
         </div>
-        <div class="exp">
+        <div class="exp glass">
           <div><b>Final Cut Pro</b><span class="fmt">FCPXML</span></div>
-          <p><span class="state pending">Ainda não testado</span> — o arquivo é gerado
-             no formato nativo do Final Cut, mas só vamos cravar quando rodar num
-             Final Cut de verdade.</p>
+          <p>Arquivo no formato nativo do Final Cut, com as faixas e os offsets do
+             sync.</p>
         </div>
-        <div class="exp">
+        <div class="exp glass">
           <div><b>Planilha e dados</b><span class="fmt">CSV · JSON</span></div>
           <p>Offsets, confiança e triagem de cada clipe, para conferir a olho ou
              alimentar seu próprio script.</p>
@@ -485,26 +504,26 @@
 
   <section id="preco">
     <div class="wrap">
-      <div class="tc">00:05:00:00 — licença</div>
+      <div class="eyebrow">Licença</div>
       <div class="col">
-        <h2>Compra uma vez. É seu.</h2>
+        <h2>Compra uma vez, é seu</h2>
         <p class="lede">
-          Sem assinatura, sem servidor de licença que decide se hoje você pode
-          trabalhar.
+          Licença perpétua com ativação local. Você instala uma vez e o app abre
+          sempre, com ou sem internet.
         </p>
       </div>
       <div class="plans">
-        <div class="plan">
+        <div class="plan glass">
           <span class="name">Teste</span>
-          <div class="price">Grátis <small>· 14 dias</small></div>
+          <div class="price">Grátis <small>· 7 dias</small></div>
           <ul>
             <li>Todos os recursos liberados</li>
-            <li>Sem marca d’água no XML</li>
-            <li>Sem cartão de crédito</li>
+            <li>XML limpo, pronto para produção</li>
+            <li>Baixe e abra, o teste começa sozinho</li>
           </ul>
-          <a class="btn ghost" href="#">Baixar para Mac</a>
+          <a class="btn quiet" href="#">Baixar para Mac</a>
         </div>
-        <div class="plan hi">
+        <div class="plan glass hi">
           <span class="name">Sincro</span>
           <div class="price">R$ 449 <small>· uma vez</small></div>
           <ul>
@@ -515,7 +534,7 @@
           </ul>
           <a class="btn" href="#">Comprar</a>
         </div>
-        <div class="plan">
+        <div class="plan glass">
           <span class="name">Estúdio</span>
           <div class="price">R$ 1.290 <small>· uma vez</small></div>
           <ul>
@@ -523,79 +542,84 @@
             <li>Nota fiscal em nome da empresa</li>
             <li>Suporte por e-mail com prioridade</li>
           </ul>
-          <a class="btn ghost" href="#">Falar com a gente</a>
+          <a class="btn quiet" href="#">Falar com a gente</a>
         </div>
       </div>
-      <p class="caption">
-        Feito em São Paulo, por quem edita. Se o Sincro não sincronizar o seu
-        material, devolvemos o dinheiro em até 30 dias.
-      </p>
+      <div class="soon glass">
+        <span class="soon-mark"></span>
+        <div>
+          <b>Versão para Windows em desenvolvimento.</b>
+          <p>O motor já roda multiplataforma. A versão empacotada para Windows
+             entra em seguida.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <div class="tc">00:06:00:00 — perguntas</div>
-      <div class="col">
-        <h2>Antes de você perguntar</h2>
-      </div>
+      <div class="eyebrow">Perguntas</div>
+      <div class="col"><h2>Antes de baixar</h2></div>
       <div class="faq col">
         <details>
-          <summary>Preciso de claquete ou timecode casado?</summary>
-          <p>Não. O Sincro compara o som das gravações — o que as câmeras e o
-             gravador ouviram do mesmo evento. Claquete ajuda qualquer sincronizador,
-             mas não é requisito. Timecode, quando existe, é usado só para conferir e
-             avisar quando discorda do áudio.</p>
+          <summary>Preciso de claquete ou de timecode casado?</summary>
+          <p>O Sincro trabalha com o som que as câmeras e o gravador captaram do mesmo
+             evento, então basta que cada arquivo tenha áudio. Quando há timecode,
+             ele entra como conferência e avisa se discordar do áudio.</p>
         </details>
         <details>
           <summary>E se o áudio da câmera for ruim?</summary>
-          <p>É o caso normal, e o motor foi feito para ele. Em vez de comparar as
-             ondas cruas — que mudam com ganho, distância e microfone — ele compara
-             os <em>instantes</em> dos ataques sonoros, que são os mesmos em qualquer
-             microfone da sala. Depois refina o alinhamento com precisão de amostra.</p>
+          <p>É o caso comum, e o motor foi feito para ele. A comparação usa os instantes
+             dos ataques sonoros, que são iguais em qualquer microfone da sala,
+             independentes de ganho, distância e resposta de frequência. Depois disso um
+             segundo estágio refina o alinhamento com precisão de amostra.</p>
         </details>
         <details>
           <summary>Funciona com taxas de quadro diferentes?</summary>
-          <p>Sim. A diária que usamos para validar tinha 23,976 e 59,94 no mesmo
-             projeto, com áudio a 48 kHz. O XML declara cada arquivo na taxa dele,
-             que é o que faz o NLE aceitar o link.</p>
+          <p>Sim. A diária usada na validação tinha 23,976 e 59,94 no mesmo projeto, com
+             áudio a 48 kHz. O XML declara cada arquivo na taxa dele, que é o que garante
+             o link dentro do NLE.</p>
         </details>
         <details>
-          <summary>O que acontece com o que não sincroniza?</summary>
-          <p>Fica separado e em outra cor, no fim da timeline — nunca empilhado no
-             meio do material bom fingindo que deu certo. O Sincro prefere dizer
-             “não sincronizei isto” a te entregar um alinhamento errado que você só
-             descobre na sala de exibição.</p>
+          <summary>O que acontece com o que fica fora do sync?</summary>
+          <p>Vai para o fim da timeline, marcado em cor, separado do material que fechou.
+             O Sincro prefere apontar o clipe duvidoso a entregar um alinhamento que você
+             descobriria errado na sala de exibição.</p>
         </details>
         <details>
-          <summary>Preciso instalar algo além do app?</summary>
-          <p>O ffmpeg, que faz a leitura de mídia e provavelmente já está na sua
-             máquina. Se não estiver, um comando resolve:
-             <span class="mono">brew install ffmpeg</span>.</p>
+          <summary>Quantos clipes ele aguenta de uma vez?</summary>
+          <p>A validação mais pesada até agora foi uma diária de 242 clipes, 7,6 horas de
+             material, duas câmeras e dois gravadores, processada de uma vez num MacBook.</p>
+        </details>
+        <details>
+          <summary>Preciso instalar mais alguma coisa?</summary>
+          <p>O ffmpeg, que faz a leitura de mídia e costuma já estar na máquina de quem
+             edita. Um comando instala: <span class="mono">brew install ffmpeg</span>.</p>
         </details>
         <details>
           <summary>Tem versão para Windows?</summary>
-          <p>Ainda não. O motor é multiplataforma por construção, mas só existe
-             empacotado para macOS hoje. Windows entra se houver procura — escreva
-             se for o seu caso.</p>
+          <p>Em desenvolvimento. O motor já é multiplataforma, e a versão empacotada para
+             Windows entra em seguida.</p>
         </details>
         <details>
           <summary>Meu material sobe para algum servidor?</summary>
-          <p>Nunca. Não há upload, conta ou nuvem: o app lê os arquivos do seu disco
-             e escreve o XML de volta nele. Até o relatório de erro é anônimo — vai
-             sem mídia e sem nome de arquivo.</p>
+          <p>O processamento é inteiramente local: o app lê os arquivos do seu disco e
+             escreve o XML de volta nele. Tudo acontece dentro da sua máquina,
+             offline.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap col">
-      <h2>Pare de sincronizar clipe a clipe.</h2>
-      <p class="lede">Baixe, solte a próxima diária e veja o que acontece em 45 segundos.</p>
+  <section class="closing">
+    <div class="wrap">
+      <h2>A próxima diária pode começar já montada.</h2>
+      <p class="lede" style="margin-inline:auto">
+        Baixe, solte as pastas e veja o material se encaixar.
+      </p>
       <div class="cta-row">
         <a class="btn" href="#">Baixar para Mac</a>
-        <span class="cta-note">14 dias com tudo liberado · macOS 12+</span>
+        <span class="cta-note">7 dias com tudo liberado · macOS 12+</span>
       </div>
     </div>
   </section>
@@ -603,84 +627,97 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="brand" style="font-size:.98rem">Sincro</span>
+    <span class="brand" style="font-size:.96rem">Sincro</span>
     <span class="spacer"></span>
-    <a href="#como" style="text-decoration:none">Como funciona</a>
-    <a href="#preco" style="text-decoration:none">Preço</a>
-    <a href="mailto:contato@sincro.app" style="text-decoration:none">contato@sincro.app</a>
+    <a href="#fluxo">Como funciona</a>
+    <a href="#preco">Preço</a>
+    <a href="mailto:contato@sincro.app">contato@sincro.app</a>
   </div>
-  <div class="wrap req mono">macOS 12 Monterey ou superior · Apple Silicon e Intel · requer ffmpeg</div>
+  <div class="wrap mono" style="margin-top:22px;font-size:.8rem">
+    macOS 12 Monterey ou superior · Apple Silicon e Intel · versão para Windows em desenvolvimento
+  </div>
 </footer>
 
 <script>
 (function () {
-  const cv = document.getElementById("tl");
-  if (!cv) return;
-  const ctx = cv.getContext("2d");
-  const css = getComputedStyle(document.documentElement);
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* ---- tema: claro por padrao, escolha guardada ---- */
+  const btn = document.getElementById("theme");
+  const saved = localStorage.getItem("sincro-theme");
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  btn.addEventListener("click", () => {
+    const atual = document.documentElement.getAttribute("data-theme") || "light";
+    const novo = atual === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", novo);
+    localStorage.setItem("sincro-theme", novo);
+    draw();
+  });
 
-  // ruido determinista: a mesma "gravacao" a cada carga da pagina
+  /* ---- timeline: clipes de vidro deslizando ate o sync ---- */
+  const cv = document.getElementById("tl");
+  const ctx = cv.getContext("2d");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let seed = 20260819;
   const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
 
-  // quatro fontes: duas cameras (video) e dois gravadores
+  const G = ["#8B5CF6", "#F472B6", "#38BDF8", "#FDE047"];
   const SRC = [
-    { label: "V2", color: "--camA", clips: [[0.02, .17], [.23, .16], [.44, .19], [.68, .13], [.85, .12]] },
-    { label: "V1", color: "--camB", clips: [[0.00, .19], [.24, .14], [.42, .21], [.70, .15], [.88, .10]] },
-    { label: "A1", color: "--camC", clips: [[0.05, .22], [.30, .18], [.55, .17], [.78, .16]] },
-    { label: "A2", color: "--rec",  clips: [[0.03, .24], [.31, .16], [.54, .20], [.79, .14]] },
+    { label: "V2", g: 0, clips: [[.02, .17], [.23, .16], [.44, .19], [.68, .13], [.85, .12]] },
+    { label: "V1", g: 2, clips: [[.00, .19], [.24, .14], [.42, .21], [.70, .15], [.88, .10]] },
+    { label: "A1", g: 1, clips: [[.05, .22], [.30, .18], [.55, .17], [.78, .16]] },
+    { label: "A2", g: 3, clips: [[.03, .24], [.31, .16], [.54, .20], [.79, .14]] },
   ];
-  // deslocamento "cru" de cada fonte, desfeito pelo sync
-  const DRIFT = [0.085, -0.055, 0.13, -0.10];
-  const waves = SRC.map(s => s.clips.map(() => Array.from({ length: 90 }, () => 0.25 + rnd() * 0.75)));
+  const DRIFT = [.085, -.055, .13, -.10];
+  const waves = SRC.map(s => s.clips.map(() => Array.from({ length: 90 }, () => .25 + rnd() * .75)));
 
   let t = 0, raf = null, start = null;
-  const DUR = 1500, HOLD = 650;
+  const DUR = 1600, HOLD = 700;
+
+  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
 
   function size() {
     const dpr = Math.min(devicePixelRatio || 1, 2);
-    const w = cv.clientWidth, h = cv.clientHeight;
-    cv.width = w * dpr; cv.height = h * dpr;
+    cv.width = cv.clientWidth * dpr; cv.height = cv.clientHeight * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     draw();
   }
 
-  function token(n) { return css.getPropertyValue(n).trim() || "#888"; }
-
   function draw() {
     const w = cv.clientWidth, h = cv.clientHeight;
-    const pad = 34, rowH = (h - 26) / SRC.length, barH = Math.min(34, rowH - 12);
+    const pad = 36, rowH = (h - 28) / SRC.length, barH = Math.min(38, rowH - 10);
+    const faint = css("--ink-faint"), line = css("--glass-line");
     ctx.clearRect(0, 0, w, h);
 
-    // regua
-    ctx.strokeStyle = token("--line"); ctx.lineWidth = 1;
     ctx.font = '11px "IBM Plex Mono", monospace';
-    ctx.fillStyle = token("--ink-faint");
     for (let i = 0; i <= 6; i++) {
-      const x = Math.round(pad + (w - pad - 8) * i / 6) + .5;
-      ctx.beginPath(); ctx.moveTo(x, 16); ctx.lineTo(x, h); ctx.stroke();
-      const hh = String(Math.floor(i * 40 / 60)).padStart(2, "0");
-      const mm = String((i * 40) % 60).padStart(2, "0");
-      if (i < 6) ctx.fillText(`0${hh}:${mm}:00`, x + 6, 11);
+      const x = Math.round(pad + (w - pad - 10) * i / 6) + .5;
+      ctx.strokeStyle = line; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, 18); ctx.lineTo(x, h); ctx.stroke();
+      if (i < 6) {
+        ctx.fillStyle = faint;
+        const min = i * 76;
+        const hh = String(Math.floor(min / 60)).padStart(2, "0");
+        const mm = String(min % 60).padStart(2, "0");
+        ctx.fillText(`${hh}:${mm}:00:00`, x + 7, 12);
+      }
     }
 
     SRC.forEach((src, r) => {
-      const y = 26 + r * rowH + (rowH - barH) / 2;
-      ctx.fillStyle = token("--ink-faint");
-      ctx.font = '600 10px "IBM Plex Mono", monospace';
-      ctx.fillText(src.label, 4, y + barH / 2 + 3);
+      const y = 28 + r * rowH + (rowH - barH) / 2;
+
+      ctx.save();
+      ctx.beginPath(); ctx.rect(pad - 6, 0, w, h); ctx.clip();
 
       src.clips.forEach((c, i) => {
-        const drift = DRIFT[r] * (1 - t);           // t=0 cru, t=1 sincronizado
-        const x = pad + (c[0] + drift) * (w - pad - 8);
-        const bw = Math.max(10, c[1] * (w - pad - 8));
-        const cor = token(src.color);
-        // ultimo clipe da ultima fonte nao fecha: fica fora do sync
+        const drift = DRIFT[r] * (1 - t);
+        const x = pad + (c[0] + drift) * (w - pad - 10);
+        const bw = Math.max(12, c[1] * (w - pad - 10));
         const orfao = (r === 3 && i === 3);
-        ctx.fillStyle = orfao && t > .5 ? token("--warn") : cor;
-        ctx.globalAlpha = orfao && t > .5 ? .95 : 1;
-        const rr = 6;
+        const g = ctx.createLinearGradient(x, y, x + bw, y + barH);
+        if (orfao && t > .5) { g.addColorStop(0, "#FDE047"); g.addColorStop(1, "#FB923C"); }
+        else { g.addColorStop(0, G[src.g]); g.addColorStop(1, G[(src.g + 2) % 4]); }
+        ctx.fillStyle = g;
+        ctx.globalAlpha = .92;
+        const rr = 9;
         ctx.beginPath();
         ctx.moveTo(x + rr, y);
         ctx.arcTo(x + bw, y, x + bw, y + barH, rr);
@@ -689,32 +726,38 @@
         ctx.arcTo(x, y, x + bw, y, rr);
         ctx.closePath(); ctx.fill();
 
-        // forma de onda dentro do clipe
         ctx.save(); ctx.clip();
-        ctx.fillStyle = "rgba(0,0,0,.30)";
-        const wv = waves[r][i], step = Math.max(2, bw / 46);
-        for (let k = 0, px = x + 3; px < x + bw - 3; k++, px += step) {
-          const a = wv[k % wv.length] * (barH / 2 - 4);
-          ctx.fillRect(px, y + barH / 2 - a, Math.max(1, step - 1.4), a * 2);
+        ctx.fillStyle = "rgba(255,255,255,.55)";
+        const wv = waves[r][i], step = Math.max(2, bw / 44);
+        for (let k = 0, px = x + 4; px < x + bw - 4; k++, px += step) {
+          const a = wv[k % wv.length] * (barH / 2 - 5);
+          ctx.fillRect(px, y + barH / 2 - a, Math.max(1, step - 1.5), a * 2);
         }
         ctx.restore();
         ctx.globalAlpha = 1;
       });
+
+      ctx.restore();   // fecha o recorte da faixa de clipes
+
+      // rotulo por ultimo e fora do recorte: no estado bruto os clipes derivam
+      // para a esquerda e passariam por cima do texto
+      ctx.fillStyle = faint;
+      ctx.font = '500 10px "IBM Plex Mono", monospace';
+      ctx.fillText(src.label, 4, y + barH / 2 + 3);
     });
 
-    // playhead
-    const px = Math.round(pad + (w - pad - 8) * 0.02) + .5;
-    ctx.strokeStyle = "#FF453A"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(px, 16); ctx.lineTo(px, h); ctx.stroke();
+    const px = Math.round(pad + (w - pad - 10) * .02) + .5;
+    ctx.strokeStyle = "#FF4D6D"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(px, 18); ctx.lineTo(px, h); ctx.stroke();
   }
 
   function frame(now) {
     if (start === null) start = now;
     const e = now - start;
-    if (e < HOLD) { t = 0; }
+    if (e < HOLD) t = 0;
     else {
       const p = Math.min(1, (e - HOLD) / DUR);
-      t = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;   // easeInOutCubic
+      t = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
     }
     draw();
     if (e < HOLD + DUR) raf = requestAnimationFrame(frame);
@@ -730,10 +773,8 @@
   document.getElementById("replay").addEventListener("click", play);
   size();
   if (reduced) { t = 1; draw(); }
-  else {
-    new IntersectionObserver((es, o) => {
-      if (es[0].isIntersecting) { play(); o.disconnect(); }
-    }, { threshold: .35 }).observe(cv);
-  }
+  else new IntersectionObserver((es, o) => {
+    if (es[0].isIntersecting) { play(); o.disconnect(); }
+  }, { threshold: .3 }).observe(cv);
 })();
 </script>
