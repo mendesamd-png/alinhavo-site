@@ -209,6 +209,49 @@
   }
   .feat p { margin-top: 10px; color: var(--ink-soft); font-size: .96rem; }
 
+  /* ------------------------------- ingest --------------------------------- */
+  .ingest { display: grid; gap: 20px; grid-template-columns: 1fr 1.05fr; margin-top: 46px; }
+  @media (max-width: 900px) { .ingest { grid-template-columns: 1fr; } }
+  .ingest .card { padding: 30px 28px; }
+  .ingest ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+  .ingest li h3 { margin-bottom: 6px; }
+  .ingest li p { color: var(--ink-soft); font-size: .96rem; }
+
+  .term {
+    padding: 24px 26px; font-family: "IBM Plex Mono", monospace; font-size: .82rem;
+    display: flex; flex-direction: column;
+  }
+  .term-head {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--ink-faint); font-size: .7rem; letter-spacing: .12em;
+    text-transform: uppercase; margin-bottom: 18px;
+  }
+  .term-head .dots { display: flex; gap: 5px; }
+  .term-head .dots i { width: 9px; height: 9px; border-radius: 50%; display: block; }
+  .term-head .dots i:nth-child(1) { background: var(--g2); }
+  .term-head .dots i:nth-child(2) { background: var(--g4); }
+  .term-head .dots i:nth-child(3) { background: var(--g3); }
+  .term .path {
+    display: block; color: var(--ink); line-height: 1.9;
+    word-break: break-all; margin-bottom: 20px;
+  }
+  .term .path b { font-weight: 500; background: linear-gradient(100deg, var(--g1), var(--g3));
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .term-rows {
+    display: grid; gap: 11px; align-content: start; flex: 1;
+    border-top: 1px solid var(--glass-line); padding-top: 18px;
+  }
+  .term-rows div { display: grid; grid-template-columns: 18px 1fr auto; gap: 12px; align-items: baseline; }
+  .term-rows span { color: var(--ink-soft); }
+  .term-rows em { font-style: normal; color: var(--ink-faint); font-size: .76rem; }
+  .term-rows .ok i    { color: #16A34A; font-style: normal; }
+  .term-rows .same i  { color: var(--g3); font-style: normal; }
+  .term-rows .warn i  { color: #D97706; font-style: normal; }
+  .term-foot {
+    margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--glass-line);
+    color: var(--ink-faint); font-size: .76rem;
+  }
+
   /* ------------------------------- export --------------------------------- */
   .exports { margin-top: 46px; display: grid; gap: 14px; }
   .exp { display: grid; grid-template-columns: 210px 1fr; gap: 22px; align-items: baseline; padding: 24px 28px; }
@@ -301,7 +344,7 @@
       </span>
       <nav>
         <a href="#fluxo" class="hide-sm">Como funciona</a>
-        <a href="#pluraleyes" class="hide-sm">Vem do PluralEyes</a>
+        <a href="#ingest" class="hide-sm">Ingest</a>
         <a href="#preco">Preço</a>
         <button class="theme-btn" id="theme" type="button" aria-label="Alternar tema claro e escuro">◐</button>
         <a class="btn" href="#preco">Baixar</a>
@@ -427,11 +470,10 @@
       </div>
       <div class="feats">
         <div class="feat glass">
-          <span class="tag">Ingest</span>
-          <h3>Backup do cartão, verificado</h3>
-          <p>Copia para o storage organizando por data, job e câmera, conferindo cada
-             arquivo por checksum. Cartão com defeito devolve o tamanho certo e os
-             bytes errados, e a verificação pega isso na hora.</p>
+          <span class="tag">Taxas mistas</span>
+          <h3>23,976 e 59,94 no mesmo projeto</h3>
+          <p>Cada arquivo entra no XML na taxa em que foi gravado, que é justamente
+             o que mantém a mídia online quando o projeto tem câmeras diferentes.</p>
         </div>
         <div class="feat glass">
           <span class="tag">Revisão</span>
@@ -466,6 +508,74 @@
           <p>O material é lido do disco, processado na sua CPU e devolvido em XML.
              O relatório de suporte, quando você escolhe enviar, leva apenas números
              e apelidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ingest">
+    <div class="wrap">
+      <div class="eyebrow">Passo zero</div>
+      <div class="col">
+        <h2>O cartão chega inteiro, e você tem prova disso</h2>
+        <p class="lede">
+          Antes de sincronizar existe o momento mais frágil da diária: a mídia mora
+          num cartão só. O Sincro copia, confere byte a byte e registra o que
+          aconteceu com cada arquivo.
+        </p>
+      </div>
+      <div class="ingest">
+        <div class="card glass">
+          <ul>
+            <li>
+              <h3>Verificação por checksum</h3>
+              <p>Cada arquivo é lido de volta do destino e comparado com a origem.
+                 Cartão com defeito devolve o tamanho certo e os bytes errados, e a
+                 leitura de volta é o que revela isso enquanto o cartão ainda está
+                 no leitor.</p>
+            </li>
+            <li>
+              <h3>Espaço conferido antes do primeiro byte</h3>
+              <p>O Sincro soma o volume a copiar e compara com o disco antes de
+                 começar. Descobrir disco cheio no arquivo 15 de 63 é o pior momento
+                 possível, então a conta vem primeiro.</p>
+            </li>
+            <li>
+              <h3>Estrutura montada no ato</h3>
+              <p>Escolha data, job e câmera, e o caminho real aparece na tela
+                 enquanto você digita. O que você vê é literalmente a pasta que vai
+                 nascer no storage.</p>
+            </li>
+            <li>
+              <h3>Erro em português, na linha do arquivo</h3>
+              <p>Disco cheio, permissão negada, cartão com defeito. O log diz o motivo
+                 no arquivo em que ele aconteceu e resume o motivo dominante no topo,
+                 então você sabe o que consertar antes de tentar de novo.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="term glass">
+          <div class="term-head">
+            <span class="dots"><i></i><i></i><i></i></span>
+            Log da cópia
+          </div>
+          <code class="path">
+            /Volumes/DG&nbsp;REALTIME/<b>2026_08_21_JADE_PICON</b>/<b>CAM_A</b>/C0043.MP4
+          </code>
+          <div class="term-rows">
+            <div class="ok"><i>✓</i><span>C0041.MP4</span><em>copiado · blake2b</em></div>
+            <div class="ok"><i>✓</i><span>C0042.MP4</span><em>copiado · blake2b</em></div>
+            <div class="same"><i>=</i><span>C0043.MP4</span><em>já estava lá</em></div>
+            <div class="ok"><i>✓</i><span>ZOOM0007.WAV</span><em>copiado · blake2b</em></div>
+            <div class="ok"><i>✓</i><span>ZOOM0008.WAV</span><em>copiado · blake2b</em></div>
+            <div class="ok"><i>✓</i><span>C0044.MP4</span><em>copiado · blake2b</em></div>
+            <div class="ok"><i>✓</i><span>C0045.MP4</span><em>copiado · blake2b</em></div>
+            <div class="warn"><i>⚠</i><span>C0046.MP4</span><em>sem espaço no destino</em></div>
+          </div>
+          <div class="term-foot">
+            63 arquivos · 61 copiados · 1 já estava lá · 1 problema · 248 GB
+          </div>
         </div>
       </div>
     </div>
