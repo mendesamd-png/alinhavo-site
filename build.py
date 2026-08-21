@@ -125,11 +125,18 @@ def doc_page(lang: str, t: dict, L: dict, updated: str, key: str,
 
     label = {"pt": "Atualizado em", "en": "Last updated"}[lang]
     ent = legal_pt.ENTITY
-    if ent["name"]:
-        quem = (f"<p>{ent['name']} · {ent['id']}<br>{ent['address']}<br>"
-                f"<a href=\"mailto:{ent['email']}\">{ent['email']}</a></p>")
+    if ent.get("name"):
+        linhas = [f"{ent['name']}"]
+        if ent.get("trade") and ent["trade"] != ent["name"]:
+            linhas[0] += f" ({ent['trade']})"
+        if ent.get("id"):
+            linhas.append(f"CNPJ {ent['id']}")
+        if ent.get("address"):
+            linhas.append(ent["address"])
+        linhas.append(f"<a href=\"mailto:{ent['email']}\">{ent['email']}</a>")
+        quem = "<p>" + "<br>".join(linhas) + "</p>"
     else:
-        quem = (f"<p><a href=\"mailto:{t['email']}\">{t['email']}</a></p>")
+        quem = f"<p><a href=\"mailto:{t['email']}\">{t['email']}</a></p>"
 
     body = f"""<section class="doc"><div class="wrap">
   <div class="col">

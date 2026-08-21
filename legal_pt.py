@@ -9,11 +9,13 @@ Os dados da empresa vivem em `ENTITY`, num lugar só.
 """
 
 ENTITY = {
-    # PREENCHER antes de vender. Enquanto estiverem vazios, o build escreve
-    # um parágrafo de contato genérico em vez de dados falsos.
-    "name": "",          # razão social
-    "id": "",            # CNPJ
-    "address": "",       # endereço completo
+    # A empresa que vende. O endereço ainda falta: a legislação de consumo
+    # exige endereço identificável de quem vende à distância, então enquanto
+    # `address` estiver vazio o build omite a linha em vez de inventar uma.
+    "name": "MS Filmes Ltda",
+    "trade": "Mangue Seco Filmes",
+    "id": "48.389.938/0001-71",
+    "address": "",       # PREENCHER: endereço completo da sede
     "email": "contato@alinhavo.app",
 }
 

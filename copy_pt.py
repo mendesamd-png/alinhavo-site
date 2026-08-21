@@ -190,17 +190,17 @@ T = {
     "price_h2": "Compra uma vez, é seu",
     "price_lede": "Comece pelos sete dias com tudo liberado. Quando eles "
                   "acabam o Alinhavo continua seu, sincronizando projetos de "
-                  "até 20 clipes, sem prazo para expirar. A licença tira o "
+                  "até 10 clipes, sem prazo para expirar. A licença tira o "
                   "teto e é comprada uma vez só.",
     "plan1_name": "Grátis",
     "plan1_price": "R$ 0",
     "plan1_unit": "· para sempre",
     "plan1_items": ["7 dias com tudo liberado, sem limite",
-                    "Depois disso, até 20 clipes por vez, sem prazo",
+                    "Depois disso, até 10 clipes por vez, sem prazo",
                     "XML limpo, pronto para produção",
                     "Baixe e abra, sem cadastro"],
     "plan1_cta": "Baixar para Mac",
-    "plan2_name": "Alinhavo",
+    "plan2_name": "Pro",
     "plan2_price": "R$ 249",
     "plan2_unit": "· uma vez",
     "plan2_items": ["Uma licença para o seu Mac",
@@ -251,7 +251,7 @@ T = {
          "ffmpeg</span>."),
         ("O que acontece quando os 7 dias acabam?",
          "O Alinhavo continua funcionando. Ele passa para o modo gratuito, que "
-         "sincroniza projetos de até 20 clipes por vez, sem prazo e sem marca "
+         "sincroniza projetos de até 10 clipes por vez, sem prazo e sem marca "
          "no XML. Diárias maiores pedem a licença, e ela é comprada uma vez."),
         ("A licença expira ou vira assinatura?",
          "Nem uma coisa nem outra. Você compra uma vez e ela é sua, com as "
