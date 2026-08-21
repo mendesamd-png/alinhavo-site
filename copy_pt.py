@@ -187,14 +187,17 @@ T = {
 
     "price_eyebrow": "Licença",
     "price_h2": "Compra uma vez, é seu",
-    "price_lede": "Licença perpétua com ativação local. Você instala uma vez e "
-                  "o app abre sempre, com ou sem internet.",
-    "plan1_name": "Teste",
-    "plan1_price": "Grátis",
-    "plan1_unit": "· 7 dias",
-    "plan1_items": ["Todos os recursos liberados",
+    "price_lede": "Comece pelos sete dias com tudo liberado. Quando eles "
+                  "acabam o Sincro continua seu, sincronizando projetos de "
+                  "até 20 clipes, sem prazo para expirar. A licença tira o "
+                  "teto e é comprada uma vez só.",
+    "plan1_name": "Grátis",
+    "plan1_price": "R$ 0",
+    "plan1_unit": "· para sempre",
+    "plan1_items": ["7 dias com tudo liberado, sem limite",
+                    "Depois disso, até 20 clipes por vez, sem prazo",
                     "XML limpo, pronto para produção",
-                    "Baixe e abra, o teste começa sozinho"],
+                    "Baixe e abra, sem cadastro"],
     "plan1_cta": "Baixar para Mac",
     "plan2_name": "Sincro",
     "plan2_price": "R$ 349",
@@ -245,6 +248,20 @@ T = {
          "O ffmpeg, que faz a leitura de mídia e costuma já estar na máquina "
          "de quem edita. Um comando instala: <span class=\"mono\">brew install "
          "ffmpeg</span>."),
+        ("O que acontece quando os 7 dias acabam?",
+         "O Sincro continua funcionando. Ele passa para o modo gratuito, que "
+         "sincroniza projetos de até 20 clipes por vez, sem prazo e sem marca "
+         "no XML. Diárias maiores pedem a licença, e ela é comprada uma vez."),
+        ("A licença expira ou vira assinatura?",
+         "Nem uma coisa nem outra. Você compra uma vez e ela é sua, com as "
+         "atualizações da versão 1.x incluídas. A ativação acontece no seu "
+         "computador e o app abre offline: não existe servidor que possa "
+         "deixar de responder e impedir o seu trabalho."),
+        ("Posso instalar em mais de um computador?",
+         "A licença Sincro cobre dois computadores seus, e a Estúdio cobre "
+         "cinco estações. Trocar de máquina é livre: você libera a vaga de um "
+         "Mac dentro do próprio app e ativa no outro. Reinstalar o sistema no "
+         "mesmo computador não consome uma vaga nova."),
         ("Tem versão para Windows?",
          "Em desenvolvimento. O motor já é multiplataforma, e a versão "
          "empacotada para Windows entra em seguida."),

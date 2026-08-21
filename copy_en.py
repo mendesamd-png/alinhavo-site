@@ -177,14 +177,17 @@ T = {
 
     "price_eyebrow": "License",
     "price_h2": "Buy once, it's yours",
-    "price_lede": "A perpetual license with local activation. You install once "
-                  "and the app opens every time, online or not.",
-    "plan1_name": "Trial",
-    "plan1_price": "Free",
-    "plan1_unit": "· 7 days",
-    "plan1_items": ["Every feature unlocked",
+    "price_lede": "Start with seven days fully unlocked. When they run out "
+                  "Sincro stays yours, syncing projects of up to 20 clips, "
+                  "with no expiry date. The license lifts the cap and is "
+                  "bought once.",
+    "plan1_name": "Free",
+    "plan1_price": "$0",
+    "plan1_unit": "· forever",
+    "plan1_items": ["7 days fully unlocked, no limits",
+                    "After that, up to 20 clips at a time, no deadline",
                     "Clean XML, production ready",
-                    "Download and open, the trial starts itself"],
+                    "Download and open, no sign-up"],
     "plan1_cta": "Download for Mac",
     "plan2_name": "Sincro",
     "plan2_price": "$69",
@@ -237,6 +240,21 @@ T = {
          "ffmpeg, which handles media reading and is usually already on an "
          "editor's machine. One command installs it: <span class=\"mono\">brew "
          "install ffmpeg</span>."),
+        ("What happens when the 7 days are up?",
+         "Sincro keeps working. It moves to free mode, which syncs projects "
+         "of up to 20 clips at a time, with no deadline and no watermark on "
+         "the XML. Bigger shoot days call for the license, and that is bought "
+         "once."),
+        ("Does the license expire or turn into a subscription?",
+         "Neither. You buy it once and it is yours, with version 1.x updates "
+         "included. Activation happens on your computer and the app opens "
+         "offline: no server exists that could stop responding and keep you "
+         "from working."),
+        ("Can I install it on more than one computer?",
+         "The Sincro license covers two computers of your own, and Studio "
+         "covers five workstations. Moving machines is free: you release a "
+         "Mac's seat from inside the app and activate on the other one. "
+         "Reinstalling the system on the same computer does not cost a seat."),
         ("Is there a Windows version?",
          "In development. The engine is already cross-platform, and the "
          "packaged Windows version comes next."),
