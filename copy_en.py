@@ -32,7 +32,7 @@ T = {
     "foot_product": "Product",
     "foot_legal": "Legal",
     "foot_contact": "Contact",
-    "foot_req": "macOS 12 Monterey or later · Apple Silicon and Intel · "
+    "foot_req": "macOS 11 Big Sur or later · Apple Silicon and Intel · "
                 "Windows version in development",
     "made_in": "Made in Brazil",
 
@@ -49,7 +49,7 @@ T = {
                  "arrives organized, each camera on its own track, ready to cut.",
     "hero_cta": "Download for Mac",
     "hero_cta2": "See how it works",
-    "hero_note": "macOS 12+ · Apple Silicon and Intel",
+    "hero_note": "macOS 11+ · Apple Silicon and Intel · nothing else to install",
     "stage_clips": "242 clips",
     "stage_srcs": "2 cameras · 2 recorders",
     "stage_dur": "7.6 h of footage",
@@ -238,9 +238,8 @@ T = {
          "hours of footage, two cameras and two recorders, processed in one "
          "pass on a MacBook."),
         ("Do I need to install anything else?",
-         "ffmpeg, which handles media reading and is usually already on an "
-         "editor's machine. One command installs it: <span class=\"mono\">brew "
-         "install ffmpeg</span>."),
+         "Nothing. Alinhavo ships with everything it needs to read media, "
+         "decoder included. Download it, drag it to Applications, open it."),
         ("What happens when the 7 days are up?",
          "Alinhavo keeps working. It moves to free mode, which syncs projects "
          "of up to 10 clips at a time, with no deadline and no watermark on "
@@ -268,5 +267,5 @@ T = {
     "close_h2": "Your next shoot day can start already assembled.",
     "close_lede": "Download it, drop the folders, and watch the footage fall "
                   "into place.",
-    "close_note": "7 days fully unlocked · macOS 12+",
+    "close_note": "7 days fully unlocked · macOS 11+",
 }
