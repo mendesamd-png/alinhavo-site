@@ -15,7 +15,7 @@ ENTITY = {
     "name": "MS Filmes Ltda",
     "trade": "Mangue Seco Filmes",
     "id": "48.389.938/0001-71",
-    "address": "",       # PREENCHER: endereço completo da sede
+    "address": "Rua dos Caciques, 414 · Vila da Saúde · São Paulo · SP",
     "email": "contato@alinhavo.app",
 }
 
