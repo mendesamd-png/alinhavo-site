@@ -224,24 +224,22 @@ T = {
     "autor_nome": "Douglas Mendes",
     "autor_cargo": "Director, DoP and editor · author of Sincou",
     "autor_p": [
-        "I am Douglas Mendes — director, DoP and editor. Sincou came out of a "
-        "day like so many others: a few cameras, a recorder, some hours of "
-        "footage, and a whole afternoon dragging waveforms around before I "
-        "could actually start editing.",
-        "I tried what was out there. The good tools require a subscription; "
-        "the ones that fit my budget struggled with large files, and that is "
-        "exactly where syncing stops being practical and becomes the "
-        "bottleneck of the day. So I built my own.",
-        "Sincou was developed against production footage. The heaviest "
-        "session it has handled held 242 clips over 7.6 hours, and it is the "
-        "same one I run every change against: if it fails there, I find out "
-        "before you do.",
+        "Syncing multicam by hand was always the toll booth before editing "
+        "could really start. I wanted out of it early on, but the automatic "
+        "tools I tried could not handle my projects: the good ones require a "
+        "subscription, and the ones that fit my budget choked on exactly the "
+        "large files.",
+        "So, out of my own routine, I built Sincou and tested it on real "
+        "full-day shoots, with several cameras and a recorder. The heaviest "
+        "session it has handled holds 242 clips over 7.6 hours, and it is "
+        "the same one I run every change against: if it fails there, I find "
+        "out before you do.",
     ],
-    "autor_promessa": "Seven days with everything unlocked, and after that it "
-                      "stays yours, syncing up to 10 clips at a time, with no "
-                      "deadline. If anything trips you up, write in: I read "
-                      "the support mail myself, and I answer within two "
-                      "business days.",
+    "autor_promessa": "Sincou is free for seven days with no restrictions, "
+                      "and free forever for up to 10 clips at a time. It "
+                      "exists to take the manual syncing routine off your "
+                      "hands and give that time back to the part that "
+                      "matters: editing.",
     "faq_eyebrow": "Questions",
     "faq_h2": "Before you download",
     "faq": [

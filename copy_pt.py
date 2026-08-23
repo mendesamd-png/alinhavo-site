@@ -241,24 +241,22 @@ T = {
     "autor_nome": "Douglas Mendes",
     "autor_cargo": "Diretor, DoP e Editor · autor do Sincou",
     "autor_p": [
-        "Eu sou Douglas Mendes, Diretor, DoP e Editor. O Sincou nasceu de um "
-        "dia como tantos outros: algumas câmeras, gravador, algumas horas de "
-        "filmagem e uma tarde inteira arrastando waveforms antes que eu "
-        "pudesse realmente começar a editar.",
-        "Experimentei as opções disponíveis. As boas ferramentas exigem "
-        "assinatura; as que cabiam no meu orçamento tinham dificuldades com "
-        "arquivos grandes, e é aí que a sincronização deixa de ser prática e "
-        "se torna o gargalo do dia a dia. Então criei a minha própria "
-        "solução.",
-        "O Sincou foi desenvolvido com base em filmagens de produção. A "
-        "sessão mais pesada que ele já realizou teve 242 clipes e durou 7,6 "
-        "horas, e é a mesma que eu uso para testar cada alteração: se falhar "
-        "lá, eu fico sabendo antes de você.",
+        "Sincronizar multicâmera à mão sempre foi o pedágio antes de a "
+        "edição começar de verdade. Quis me livrar disso desde cedo, mas as "
+        "ferramentas automáticas que testei não davam conta dos meus "
+        "projetos: as boas cobram assinatura, e as que cabiam no orçamento "
+        "engasgavam justamente nos arquivos grandes.",
+        "Então, a partir da minha própria rotina, criei o Sincou e testei em "
+        "diárias reais de dia inteiro, com várias câmeras e gravador. A "
+        "sessão mais pesada que passou por ele tem 242 clipes e 7,6 horas, e "
+        "é a mesma que uso para testar cada alteração: se falhar lá, eu fico "
+        "sabendo antes de você.",
     ],
-    "autor_promessa": "São sete dias com tudo liberado, e depois disso ele "
-                      "continua seu, sincronizando até 10 clipes por vez, sem "
-                      "prazo. Se travar em alguma coisa, escreva: quem lê o "
-                      "suporte sou eu, e respondo em até dois dias úteis.",
+    "autor_promessa": "O Sincou é gratuito por sete dias sem restrição, e "
+                      "sempre gratuito para até 10 clipes por vez. Ele "
+                      "existe para tirar de você a rotina da sincronização "
+                      "manual e devolver esse tempo para a parte que "
+                      "importa: editar.",
     "faq_eyebrow": "Perguntas",
     "faq_h2": "Antes de baixar",
     "faq": [
