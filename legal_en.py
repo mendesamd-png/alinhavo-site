@@ -7,30 +7,27 @@ UPDATED = "August 21, 2026"
 
 L = {
     # ============================================================ EULA ======
-    "eula_title": "Alinhavo license agreement",
-    "eula_desc": "Terms of the Alinhavo software license.",
+    "eula_title": "Sincou license agreement",
+    "eula_desc": "Terms of the Sincou software license.",
     "eula_h1": "License agreement",
-    "eula_lede": "This document covers what you may do with Alinhavo once it is "
+    "eula_lede": "This document covers what you may do with Sincou once it is "
                  "installed. It applies to the trial and to the licensed "
                  "version alike.",
     "eula_body": [
         ("1. What you get", [
-            "Installing Alinhavo grants you a personal, perpetual, "
+            "Installing Sincou grants you a personal, perpetual, "
             "non-exclusive license to use the program, version 1.x. The "
             "license is yours to use; the program itself remains ours.",
-            "The <strong>Alinhavo</strong> license covers one computer "
+            "The <strong>Sincou</strong> license covers one computer "
             "belonging to the holder. The <strong>Studio</strong> license "
             "covers up to three workstations at the same company. Moving "
             "machines is allowed: deactivate on one and activate on the other.",
-            "Activation happens on your computer. Alinhavo works without an "
-            "internet connection, and no server exists that could stop "
-            "responding and keep you from working.",
-        ]),
-        ("2. What you produce with it", [
-            "Everything Alinhavo outputs is yours: the XML files, the reports, "
-            "the copies ingest made. We claim no rights over your footage or "
-            "over the results of your work.",
-            "You may use Alinhavo on commercial work at no cost beyond the "
+            "Activation requires a connection once, to register the machine "
+            "and honour the seat count you bought. After that Sincou works "
+            "without internet for up to 30 days at a stretch between checks, "
+            "and the check happens on its own whenever a connection is "
+            "available.",
+            "You may use Sincou on commercial work at no cost beyond the "
             "license.",
         ]),
         ("3. What the license does not allow", [
@@ -46,12 +43,13 @@ L = {
             "exactly as it always did.",
         ]),
         ("5. Third-party software", [
-            "Alinhavo uses ffmpeg to read media. ffmpeg is free third-party "
-            "software and is not distributed inside the application: you "
-            "install it separately. It carries its own license.",
+            "Sincou uses ffmpeg to read media. ffmpeg is free third-party "
+            "software, distributed inside the application under LGPL 2.1, "
+            "built without the GPL components. The license text and the "
+            "address of the corresponding source ship with the application.",
         ]),
         ("6. Warranty and limits", [
-            "Alinhavo is provided as is. It has been tested against real "
+            "Sincou is provided as is. It has been tested against real "
             "production footage and measures its own results, but no sync "
             "software replaces the judgment of the person editing. "
             "<strong>Check the result before committing to a delivery.</strong>",
@@ -75,14 +73,14 @@ L = {
     # =========================================================== TERMS ======
     "terms_title": "Terms of use",
     "terms_desc": "Terms of use for this site and conditions of sale for "
-                  "Alinhavo.",
+                  "Sincou.",
     "terms_h1": "Terms of use",
-    "terms_lede": "These terms cover this website and the purchase of Alinhavo "
+    "terms_lede": "These terms cover this website and the purchase of Sincou "
                   "licenses. The license for the software itself lives in its "
                   "own document.",
     "terms_body": [
         ("1. This website", [
-            "This site presents Alinhavo, distributes the trial, and sells "
+            "This site presents Sincou, distributes the trial, and sells "
             "licenses. By using it, you agree to these terms.",
             "The performance figures published here come from measurements on "
             "real production footage and are described alongside the number. "
@@ -125,7 +123,7 @@ L = {
 
     # ========================================================= PRIVACY ======
     "privacy_title": "Privacy",
-    "privacy_desc": "What Alinhavo collects and what it never collects. Local "
+    "privacy_desc": "What Sincou collects and what it never collects. Local "
                     "processing, no footage upload.",
     "privacy_h1": "Privacy",
     "privacy_lede": "The short answer: your footage never leaves your "
@@ -133,7 +131,7 @@ L = {
                     "happens outside it.",
     "privacy_body": [
         ("What the application does with your footage", [
-            "<strong>Nothing leaves your machine.</strong> Alinhavo reads files "
+            "<strong>Nothing leaves your machine.</strong> Sincou reads files "
             "from your disk, processes audio on your CPU, and writes the XML "
             "back to your disk. There is no upload, no account to create, and "
             "no cloud involved in processing.",
@@ -178,7 +176,7 @@ L = {
 
     # ========================================================= REFUNDS ======
     "refunds_title": "Refunds",
-    "refunds_desc": "Alinhavo refund policy: fourteen days, no reason needed.",
+    "refunds_desc": "Sincou refund policy: fourteen days, no reason needed.",
     "refunds_h1": "Refunds",
     "refunds_lede": "Try it for seven days before paying. If the purchase "
                     "still doesn't fit, we give the money back.",

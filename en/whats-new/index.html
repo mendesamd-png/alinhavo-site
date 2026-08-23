@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What's new in Alinhavo · Alinhavo</title>
-<meta name="description" content="What changed in each version of Alinhavo.">
-<link rel="canonical" href="https://mendesamd-png.github.io/alinhavo-site/en/whats-new/">
-<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/alinhavo-site/en/whats-new/">
-<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/alinhavo-site/novidades/">
-<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/alinhavo-site/en/whats-new/">
-<meta property="og:title" content="What's new in Alinhavo · Alinhavo">
-<meta property="og:description" content="What changed in each version of Alinhavo.">
+<title>What's new in Sincou · Sincou</title>
+<meta name="description" content="What changed in each version of Sincou.">
+<link rel="canonical" href="https://mendesamd-png.github.io/sincou-site/en/whats-new/">
+<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincou-site/en/whats-new/">
+<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincou-site/novidades/">
+<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincou-site/en/whats-new/">
+<meta property="og:title" content="What's new in Sincou · Sincou">
+<meta property="og:description" content="What changed in each version of Sincou.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mendesamd-png.github.io/alinhavo-site/en/whats-new/">
+<meta property="og:url" content="https://mendesamd-png.github.io/sincou-site/en/whats-new/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
@@ -303,6 +303,33 @@ canvas#tl { display: block; width: 100%; height: 280px; border-radius: 16px; }
 .soon b { font-weight: 600; }
 .soon p { color: var(--ink-soft); font-size: .95rem; margin-top: 4px; }
 
+/* Autor. O retrato e redondo e grande de proposito: e a unica foto de
+   gente no site inteiro, e o que ela precisa transmitir e "tem alguem do
+   outro lado", nao "aqui vai uma imagem". Sem foto, o monograma no
+   gradiente da marca ocupa o mesmo lugar com a mesma presenca - um quadro
+   vazio diria que falta algo. */
+.cta-note .ver { display: inline-block; margin-top: 5px; font-weight: 500; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.autor { display: grid; gap: 40px; grid-template-columns: 260px 1fr; align-items: start; margin-top: 46px; }
+.autor .retrato { width: 260px; height: 260px; border-radius: 50%; overflow: hidden; position: relative; box-shadow: var(--shadow-sm); }
+.autor .retrato img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.autor .mono-face {
+  width: 100%; height: 100%; display: grid; place-items: center;
+  background: linear-gradient(140deg, var(--g1), var(--g2) 55%, var(--g3));
+  color: #fff; font-size: 4.6rem; font-weight: 600; letter-spacing: .04em;
+}
+.autor .diz p { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 18px; max-width: var(--measure); }
+.autor .promessa { margin-top: 26px; padding: 22px 26px; border-radius: 18px; border: 1px solid var(--glass-line); background: var(--glass); }
+.autor .promessa p { margin: 0; color: var(--ink); font-size: .99rem; }
+.autor .assina { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--glass-line); }
+.autor .assina b { display: block; font-size: 1.06rem; }
+.autor .assina span { color: var(--ink-faint); font-size: .9rem; }
+@media (max-width: 860px) {
+  .autor { grid-template-columns: 1fr; gap: 28px; justify-items: center; }
+  .autor .retrato { width: 180px; height: 180px; }
+  .autor .mono-face { font-size: 3.2rem; }
+  .autor .diz { text-align: left; }
+  .autor .assina { text-align: center; }
+}
 .faq { margin-top: 42px; }
 details { border-bottom: 1px solid var(--glass-line); }
 details:first-child { border-top: 1px solid var(--glass-line); }
@@ -375,25 +402,24 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
 <body>
 <div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
 <header><div class="wrap"><div class="bar glass">
-  <a class="brand" href="/alinhavo-site/en/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <a class="brand" href="/sincou-site/en/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
   <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
     <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
-  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
-  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
-  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
-  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
-  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
-</svg> Alinhavo</a>
+  <rect x="248" y="196" width="30" height="632" rx="15" fill="currentColor"/>
+  <rect x="286" y="300" width="520" height="112" rx="56" fill="url(#lg)"/>
+  <rect x="286" y="456" width="600" height="112" rx="56" fill="url(#lg)" opacity=".82"/>
+  <rect x="286" y="612" width="420" height="112" rx="56" fill="url(#lg)" opacity=".64"/>
+</svg> Sincou</a>
   <nav>
-    <a href="/alinhavo-site/en/how-it-works/" class="hide-sm">How it works</a>
-    <a href="/alinhavo-site/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
-    <a href="/alinhavo-site/en/whats-new/" class="hide-sm" aria-current="page">What's new</a>
-    <a href="/alinhavo-site/en/#preco">Pricing</a>
-    <a class="pillbtn" href="/alinhavo-site/novidades/" hreflang="pt"
+    <a href="/sincou-site/en/how-it-works/" class="hide-sm">How it works</a>
+    <a href="/sincou-site/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
+    <a href="/sincou-site/en/whats-new/" class="hide-sm" aria-current="page">What's new</a>
+    <a href="/sincou-site/en/#preco">Pricing</a>
+    <a class="pillbtn" href="/sincou-site/novidades/" hreflang="pt"
        aria-label="View this site in Portuguese">PT</a>
     <button class="pillbtn" id="theme" type="button" aria-label="Switch between light and dark">&#9680;</button>
-    <a class="btn" href="/alinhavo-site/en/#preco">Download</a>
+    <a class="btn" href="/sincou-site/en/#preco">Download</a>
   </nav>
 </div></div></header>
 <main>
@@ -417,38 +443,37 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
 <section class="closing"><div class="wrap">
   <h2>Your next shoot day can start already assembled.</h2>
   <p class="lede" style="margin-inline:auto">Download it, drop the folders, and watch the footage fall into place.</p>
-  <div class="cta-row"><a class="btn" href="/alinhavo-site/en/#preco">Download for Mac</a><span class="cta-note">7 days fully unlocked · macOS 11+</span></div>
+  <div class="cta-row"><a class="btn" href="/sincou-site/en/#preco">Download for Mac</a><span class="cta-note">7 days fully unlocked · macOS 11+</span></div>
 </div></section>
 </main>
 <footer><div class="wrap">
   <div class="foot-grid">
     <div>
-      <a class="brand" href="/alinhavo-site/en/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+      <a class="brand" href="/sincou-site/en/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
   <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
     <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
-  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
-  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
-  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
-  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
-  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
-</svg> Alinhavo</a>
+  <rect x="248" y="196" width="30" height="632" rx="15" fill="currentColor"/>
+  <rect x="286" y="300" width="520" height="112" rx="56" fill="url(#lg)"/>
+  <rect x="286" y="456" width="600" height="112" rx="56" fill="url(#lg)" opacity=".82"/>
+  <rect x="286" y="612" width="420" height="112" rx="56" fill="url(#lg)" opacity=".64"/>
+</svg> Sincou</a>
       <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">Syncs the whole shoot day by sound, organizes your cards and hands your editor a finished timeline.</p>
     </div>
     <div><h4>Product</h4><ul>
-      <li><a href="/alinhavo-site/en/how-it-works/">How it works</a></li>
-      <li><a href="/alinhavo-site/en/pluraleyes-alternative/">From PluralEyes</a></li>
-      <li><a href="/alinhavo-site/en/whats-new/">What's new</a></li>
-      <li><a href="/alinhavo-site/en/#preco">Pricing</a></li>
+      <li><a href="/sincou-site/en/how-it-works/">How it works</a></li>
+      <li><a href="/sincou-site/en/pluraleyes-alternative/">From PluralEyes</a></li>
+      <li><a href="/sincou-site/en/whats-new/">What's new</a></li>
+      <li><a href="/sincou-site/en/#preco">Pricing</a></li>
     </ul></div>
     <div><h4>Legal</h4><ul>
-      <li><a href="/alinhavo-site/en/license/">License</a></li>
-      <li><a href="/alinhavo-site/en/terms/">Terms</a></li>
-      <li><a href="/alinhavo-site/en/privacy/">Privacy</a></li>
-      <li><a href="/alinhavo-site/en/refunds/">Refunds</a></li>
+      <li><a href="/sincou-site/en/license/">License</a></li>
+      <li><a href="/sincou-site/en/terms/">Terms</a></li>
+      <li><a href="/sincou-site/en/privacy/">Privacy</a></li>
+      <li><a href="/sincou-site/en/refunds/">Refunds</a></li>
     </ul></div>
     <div><h4>Contact</h4><ul>
-      <li><a href="mailto:contato@alinhavo.app">contato@alinhavo.app</a></li>
+      <li><a href="mailto:contato@sincou.com.br">contato@sincou.com.br</a></li>
     </ul></div>
   </div>
   <div class="foot-end">
@@ -465,14 +490,14 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
 <script>
 (function () {
   var btn = document.getElementById("theme");
-  var saved = localStorage.getItem("alinhavo-theme");
+  var saved = localStorage.getItem("sincou-theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
   if (btn) btn.addEventListener("click", function () {
     var atual = document.documentElement.getAttribute("data-theme") || "light";
     var novo = atual === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", novo);
-    localStorage.setItem("alinhavo-theme", novo);
-    document.dispatchEvent(new CustomEvent("alinhavo:theme", {detail: novo}));
+    localStorage.setItem("sincou-theme", novo);
+    document.dispatchEvent(new CustomEvent("sincou:theme", {detail: novo}));
   });
 })();
 </script>

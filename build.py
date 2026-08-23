@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera o site estatico do Alinhavo nos dois idiomas.
+"""Gera o site estatico do Sincou nos dois idiomas.
 
     python3 site/build.py
 
@@ -152,7 +152,7 @@ def doc_page(lang: str, t: dict, L: dict, updated: str, key: str,
   </div>
 </div></section>"""
     return page(t, lang=lang, path=f"{base}{t['url_' + url_key]}",
-                alt_path=alt_url, title=f"{L[f'{key}_title']} · Alinhavo",
+                alt_path=alt_url, title=f"{L[f'{key}_title']} · Sincou",
                 desc=L[f"{key}_desc"], body=body, extra_css=DOC_CSS)
 
 
@@ -268,6 +268,33 @@ canvas#tl { display: block; width: 100%; height: 280px; border-radius: 16px; }
 .soon b { font-weight: 600; }
 .soon p { color: var(--ink-soft); font-size: .95rem; margin-top: 4px; }
 
+/* Autor. O retrato e redondo e grande de proposito: e a unica foto de
+   gente no site inteiro, e o que ela precisa transmitir e "tem alguem do
+   outro lado", nao "aqui vai uma imagem". Sem foto, o monograma no
+   gradiente da marca ocupa o mesmo lugar com a mesma presenca - um quadro
+   vazio diria que falta algo. */
+.cta-note .ver { display: inline-block; margin-top: 5px; font-weight: 500; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.autor { display: grid; gap: 40px; grid-template-columns: 260px 1fr; align-items: start; margin-top: 46px; }
+.autor .retrato { width: 260px; height: 260px; border-radius: 50%; overflow: hidden; position: relative; box-shadow: var(--shadow-sm); }
+.autor .retrato img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.autor .mono-face {
+  width: 100%; height: 100%; display: grid; place-items: center;
+  background: linear-gradient(140deg, var(--g1), var(--g2) 55%, var(--g3));
+  color: #fff; font-size: 4.6rem; font-weight: 600; letter-spacing: .04em;
+}
+.autor .diz p { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 18px; max-width: var(--measure); }
+.autor .promessa { margin-top: 26px; padding: 22px 26px; border-radius: 18px; border: 1px solid var(--glass-line); background: var(--glass); }
+.autor .promessa p { margin: 0; color: var(--ink); font-size: .99rem; }
+.autor .assina { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--glass-line); }
+.autor .assina b { display: block; font-size: 1.06rem; }
+.autor .assina span { color: var(--ink-faint); font-size: .9rem; }
+@media (max-width: 860px) {
+  .autor { grid-template-columns: 1fr; gap: 28px; justify-items: center; }
+  .autor .retrato { width: 180px; height: 180px; }
+  .autor .mono-face { font-size: 3.2rem; }
+  .autor .diz { text-align: left; }
+  .autor .assina { text-align: center; }
+}
 .faq { margin-top: 42px; }
 details { border-bottom: 1px solid var(--glass-line); }
 details:first-child { border-top: 1px solid var(--glass-line); }
@@ -443,7 +470,7 @@ TL_JS = r"""
     raf = requestAnimationFrame(frame);
   }
   addEventListener("resize", size);
-  document.addEventListener("alinhavo:theme", draw);
+  document.addEventListener("sincou:theme", draw);
   var rb = document.getElementById("replay");
   if (rb) rb.addEventListener("click", play);
   size();
@@ -503,6 +530,19 @@ def build_home(lang: str) -> str:
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>"
                   for q, a in t["faq"])
 
+    # A foto entra sozinha quando o arquivo existir: basta soltar
+    # site/img/autor.jpg (ou .png/.webp). Ate la o monograma ocupa o lugar,
+    # entao o site nunca fica com um quadro vazio esperando alguem lembrar.
+    foto = next((n for n in ("autor.jpg", "autor.jpeg", "autor.png",
+                             "autor.webp") if (HERE / "img" / n).exists()), None)
+    retrato = (f'<img src="{base}/img/{foto}" alt="{t["autor_nome"]}" '
+               f'width="260" height="260" loading="lazy">' if foto
+               else f'<div class="mono-face" aria-hidden="true">'
+                    f'{t["autor_iniciais"]}</div>')
+    autor_p = "".join(f"<p>{x}</p>" for x in t["autor_p"])
+    mod = copy_pt if lang == "pt" else copy_en
+    versao = t["hero_versao"].format(v=mod.VERSION, d=mod.RELEASE)
+
     pe_same = "".join(f"<li>{x}</li>" for x in t["pe_same"])
     pe_new = "".join(f"<li>{x}</li>" for x in t["pe_new"])
 
@@ -513,7 +553,7 @@ def build_home(lang: str) -> str:
     <div class="cta-row">
       <a class="btn" href="#preco">{t['hero_cta']}</a>
       <a class="btn quiet" href="{base}{t['url_howto']}">{t['hero_cta2']}</a>
-      <span class="cta-note">{t['hero_note']}</span>
+      <span class="cta-note">{t['hero_note']}<br><b class="ver">{versao}</b></span>
     </div>
   </div>
   <div class="stage glass">
@@ -577,6 +617,22 @@ def build_home(lang: str) -> str:
   <div class="exports">{exports}</div>
 </div></section>
 
+<section id="autor"><div class="wrap">
+  <div class="eyebrow">{t['autor_eyebrow']}</div>
+  <div class="col"><h2>{t['autor_h2']}</h2></div>
+  <div class="autor">
+    <div class="retrato">{retrato}</div>
+    <div class="diz">
+      {autor_p}
+      <div class="promessa"><p>{t['autor_promessa']}</p></div>
+      <div class="assina">
+        <b>{t['autor_nome']}</b>
+        <span>{t['autor_cargo']}</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <section id="preco"><div class="wrap">
   <div class="eyebrow">{t['price_eyebrow']}</div>
   <div class="col"><h2>{t['price_h2']}</h2><p class="lede">{t['price_lede']}</p></div>
@@ -597,7 +653,7 @@ def build_home(lang: str) -> str:
 {cta(t, base, t['close_h2'], t['close_lede'], t['close_note'])}"""
 
     return page(t, lang=lang, path=f"{base}/", alt_path=alt,
-                title=f"Alinhavo · {t['home_tagline']}",
+                title=f"Sincou · {t['home_tagline']}",
                 desc=t["home_desc"], body=body, here="home",
                 extra_css=HOME_CSS, extra_js=TL_JS)
 
@@ -688,7 +744,7 @@ def build_howto(lang: str) -> str:
 {cta(t, base, P['howto_cta_h'], P['howto_cta_p'])}"""
 
     return page(t, lang=lang, path=f"{base}{t['url_howto']}", alt_path=alt,
-                title=f"{P['howto_title']} · Alinhavo", desc=P["howto_desc"],
+                title=f"{P['howto_title']} · Sincou", desc=P["howto_desc"],
                 body=body, here="howto", extra_css=HOWTO_CSS)
 
 
@@ -733,7 +789,7 @@ def build_pluraleyes(lang: str) -> str:
 {cta(t, base, P['pe_page_cta_h'], P['pe_page_cta_p'])}"""
 
     return page(t, lang=lang, path=f"{base}{t['url_pluraleyes']}", alt_path=alt,
-                title=f"{P['pe_title']} · Alinhavo", desc=P["pe_desc"],
+                title=f"{P['pe_title']} · Sincou", desc=P["pe_desc"],
                 body=body, here="pluraleyes", extra_css=HOWTO_CSS)
 
 
@@ -768,7 +824,7 @@ def build_whatsnew(lang: str) -> str:
 {cta(t, base, t['close_h2'], t['close_lede'], t['close_note'])}"""
 
     return page(t, lang=lang, path=f"{base}{t['url_whatsnew']}", alt_path=alt,
-                title=f"{P['wn_title']} · Alinhavo", desc=P["wn_desc"],
+                title=f"{P['wn_title']} · Sincou", desc=P["wn_desc"],
                 body=body, here="whatsnew", extra_css=HOWTO_CSS)
 
 

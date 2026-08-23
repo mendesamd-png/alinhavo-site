@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How Alinhavo works · Alinhavo</title>
-<meta name="description" content="A walkthrough of Alinhavo: copy cards with verification, sync the shoot day by sound, and export the timeline to Premiere, DaVinci Resolve or Final Cut.">
-<link rel="canonical" href="https://mendesamd-png.github.io/alinhavo-site/en/how-it-works/">
-<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/alinhavo-site/en/how-it-works/">
-<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/alinhavo-site/como-funciona/">
-<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/alinhavo-site/en/how-it-works/">
-<meta property="og:title" content="How Alinhavo works · Alinhavo">
-<meta property="og:description" content="A walkthrough of Alinhavo: copy cards with verification, sync the shoot day by sound, and export the timeline to Premiere, DaVinci Resolve or Final Cut.">
+<title>How Sincou works · Sincou</title>
+<meta name="description" content="A walkthrough of Sincou: copy cards with verification, sync the shoot day by sound, and export the timeline to Premiere, DaVinci Resolve or Final Cut.">
+<link rel="canonical" href="https://mendesamd-png.github.io/sincou-site/en/how-it-works/">
+<link rel="alternate" hreflang="en" href="https://mendesamd-png.github.io/sincou-site/en/how-it-works/">
+<link rel="alternate" hreflang="pt" href="https://mendesamd-png.github.io/sincou-site/como-funciona/">
+<link rel="alternate" hreflang="x-default" href="https://mendesamd-png.github.io/sincou-site/en/how-it-works/">
+<meta property="og:title" content="How Sincou works · Sincou">
+<meta property="og:description" content="A walkthrough of Sincou: copy cards with verification, sync the shoot day by sound, and export the timeline to Premiere, DaVinci Resolve or Final Cut.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mendesamd-png.github.io/alinhavo-site/en/how-it-works/">
+<meta property="og:url" content="https://mendesamd-png.github.io/sincou-site/en/how-it-works/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&display=swap">
@@ -303,6 +303,33 @@ canvas#tl { display: block; width: 100%; height: 280px; border-radius: 16px; }
 .soon b { font-weight: 600; }
 .soon p { color: var(--ink-soft); font-size: .95rem; margin-top: 4px; }
 
+/* Autor. O retrato e redondo e grande de proposito: e a unica foto de
+   gente no site inteiro, e o que ela precisa transmitir e "tem alguem do
+   outro lado", nao "aqui vai uma imagem". Sem foto, o monograma no
+   gradiente da marca ocupa o mesmo lugar com a mesma presenca - um quadro
+   vazio diria que falta algo. */
+.cta-note .ver { display: inline-block; margin-top: 5px; font-weight: 500; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.autor { display: grid; gap: 40px; grid-template-columns: 260px 1fr; align-items: start; margin-top: 46px; }
+.autor .retrato { width: 260px; height: 260px; border-radius: 50%; overflow: hidden; position: relative; box-shadow: var(--shadow-sm); }
+.autor .retrato img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.autor .mono-face {
+  width: 100%; height: 100%; display: grid; place-items: center;
+  background: linear-gradient(140deg, var(--g1), var(--g2) 55%, var(--g3));
+  color: #fff; font-size: 4.6rem; font-weight: 600; letter-spacing: .04em;
+}
+.autor .diz p { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 18px; max-width: var(--measure); }
+.autor .promessa { margin-top: 26px; padding: 22px 26px; border-radius: 18px; border: 1px solid var(--glass-line); background: var(--glass); }
+.autor .promessa p { margin: 0; color: var(--ink); font-size: .99rem; }
+.autor .assina { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--glass-line); }
+.autor .assina b { display: block; font-size: 1.06rem; }
+.autor .assina span { color: var(--ink-faint); font-size: .9rem; }
+@media (max-width: 860px) {
+  .autor { grid-template-columns: 1fr; gap: 28px; justify-items: center; }
+  .autor .retrato { width: 180px; height: 180px; }
+  .autor .mono-face { font-size: 3.2rem; }
+  .autor .diz { text-align: left; }
+  .autor .assina { text-align: center; }
+}
 .faq { margin-top: 42px; }
 details { border-bottom: 1px solid var(--glass-line); }
 details:first-child { border-top: 1px solid var(--glass-line); }
@@ -375,25 +402,24 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
 <body>
 <div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
 <header><div class="wrap"><div class="bar glass">
-  <a class="brand" href="/alinhavo-site/en/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+  <a class="brand" href="/sincou-site/en/"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
   <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
     <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
-  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
-  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
-  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
-  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
-  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
-</svg> Alinhavo</a>
+  <rect x="248" y="196" width="30" height="632" rx="15" fill="currentColor"/>
+  <rect x="286" y="300" width="520" height="112" rx="56" fill="url(#lg)"/>
+  <rect x="286" y="456" width="600" height="112" rx="56" fill="url(#lg)" opacity=".82"/>
+  <rect x="286" y="612" width="420" height="112" rx="56" fill="url(#lg)" opacity=".64"/>
+</svg> Sincou</a>
   <nav>
-    <a href="/alinhavo-site/en/how-it-works/" class="hide-sm" aria-current="page">How it works</a>
-    <a href="/alinhavo-site/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
-    <a href="/alinhavo-site/en/whats-new/" class="hide-sm">What's new</a>
-    <a href="/alinhavo-site/en/#preco">Pricing</a>
-    <a class="pillbtn" href="/alinhavo-site/como-funciona/" hreflang="pt"
+    <a href="/sincou-site/en/how-it-works/" class="hide-sm" aria-current="page">How it works</a>
+    <a href="/sincou-site/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
+    <a href="/sincou-site/en/whats-new/" class="hide-sm">What's new</a>
+    <a href="/sincou-site/en/#preco">Pricing</a>
+    <a class="pillbtn" href="/sincou-site/como-funciona/" hreflang="pt"
        aria-label="View this site in Portuguese">PT</a>
     <button class="pillbtn" id="theme" type="button" aria-label="Switch between light and dark">&#9680;</button>
-    <a class="btn" href="/alinhavo-site/en/#preco">Download</a>
+    <a class="btn" href="/sincou-site/en/#preco">Download</a>
   </nav>
 </div></div></header>
 <main>
@@ -412,10 +438,10 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
     <p class="lede">The Ingest tab exists because the moment a shoot day has only one copy is the moment it can disappear. Four steps, and the card leaves the reader with the work verified.</p></div>
   <ol class="steps-list" aria-label="From card to storage"><li class="step-row">
   <div class="step-num"><span>01</span></div>
-  <div class="step-txt"><h3>Pick the destination and name the job</h3><p>Point at the volume where the footage will live and type the job name. As you type, Alinhavo shows the real path that will exist on disk, with the date already in front. What appears on screen is literally the folder that gets created.</p></div>
+  <div class="step-txt"><h3>Pick the destination and name the job</h3><p>Point at the volume where the footage will live and type the job name. As you type, Sincou shows the real path that will exist on disk, with the date already in front. What appears on screen is literally the folder that gets created.</p></div>
 </li><li class="step-row">
   <div class="step-num"><span>02</span></div>
-  <div class="step-txt"><h3>Drop the cards</h3><p>Drag in one card, several, or folders you already copied. Alinhavo reads the whole tree, adds up the volume, and compares it against the free space on the destination before writing anything.</p></div>
+  <div class="step-txt"><h3>Drop the cards</h3><p>Drag in one card, several, or folders you already copied. Sincou reads the whole tree, adds up the volume, and compares it against the free space on the destination before writing anything.</p></div>
 </li><li class="step-row">
   <div class="step-num"><span>03</span></div>
   <div class="step-txt"><h3>Copy with verification</h3><p>Every file is copied and then read back from the destination to be compared with the source. This is the step that separates a copy from a backup: a failing card returns the right size with the wrong bytes, and only reading back reveals it.</p></div>
@@ -424,11 +450,11 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   <div class="step-txt"><h3>Read the report</h3><p>Every line carries a symbol and a state. The footer sums up files, copied, already there, problems and volume. When something fails, the reason appears on that file's own line, in plain words, and the dominant reason rises to the top.</p></div>
 </li></ol>
   <figure class="shot glass">
-  <img src="/alinhavo-site/img/app-ingest-en.png" alt="The Ingest tab with the destination, the job, and the real path appearing in real time." width="1440" height="860" loading="lazy">
+  <img src="/sincou-site/img/app-ingest-en.png" alt="The Ingest tab with the destination, the job, and the real path appearing in real time." width="1440" height="860" loading="lazy">
   <figcaption>The Ingest tab with the destination, the job, and the real path appearing in real time.</figcaption>
 </figure>
   <div class="tip glass">
-    <h3>About moving instead of copying</h3><p>Alinhavo copies, always. Moving erases the source before you have verified the destination, and the one time that matters is the time it goes wrong. Format the card yourself, after you have seen the report.</p>
+    <h3>About moving instead of copying</h3><p>Sincou copies, always. Moving erases the source before you have verified the destination, and the one time that matters is the time it goes wrong. Format the card yourself, after you have seen the report.</p>
   </div>
 </div></section>
 
@@ -437,15 +463,15 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   <div class="col"><h2>From storage to timeline</h2>
     <p class="lede">Here the sound does the work. You hand over raw footage and get back a timeline with each camera on its own track, audio underneath, and whatever fell outside kept separate.</p></div>
   <figure class="shot glass">
-  <img src="/alinhavo-site/img/app-prescan-en.png" alt="Footage loaded before Sync: each source on its own row, in recording order." width="1440" height="860" loading="lazy">
+  <img src="/sincou-site/img/app-prescan-en.png" alt="Footage loaded before Sync: each source on its own row, in recording order." width="1440" height="860" loading="lazy">
   <figcaption>Footage loaded before Sync: each source on its own row, in recording order.</figcaption>
 </figure>
   <ol class="steps-list" aria-label="From storage to timeline"><li class="step-row">
   <div class="step-num"><span>01</span></div>
-  <div class="step-txt"><h3>Organize the raw footage in folders by source</h3><p>One folder per camera, one per recorder. Alinhavo uses the folder to know those files came from the same piece of gear, and that improves both the grouping and how the timeline reads. If the footage came through Ingest, the structure is already there.</p></div>
+  <div class="step-txt"><h3>Organize the raw footage in folders by source</h3><p>One folder per camera, one per recorder. Sincou uses the folder to know those files came from the same piece of gear, and that improves both the grouping and how the timeline reads. If the footage came through Ingest, the structure is already there.</p></div>
 </li><li class="step-row">
   <div class="step-num"><span>02</span></div>
-  <div class="step-txt"><h3>Drop it all at once</h3><p>Drag in the whole shoot day. Alinhavo does a quick pass without decoding audio and draws the footage on the timeline right away, waveform included. The summary up top says how many clips, cameras and recorders came in.</p></div>
+  <div class="step-txt"><h3>Drop it all at once</h3><p>Drag in the whole shoot day. Sincou does a quick pass without decoding audio and draws the footage on the timeline right away, waveform included. The summary up top says how many clips, cameras and recorders came in.</p></div>
 </li><li class="step-row">
   <div class="step-num"><span>03</span></div>
   <div class="step-txt"><h3>Check the count before syncing</h3><p>This is the cheap moment to notice a card got left out. If the camera count is wrong, fix it now: adding footage later means running the sync again.</p></div>
@@ -457,13 +483,13 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   <div class="step-txt"><h3>Read the timeline</h3><p>Each row is a source. Cameras sit on top, recorders underneath. The horizontal distance between blocks is the real time between recordings, so empty space carries information too.</p></div>
 </li><li class="step-row">
   <div class="step-num"><span>06</span></div>
-  <div class="step-txt"><h3>Listen before you export</h3><p>Click anywhere and hit play. Alinhavo mixes every clip under the cursor in real time. Aligned sounds like a single source; out of sync produces echo. It's the fastest check there is, and it happens before the footage reaches your editor.</p></div>
+  <div class="step-txt"><h3>Listen before you export</h3><p>Click anywhere and hit play. Sincou mixes every clip under the cursor in real time. Aligned sounds like a single source; out of sync produces echo. It's the fastest check there is, and it happens before the footage reaches your editor.</p></div>
 </li><li class="step-row">
   <div class="step-num"><span>07</span></div>
   <div class="step-txt"><h3>Export to your editor</h3><p>Pick the destination in the Export menu. Each option carries the import instruction that program expects, because each of them imports differently.</p></div>
 </li></ol>
   <figure class="shot glass">
-  <img src="/alinhavo-site/img/app-synced-en.png" alt="After Sync: groups aligned, the yellow clip asking for review and the orange one out of sync." width="1440" height="860" loading="lazy">
+  <img src="/sincou-site/img/app-synced-en.png" alt="After Sync: groups aligned, the yellow clip asking for review and the orange one out of sync." width="1440" height="860" loading="lazy">
   <figcaption>After Sync: groups aligned, the yellow clip asking for review and the orange one out of sync.</figcaption>
 </figure>
 </div></section>
@@ -476,61 +502,60 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   <h3 style="margin-top:44px">The footer numbers</h3>
   <div class="legend"><div class="glass"><b class="mono">files</b><p>How many clips came in altogether.</p></div><div class="glass"><b class="mono">locked</b><p>Aligned above the confidence threshold. You can trust these.</p></div><div class="glass"><b class="mono">review</b><p>Aligned, but below the threshold. Check these.</p></div><div class="glass"><b class="mono">out of sync</b><p>No trustworthy pair. They sit at the end, in orange.</p></div><div class="glass"><b class="mono">groups</b><p>Recording blocks found. Usually matches the number of takes in the day.</p></div><div class="glass"><b class="mono">sync time</b><p>How long the engine took.</p></div></div>
   <div class="tip glass">
-    <h3>If triage feels too conservative</h3><p>The gear icon up top opens two thresholds. <strong>Sync threshold</strong> is the minimum for Alinhavo to accept an alignment at all. <strong>Lock threshold</strong> is the minimum for it to stop asking for review. Footage with heavy set noise or short overlap wants a lower threshold; clean footage takes a higher one.</p>
+    <h3>If triage feels too conservative</h3><p>The gear icon up top opens two thresholds. <strong>Sync threshold</strong> is the minimum for Sincou to accept an alignment at all. <strong>Lock threshold</strong> is the minimum for it to stop asking for review. Footage with heavy set noise or short overlap wants a lower threshold; clean footage takes a higher one.</p>
   </div>
 </div></section>
 
 <section id="fora"><div class="wrap">
   <div class="col"><h2>When something falls outside</h2>
     <p class="lede">An orange clip almost always has one of these causes.</p></div>
-  <div class="grid2"><div class="glass"><h3>There is no real overlap</h3><p>The clip was recorded while nothing else was rolling. Here the orange is correct: there is nothing to sync it against.</p></div><div class="glass"><h3>The overlap is too short</h3><p>A few seconds in common produce correlation that looks good and isn't. Alinhavo weighs the evidence by how much overlap it had, precisely to avoid falling for that.</p></div><div class="glass"><h3>The audio has no events</h3><p>A stretch of silence, wind, or continuous tone gives the engine nothing to compare. Alignment uses the instants where sound attacks, and where there is no attack there is no anchor.</p></div><div class="glass"><h3>The camera recorded without audio</h3><p>No audio track means no syncing by sound. Timecode can still place the clip, if it exists.</p></div></div>
+  <div class="grid2"><div class="glass"><h3>There is no real overlap</h3><p>The clip was recorded while nothing else was rolling. Here the orange is correct: there is nothing to sync it against.</p></div><div class="glass"><h3>The overlap is too short</h3><p>A few seconds in common produce correlation that looks good and isn't. Sincou weighs the evidence by how much overlap it had, precisely to avoid falling for that.</p></div><div class="glass"><h3>The audio has no events</h3><p>A stretch of silence, wind, or continuous tone gives the engine nothing to compare. Alignment uses the instants where sound attacks, and where there is no attack there is no anchor.</p></div><div class="glass"><h3>The camera recorded without audio</h3><p>No audio track means no syncing by sound. Timecode can still place the clip, if it exists.</p></div></div>
 </div></section>
 
 <section id="exportar"><div class="wrap">
   <div class="col"><h2>How each editor imports</h2></div>
-  <div class="grid2"><div class="glass"><h3>Adobe Premiere Pro</h3><p>Export <strong>FCP7 XML</strong> and open the file from Premiere (File &rsaquo; Open). It converts into a project with the sequences built, media online, and audio linked to video. Your raw folders become bins.</p></div><div class="glass"><h3>DaVinci Resolve</h3><p>Export <strong>FCP7 XML</strong> and use File &rsaquo; Import &rsaquo; Timeline. Media links itself. As an alternative, Alinhavo installs a script under Workspace &rsaquo; Scripts that syncs the open bin and builds the timelines without leaving Resolve.</p></div><div class="glass"><h3>Final Cut Pro</h3><p>Export <strong>FCPXML</strong> and import it from Final Cut. The file carries the tracks and the sync offsets.</p></div><div class="glass"><h3>Native multicam</h3><p>Turn on <strong>Matching timecode</strong> in the export menu. Alinhavo writes the same timecode across every camera in the XML, and your editor's multicam feature groups them on its own. Your original files are never touched.</p></div></div>
+  <div class="grid2"><div class="glass"><h3>Adobe Premiere Pro</h3><p>Export <strong>FCP7 XML</strong> and open the file from Premiere (File &rsaquo; Open). It converts into a project with the sequences built, media online, and audio linked to video. Your raw folders become bins.</p></div><div class="glass"><h3>DaVinci Resolve</h3><p>Export <strong>FCP7 XML</strong> and use File &rsaquo; Import &rsaquo; Timeline. Media links itself. As an alternative, Sincou installs a script under Workspace &rsaquo; Scripts that syncs the open bin and builds the timelines without leaving Resolve.</p></div><div class="glass"><h3>Final Cut Pro</h3><p>Export <strong>FCPXML</strong> and import it from Final Cut. The file carries the tracks and the sync offsets.</p></div><div class="glass"><h3>Native multicam</h3><p>Turn on <strong>Matching timecode</strong> in the export menu. Sincou writes the same timecode across every camera in the XML, and your editor's multicam feature groups them on its own. Your original files are never touched.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
   <div class="col"><h2>Questions along the way</h2></div>
-  <div class="faq col"><details><summary>Can I run only Ingest, without syncing?</summary><p>Yes. The two tabs are independent. Plenty of people run Ingest when they get back from the shoot and Sync the next day, with the footage already on storage.</p></details><details><summary>Can I sync footage that never went through Ingest?</summary><p>Yes. Sync reads any folder. Ingest exists for the path off the card, and is not a prerequisite.</p></details><details><summary>Does Alinhavo change my files?</summary><p>No. It reads the media and writes a separate XML. Even the matching timecode option leaves files alone: the new timecode lives inside the XML.</p></details><details><summary>How many cameras fit?</summary><p>There is no fixed limit. Cost grows with the number of plausible pairs, and a two-camera day with two recorders and more than two hundred clips runs in one pass on a MacBook.</p></details><details><summary>What about a multitrack recorder?</summary><p>Each file becomes a source. If your recorder writes one file per channel, put them in the same folder: Alinhavo treats them as the same piece of gear and won't try to sync one against the other.</p></details></div>
+  <div class="faq col"><details><summary>Can I run only Ingest, without syncing?</summary><p>Yes. The two tabs are independent. Plenty of people run Ingest when they get back from the shoot and Sync the next day, with the footage already on storage.</p></details><details><summary>Can I sync footage that never went through Ingest?</summary><p>Yes. Sync reads any folder. Ingest exists for the path off the card, and is not a prerequisite.</p></details><details><summary>Does Sincou change my files?</summary><p>No. It reads the media and writes a separate XML. Even the matching timecode option leaves files alone: the new timecode lives inside the XML.</p></details><details><summary>How many cameras fit?</summary><p>There is no fixed limit. Cost grows with the number of plausible pairs, and a two-camera day with two recorders and more than two hundred clips runs in one pass on a MacBook.</p></details><details><summary>What about a multitrack recorder?</summary><p>Each file becomes a source. If your recorder writes one file per channel, put them in the same folder: Sincou treats them as the same piece of gear and won't try to sync one against the other.</p></details></div>
 </div></section>
 
 <section class="closing"><div class="wrap">
   <h2>Ready to try it on your own footage?</h2>
   <p class="lede" style="margin-inline:auto">Seven days fully unlocked, no sign-up.</p>
-  <div class="cta-row"><a class="btn" href="/alinhavo-site/en/#preco">Download for Mac</a></div>
+  <div class="cta-row"><a class="btn" href="/sincou-site/en/#preco">Download for Mac</a></div>
 </div></section>
 </main>
 <footer><div class="wrap">
   <div class="foot-grid">
     <div>
-      <a class="brand" href="/alinhavo-site/en/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
+      <a class="brand" href="/sincou-site/en/" style="font-size:.98rem"><svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
   <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
     <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
-  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
-  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
-  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
-  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
-  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
-</svg> Alinhavo</a>
+  <rect x="248" y="196" width="30" height="632" rx="15" fill="currentColor"/>
+  <rect x="286" y="300" width="520" height="112" rx="56" fill="url(#lg)"/>
+  <rect x="286" y="456" width="600" height="112" rx="56" fill="url(#lg)" opacity=".82"/>
+  <rect x="286" y="612" width="420" height="112" rx="56" fill="url(#lg)" opacity=".64"/>
+</svg> Sincou</a>
       <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">Syncs the whole shoot day by sound, organizes your cards and hands your editor a finished timeline.</p>
     </div>
     <div><h4>Product</h4><ul>
-      <li><a href="/alinhavo-site/en/how-it-works/">How it works</a></li>
-      <li><a href="/alinhavo-site/en/pluraleyes-alternative/">From PluralEyes</a></li>
-      <li><a href="/alinhavo-site/en/whats-new/">What's new</a></li>
-      <li><a href="/alinhavo-site/en/#preco">Pricing</a></li>
+      <li><a href="/sincou-site/en/how-it-works/">How it works</a></li>
+      <li><a href="/sincou-site/en/pluraleyes-alternative/">From PluralEyes</a></li>
+      <li><a href="/sincou-site/en/whats-new/">What's new</a></li>
+      <li><a href="/sincou-site/en/#preco">Pricing</a></li>
     </ul></div>
     <div><h4>Legal</h4><ul>
-      <li><a href="/alinhavo-site/en/license/">License</a></li>
-      <li><a href="/alinhavo-site/en/terms/">Terms</a></li>
-      <li><a href="/alinhavo-site/en/privacy/">Privacy</a></li>
-      <li><a href="/alinhavo-site/en/refunds/">Refunds</a></li>
+      <li><a href="/sincou-site/en/license/">License</a></li>
+      <li><a href="/sincou-site/en/terms/">Terms</a></li>
+      <li><a href="/sincou-site/en/privacy/">Privacy</a></li>
+      <li><a href="/sincou-site/en/refunds/">Refunds</a></li>
     </ul></div>
     <div><h4>Contact</h4><ul>
-      <li><a href="mailto:contato@alinhavo.app">contato@alinhavo.app</a></li>
+      <li><a href="mailto:contato@sincou.com.br">contato@sincou.com.br</a></li>
     </ul></div>
   </div>
   <div class="foot-end">
@@ -547,14 +572,14 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
 <script>
 (function () {
   var btn = document.getElementById("theme");
-  var saved = localStorage.getItem("alinhavo-theme");
+  var saved = localStorage.getItem("sincou-theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
   if (btn) btn.addEventListener("click", function () {
     var atual = document.documentElement.getAttribute("data-theme") || "light";
     var novo = atual === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", novo);
-    localStorage.setItem("alinhavo-theme", novo);
-    document.dispatchEvent(new CustomEvent("alinhavo:theme", {detail: novo}));
+    localStorage.setItem("sincou-theme", novo);
+    document.dispatchEvent(new CustomEvent("sincou:theme", {detail: novo}));
   });
 })();
 </script>

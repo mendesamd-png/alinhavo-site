@@ -16,37 +16,39 @@ ENTITY = {
     "trade": "Mangue Seco Filmes",
     "id": "48.389.938/0001-71",
     "address": "Rua dos Caciques, 414 · Vila da Saúde · São Paulo · SP",
-    "email": "contato@alinhavo.app",
+    "email": "contato@sincou.com.br",
 }
 
 UPDATED = "21 de agosto de 2026"
 
 L = {
     # ============================================================ EULA ======
-    "eula_title": "Licença de uso do Alinhavo",
-    "eula_desc": "Termos da licença de uso do software Alinhavo.",
+    "eula_title": "Licença de uso do Sincou",
+    "eula_desc": "Termos da licença de uso do software Sincou.",
     "eula_h1": "Licença de uso",
-    "eula_lede": "Este documento diz o que você pode fazer com o Alinhavo depois "
+    "eula_lede": "Este documento diz o que você pode fazer com o Sincou depois "
                  "de instalar. Ele vale para a versão de teste e para a versão "
                  "licenciada.",
     "eula_body": [
         ("1. O que você recebe", [
-            "Ao instalar o Alinhavo você recebe uma licença de uso pessoal, "
+            "Ao instalar o Sincou você recebe uma licença de uso pessoal, "
             "permanente e não exclusiva do programa, na versão 1.x. A licença "
             "é sua para usar; o programa em si continua sendo nosso.",
-            "A licença <strong>Alinhavo</strong> vale para um computador do "
+            "A licença <strong>Sincou</strong> vale para um computador do "
             "titular. A licença <strong>Estúdio</strong> cobre até três "
             "estações da mesma empresa. Trocar de máquina é permitido: "
             "desative em uma e ative na outra.",
-            "A ativação acontece no seu computador. O Alinhavo funciona sem "
-            "conexão com a internet, e não existe servidor que possa deixar "
-            "de responder e impedir o seu trabalho.",
+            "A ativação pede conexão uma única vez, para registrar a "
+            "máquina e respeitar o limite contratado. Depois disso o "
+            "Sincou trabalha sem internet por até 30 dias seguidos entre "
+            "uma conferência e outra, e a conferência acontece sozinha "
+            "quando houver conexão.",
         ]),
         ("2. O que você produz com ele", [
-            "Tudo o que sai do Alinhavo é seu: os arquivos XML, os relatórios, "
+            "Tudo o que sai do Sincou é seu: os arquivos XML, os relatórios, "
             "as cópias que o ingest fez. Não reivindicamos nenhum direito "
             "sobre o seu material nem sobre o resultado do seu trabalho.",
-            "Você pode usar o Alinhavo em trabalho comercial sem pagar nada "
+            "Você pode usar o Sincou em trabalho comercial sem pagar nada "
             "além da licença.",
         ]),
         ("3. O que a licença não permite", [
@@ -63,12 +65,14 @@ L = {
             "continua funcionando como sempre funcionou.",
         ]),
         ("5. Programas de terceiros", [
-            "O Alinhavo usa o ffmpeg para ler mídia. O ffmpeg é um programa "
-            "livre, de terceiros, e não é distribuído dentro do aplicativo: "
-            "você o instala separadamente. Ele tem a própria licença.",
+            "O Sincou usa o ffmpeg para ler mídia. O ffmpeg é um programa "
+            "livre, de terceiros, distribuído dentro do aplicativo sob a "
+            "licença LGPL 2.1, em versão compilada sem os componentes GPL. "
+            "O texto da licença e o endereço do código-fonte correspondente "
+            "acompanham o aplicativo.",
         ]),
         ("6. Garantia e limites", [
-            "O Alinhavo é entregue como está. Ele foi testado com material real "
+            "O Sincou é entregue como está. Ele foi testado com material real "
             "de produção e mede o próprio resultado, mas nenhum software de "
             "sincronização substitui a conferência de quem edita. "
             "<strong>Confira o resultado antes de comprometer uma "
@@ -94,14 +98,14 @@ L = {
 
     # =========================================================== TERMOS =====
     "terms_title": "Termos de uso",
-    "terms_desc": "Termos de uso do site e condições de venda do Alinhavo.",
+    "terms_desc": "Termos de uso do site e condições de venda do Sincou.",
     "terms_h1": "Termos de uso",
     "terms_lede": "Estes termos valem para este site e para a compra de "
-                  "licenças do Alinhavo. A licença do programa em si está em "
+                  "licenças do Sincou. A licença do programa em si está em "
                   "documento próprio.",
     "terms_body": [
         ("1. Este site", [
-            "Este site apresenta o Alinhavo, distribui a versão de teste e vende "
+            "Este site apresenta o Sincou, distribui a versão de teste e vende "
             "licenças. Ao usá-lo, você concorda com estes termos.",
             "Os números de desempenho publicados aqui vêm de medições feitas "
             "com material de produção real e estão descritos junto ao número. "
@@ -145,7 +149,7 @@ L = {
 
     # ====================================================== PRIVACIDADE =====
     "privacy_title": "Privacidade",
-    "privacy_desc": "O que o Alinhavo coleta e o que ele nunca coleta. "
+    "privacy_desc": "O que o Sincou coleta e o que ele nunca coleta. "
                     "Processamento local, sem upload de mídia.",
     "privacy_h1": "Privacidade",
     "privacy_lede": "A resposta curta: o seu material nunca sai do seu "
@@ -153,7 +157,7 @@ L = {
                     "acontece fora dele.",
     "privacy_body": [
         ("O que o aplicativo faz com o seu material", [
-            "<strong>Nada sai da sua máquina.</strong> O Alinhavo lê os arquivos "
+            "<strong>Nada sai da sua máquina.</strong> O Sincou lê os arquivos "
             "do seu disco, processa o áudio na sua CPU e escreve o XML de "
             "volta no seu disco. Não há upload, não há conta para criar e não "
             "há nuvem envolvida no processamento.",
@@ -200,7 +204,7 @@ L = {
 
     # ======================================================== REEMBOLSO =====
     "refunds_title": "Reembolso",
-    "refunds_desc": "Política de reembolso do Alinhavo: quatorze dias, sem "
+    "refunds_desc": "Política de reembolso do Sincou: quatorze dias, sem "
                     "necessidade de justificar.",
     "refunds_h1": "Reembolso",
     "refunds_lede": "Teste sete dias antes de pagar. Se mesmo assim a compra "

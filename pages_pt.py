@@ -2,8 +2,8 @@
 
 P = {
     # ================================================== COMO FUNCIONA =======
-    "howto_title": "Como funciona o Alinhavo",
-    "howto_desc": "Passo a passo do Alinhavo: copiar os cartões com verificação, "
+    "howto_title": "Como funciona o Sincou",
+    "howto_desc": "Passo a passo do Sincou: copiar os cartões com verificação, "
                   "sincronizar a diária pelo som e exportar a timeline para "
                   "Premiere, DaVinci Resolve ou Final Cut.",
     "howto_eyebrow": "Passo a passo",
@@ -23,11 +23,11 @@ P = {
     "howto_ing_steps": [
         ("Escolha o destino e nomeie o job",
          "Aponte o volume onde o material vai morar e escreva o nome do job. "
-         "Enquanto você digita, o Alinhavo mostra o caminho real que vai nascer "
+         "Enquanto você digita, o Sincou mostra o caminho real que vai nascer "
          "no disco, já com a data na frente. O que aparece na tela é "
          "literalmente a pasta que vai existir."),
         ("Solte os cartões",
-         "Arraste um cartão, vários, ou pastas já copiadas. O Alinhavo lê a "
+         "Arraste um cartão, vários, ou pastas já copiadas. O Sincou lê a "
          "árvore inteira, soma o volume e compara com o espaço livre do "
          "destino antes de escrever qualquer coisa."),
         ("Copie com verificação",
@@ -44,7 +44,7 @@ P = {
     "howto_ing_shot": "A aba Ingest com o destino, o job e o caminho real "
                       "aparecendo em tempo real.",
     "howto_ing_tip_h": "Sobre mover em vez de copiar",
-    "howto_ing_tip_p": "O Alinhavo copia, sempre. Mover apaga a origem antes de "
+    "howto_ing_tip_p": "O Sincou copia, sempre. Mover apaga a origem antes de "
                        "você ter conferido o destino, e a única hora em que "
                        "isso importa é a hora em que dá errado. Formate o "
                        "cartão você mesmo, depois de ver o relatório.",
@@ -57,12 +57,12 @@ P = {
                         "separado.",
     "howto_sync_steps": [
         ("Organize o bruto em pastas por fonte",
-         "Uma pasta por câmera, uma por gravador. O Alinhavo usa a pasta para "
+         "Uma pasta por câmera, uma por gravador. O Sincou usa a pasta para "
          "saber que aqueles arquivos vieram do mesmo equipamento, e isso "
          "melhora tanto o agrupamento quanto a leitura da timeline. Se o "
          "material já veio do Ingest, a estrutura já está pronta."),
         ("Solte tudo de uma vez",
-         "Arraste a pasta da diária inteira. O Alinhavo faz um reconhecimento "
+         "Arraste a pasta da diária inteira. O Sincou faz um reconhecimento "
          "rápido, sem decodificar áudio, e já desenha o material na timeline "
          "com a forma de onda de cada clipe. O resumo no topo diz quantos "
          "clipes, quantas câmeras e quantos gravadores entraram."),
@@ -80,7 +80,7 @@ P = {
          "embaixo. A distância horizontal entre os blocos é o tempo real "
          "entre as gravações, então o espaço vazio também é informação."),
         ("Ouça antes de exportar",
-         "Clique em qualquer ponto e dê play. O Alinhavo mixa em tempo real "
+         "Clique em qualquer ponto e dê play. O Sincou mixa em tempo real "
          "todos os clipes sob o cursor. Alinhado soa como uma fonte só; fora "
          "de sync produz eco. É a conferência mais rápida que existe, e ela "
          "acontece antes de o material chegar no editor."),
@@ -122,7 +122,7 @@ P = {
     "howto_thresholds_h": "Se a triagem estiver conservadora demais",
     "howto_thresholds_p": "A engrenagem no topo abre dois limiares. "
                           "<strong>Sync threshold</strong> é o mínimo para o "
-                          "Alinhavo aceitar um alinhamento. <strong>Lock "
+                          "Sincou aceitar um alinhamento. <strong>Lock "
                           "threshold</strong> é o mínimo para ele parar de "
                           "pedir revisão. Material com muito ruído de set ou "
                           "sobreposição curta pede um limiar mais baixo; "
@@ -136,7 +136,7 @@ P = {
          "laranja está certo: não existe com o que sincronizar."),
         ("A sobreposição é curta demais",
          "Poucos segundos em comum produzem correlação que parece boa e não é. "
-         "O Alinhavo pesa a evidência pelo tamanho da sobreposição justamente "
+         "O Sincou pesa a evidência pelo tamanho da sobreposição justamente "
          "para não cair nisso."),
         ("O áudio não tem eventos",
          "Um trecho de silêncio, de vento ou de tom contínuo não dá ao motor "
@@ -156,7 +156,7 @@ P = {
          "material bruto viram bins."),
         ("DaVinci Resolve",
          "Exporte <strong>XML do FCP7</strong> e use File &rsaquo; Import "
-         "&rsaquo; Timeline. A mídia linka sozinha. Como alternativa, o Alinhavo "
+         "&rsaquo; Timeline. A mídia linka sozinha. Como alternativa, o Sincou "
          "instala um script em Workspace &rsaquo; Scripts que sincroniza o bin "
          "aberto e monta as timelines sem sair do Resolve."),
         ("Final Cut Pro",
@@ -164,7 +164,7 @@ P = {
          "leva as faixas e os offsets do sync."),
         ("Multicam nativo",
          "Ligue <strong>Matching timecode</strong> no menu de exportação. O "
-         "Alinhavo escreve o mesmo timecode para todas as câmeras no XML, e a "
+         "Sincou escreve o mesmo timecode para todas as câmeras no XML, e a "
          "função de multicam do seu editor agrupa sozinha. Seus arquivos "
          "originais não são tocados."),
     ],
@@ -178,7 +178,7 @@ P = {
         ("Posso sincronizar material que não passou pelo Ingest?",
          "Pode. O Sync lê qualquer pasta. O Ingest existe para o caminho do "
          "cartão, e não é pré-requisito."),
-        ("O Alinhavo altera meus arquivos?",
+        ("O Sincou altera meus arquivos?",
          "Não. Ele lê a mídia e escreve um XML separado. Nem a opção de "
          "igualar timecode toca nos arquivos: o timecode novo vive dentro do "
          "XML."),
@@ -188,7 +188,7 @@ P = {
          "de duzentos clipes roda de uma vez num MacBook."),
         ("E se eu tiver um gravador de várias faixas?",
          "Cada arquivo vira uma fonte. Se o gravador escreve um arquivo por "
-         "canal, coloque-os na mesma pasta: o Alinhavo os trata como o mesmo "
+         "canal, coloque-os na mesma pasta: o Sincou os trata como o mesmo "
          "equipamento e não tenta sincronizar um contra o outro."),
     ],
     "howto_cta_h": "Pronto para experimentar no seu material?",
@@ -196,7 +196,7 @@ P = {
 
     # ================================================ ALTERNATIVA PE ========
     "pe_title": "Alternativa ao PluralEyes para Mac",
-    "pe_desc": "O PluralEyes saiu de cena. O Alinhavo sincroniza a diária pelo "
+    "pe_desc": "O PluralEyes saiu de cena. O Sincou sincroniza a diária pelo "
                "áudio, roda nativo em Apple Silicon e exporta para Premiere, "
                "DaVinci Resolve e Final Cut.",
     "pe_page_eyebrow": "Migração",
@@ -204,7 +204,7 @@ P = {
     "pe_page_lede": "Por quase quinze anos, sincronizar multicam por áudio "
                     "queria dizer PluralEyes. O hábito que ele criou continua "
                     "certo: o som que todas as câmeras captaram é a evidência "
-                    "mais confiável que existe numa diária. O Alinhavo parte "
+                    "mais confiável que existe numa diária. O Sincou parte "
                     "desse mesmo princípio e resolve as partes que "
                     "envelheceram.",
 
@@ -216,19 +216,19 @@ P = {
          "entre eles é exatamente o offset. Esse princípio não envelheceu."),
         ("Um botão, a diária inteira",
          "A interface certa para essa tarefa é quase nenhuma interface: "
-         "material dentro, timeline fora. O Alinhavo mantém isso."),
+         "material dentro, timeline fora. O Sincou mantém isso."),
         ("Entregar para o NLE em XML",
          "Trocar timeline por arquivo funciona melhor que plugin instalado "
          "dentro do editor, porque sobrevive à atualização do editor."),
     ],
 
-    "pe_diff_h2": "O que muda no Alinhavo",
+    "pe_diff_h2": "O que muda no Sincou",
     "pe_diff": [
         ("Nativo em Apple Silicon",
          "O processamento roda direto no seu Mac, sem camada de tradução. "
          "Nada é enviado para nenhum servidor."),
         ("A confiança fica visível",
-         "Cada alinhamento carrega uma nota. O Alinhavo separa o que travou, o "
+         "Cada alinhamento carrega uma nota. O Sincou separa o que travou, o "
          "que merece uma conferida e o que ficou de fora, em vez de entregar "
          "tudo com a mesma cara. Um sync errado descoberto na sala de exibição "
          "custa muito mais caro do que um clipe marcado em amarelo."),
@@ -247,7 +247,7 @@ P = {
     "pe_move": [
         ("Mantenha suas pastas como estão",
          "Uma pasta por câmera, uma por gravador. É a mesma organização que o "
-         "PluralEyes pedia, e o Alinhavo lê exatamente isso."),
+         "PluralEyes pedia, e o Sincou lê exatamente isso."),
         ("Solte a diária e aperte Sync",
          "Não há projeto para criar nem configuração para acertar antes. Os "
          "limiares têm padrões que funcionam, e ficam a um clique se você "
@@ -261,8 +261,8 @@ P = {
                      "familiar, este vai parecer o mesmo lugar, mais rápido.",
 
     # ====================================================== NOVIDADES =======
-    "wn_title": "Novidades do Alinhavo",
-    "wn_desc": "O que mudou em cada versão do Alinhavo.",
+    "wn_title": "Novidades do Sincou",
+    "wn_desc": "O que mudou em cada versão do Sincou.",
     "wn_eyebrow": "Registro",
     "wn_h1": "Novidades",
     "wn_lede": "Cada versão e o que ela trouxe. As correções que valem nota "

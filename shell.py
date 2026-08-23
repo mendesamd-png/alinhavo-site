@@ -7,14 +7,14 @@ monta o texto depois do script chega vazia no rastreador.
 """
 from __future__ import annotations
 
-SITE = "https://mendesamd-png.github.io/alinhavo-site"
+SITE = "https://mendesamd-png.github.io/sincou-site"
 
 # Prefixo de TODO caminho interno. O GitHub Pages serve um repositorio de
 # projeto sob /nome-do-repo/, entao um href="/como-funciona/" cai fora do
-# site e devolve 404. Num dominio proprio (alinhavo.app) isto vira "" e nada
+# site e devolve 404. Num dominio proprio (sincou.com.br) isto vira "" e nada
 # mais precisa mudar: `build.rebase()` reescreve os caminhos na hora de
 # gravar, em vez de espalhar o prefixo por cada link.
-BASE = "/alinhavo-site"
+BASE = "/sincou-site"
 
 # ---------------------------------------------------------------- paleta ---
 CSS = """
@@ -197,27 +197,32 @@ footer { padding: 48px 0 64px; color: var(--ink-faint); font-size: .88rem; }
 JS = """
 (function () {
   var btn = document.getElementById("theme");
-  var saved = localStorage.getItem("alinhavo-theme");
+  var saved = localStorage.getItem("sincou-theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
   if (btn) btn.addEventListener("click", function () {
     var atual = document.documentElement.getAttribute("data-theme") || "light";
     var novo = atual === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", novo);
-    localStorage.setItem("alinhavo-theme", novo);
-    document.dispatchEvent(new CustomEvent("alinhavo:theme", {detail: novo}));
+    localStorage.setItem("sincou-theme", novo);
+    document.dispatchEvent(new CustomEvent("sincou:theme", {detail: novo}));
   });
 })();
 """
 
+# O simbolo do Sincou: as pontas DIREITAS sao irregulares porque as tomadas
+# tem duracoes diferentes; as ESQUERDAS batem todas no mesmo trilho, e e so
+# isso que o programa faz. A irregularidade e a informacao - alinhar as
+# pontas direitas "para ficar mais bonito" apaga o significado inteiro.
+# O trilho ultrapassa em cima e embaixo para o conjunto nao virar um
+# grafico de barras.
 LOGO = """<svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true">
   <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#F472B6"/>
     <stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
-  <rect x="190" y="330" width="620" height="110" rx="55" fill="url(#lg)"/>
-  <rect x="300" y="470" width="560" height="110" rx="55" fill="url(#lg)" opacity=".8"/>
-  <rect x="410" y="610" width="450" height="110" rx="55" fill="url(#lg)" opacity=".62"/>
-  <rect x="551" y="240" width="18" height="550" rx="9" fill="currentColor"/>
-  <path d="M508 205 H612 L560 292 Z" fill="currentColor"/>
+  <rect x="248" y="196" width="30" height="632" rx="15" fill="currentColor"/>
+  <rect x="286" y="300" width="520" height="112" rx="56" fill="url(#lg)"/>
+  <rect x="286" y="456" width="600" height="112" rx="56" fill="url(#lg)" opacity=".82"/>
+  <rect x="286" y="612" width="420" height="112" rx="56" fill="url(#lg)" opacity=".64"/>
 </svg>"""
 
 # bandeira do Brasil desenhada em SVG: um emoji nao renderiza igual em todo
@@ -257,7 +262,7 @@ def header(t: dict, base: str, alt_url: str, here: str = "") -> str:
         mark = ' aria-current="page"' if here == key else ""
         return f'<a href="{base}{url}" class="{cls}"{mark}>{t["nav_" + key]}</a>'
     return f"""<header><div class="wrap"><div class="bar glass">
-  <a class="brand" href="{base}/">{LOGO} Alinhavo</a>
+  <a class="brand" href="{base}/">{LOGO} Sincou</a>
   <nav>
     {link("howto", t["url_howto"])}
     {link("pluraleyes", t["url_pluraleyes"])}
@@ -277,7 +282,7 @@ def footer(t: dict, base: str) -> str:
     return f"""<footer><div class="wrap">
   <div class="foot-grid">
     <div>
-      <a class="brand" href="{base}/" style="font-size:.98rem">{LOGO} Alinhavo</a>
+      <a class="brand" href="{base}/" style="font-size:.98rem">{LOGO} Sincou</a>
       <p style="margin-top:12px;color:var(--ink-soft);max-width:34ch">{t["foot_tagline"]}</p>
     </div>
     <div><h4>{t["foot_product"]}</h4><ul>

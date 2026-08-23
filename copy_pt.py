@@ -10,6 +10,9 @@ quando alguém cola o link.
 """
 
 VERSION = "1.0"
+# Data da versao publicada. Atualize junto com VERSION: uma data velha
+# no hero diz o contrario do que a linha existe para dizer.
+RELEASE = "23 de agosto de 2026"
 UPDATED = "21 de agosto de 2026"
 
 T = {
@@ -33,7 +36,7 @@ T = {
     "url_terms": "/termos/",
     "url_privacy": "/privacidade/",
     "url_refunds": "/reembolso/",
-    "email": "contato@alinhavo.app",
+    "email": "contato@sincou.com.br",
 
     # ---------------------------------------------------------- rodapé -----
     "foot_tagline": "Sincroniza a diária pelo som, organiza os cartões e "
@@ -46,7 +49,7 @@ T = {
     "made_in": "Feito no Brasil",
 
     # =========================================================== HOME =======
-    "home_title": "Alinhavo",
+    "home_title": "Sincou",
     "home_tagline": "sincroniza a diária pelo som",
     "home_desc": "Sincronize a diária inteira pelo som e importe no Premiere, "
                  "DaVinci Resolve ou Final Cut com a timeline pronta. Para "
@@ -59,7 +62,11 @@ T = {
                  "cortar.",
     "hero_cta": "Baixar para Mac",
     "hero_cta2": "Ver o passo a passo",
+    # Versao e data no hero pela mesma razao que o concorrente faz: num
+    # produto de uma pessoa so, a duvida silenciosa de quem chega e "isto
+    # ainda e mantido?". Uma data recente responde antes da pergunta.
     "hero_note": "macOS 11+ · Apple Silicon e Intel · nada a instalar além dele",
+    "hero_versao": "Versão {v} · {d}",
     "stage_clips": "242 clipes",
     "stage_srcs": "2 câmeras · 2 gravadores",
     "stage_dur": "7,6 h de material",
@@ -79,7 +86,7 @@ T = {
                  "máquina que mantém a mesma atenção no clipe 1 e no clipe 242.",
     "flow1_h": "Solte o material",
     "flow1_p": "Pastas inteiras, taxas de quadro misturadas, câmeras e "
-               "gravadores juntos. O Alinhavo lê os metadados na hora e desenha "
+               "gravadores juntos. O Sincou lê os metadados na hora e desenha "
                "a timeline antes de analisar.",
     "flow2_h": "Aperte Sync",
     "flow2_p": "O motor compara as formas de onda e alinha cada clipe com "
@@ -95,13 +102,13 @@ T = {
     "pe_eyebrow": "Continuidade",
     "pe_h2": "Você já conhece este fluxo",
     "pe_lede": "O PluralEyes ensinou uma geração de editores a confiar no som "
-               "para sincronizar. O Alinhavo segue esse caminho e roda nativo "
+               "para sincronizar. O Sincou segue esse caminho e roda nativo "
                "nos Macs de hoje.",
     "pe_same_h": "O que continua igual",
     "pe_same": ["Solte a diária inteira e deixe o áudio resolver o alinhamento",
                 "Uma timeline por bloco de gravação, cada ângulo na sua faixa",
                 "XML que abre direto no Premiere e no DaVinci Resolve"],
-    "pe_new_h": "O que o Alinhavo traz",
+    "pe_new_h": "O que o Sincou traz",
     "pe_new": ["Nativo em Apple Silicon, com o áudio processado no seu Mac",
                "Backup verificado dos cartões dentro do mesmo aplicativo",
                "Player para conferir o sync de ouvido antes de exportar",
@@ -118,7 +125,7 @@ T = {
          "justamente o que mantém a mídia online quando o projeto tem câmeras "
          "diferentes."),
         ("Revisão", "Ouça antes de exportar",
-         "Clique em qualquer ponto da timeline e dê play: o Alinhavo mixa as "
+         "Clique em qualquer ponto da timeline e dê play: o Sincou mixa as "
          "câmeras sob o cursor em tempo real. Alinhado soa junto, e o ouvido "
          "confirma o sync antes de o material chegar no NLE."),
         ("Triagem", "Três estados, uma cor cada",
@@ -129,7 +136,7 @@ T = {
          "monta as timelines por dentro do Resolve, com os clipes linkados ao "
          "Media Pool e a triagem pintada."),
         ("Timecode", "Igualar TC para multicam",
-         "Na exportação, o Alinhavo escreve o mesmo timecode para todas as "
+         "Na exportação, o Sincou escreve o mesmo timecode para todas as "
          "câmeras e o multicam nativo do seu editor agrupa sozinho. Seus "
          "arquivos permanecem intactos."),
         ("Privacidade", "Tudo acontece no seu Mac",
@@ -141,7 +148,7 @@ T = {
     "ing_eyebrow": "Passo zero",
     "ing_h2": "O cartão chega inteiro, e você tem prova disso",
     "ing_lede": "Antes de sincronizar existe o momento mais frágil da diária: "
-                "a mídia mora num cartão só. O Alinhavo copia, confere byte a "
+                "a mídia mora num cartão só. O Sincou copia, confere byte a "
                 "byte e registra o que aconteceu com cada arquivo.",
     "ing_items": [
         ("Verificação byte a byte",
@@ -150,7 +157,7 @@ T = {
          "leitura de volta é o que revela isso enquanto o cartão ainda está "
          "no leitor."),
         ("Espaço conferido antes do primeiro byte",
-         "O Alinhavo soma o volume a copiar e compara com o disco antes de "
+         "O Sincou soma o volume a copiar e compara com o disco antes de "
          "começar. Descobrir disco cheio no arquivo 15 de 63 é o pior momento "
          "possível, então a conta vem primeiro."),
         ("Estrutura montada no ato",
@@ -189,7 +196,7 @@ T = {
     "price_eyebrow": "Licença",
     "price_h2": "Compra uma vez, é seu",
     "price_lede": "Comece pelos sete dias com tudo liberado. Quando eles "
-                  "acabam o Alinhavo continua seu, sincronizando projetos de "
+                  "acabam o Sincou continua seu, sincronizando projetos de "
                   "até 10 clipes, sem prazo para expirar. A licença tira o "
                   "teto e é comprada uma vez só.",
     "plan1_name": "Grátis",
@@ -220,11 +227,38 @@ T = {
     "soon_p": "O motor já roda multiplataforma. A versão empacotada para "
               "Windows entra em seguida.",
 
+    # A secao de autor existe pela mesma razao que o concorrente tem a dele:
+    # num produto de uma pessoa so, saber QUEM fez e parte do que se compra.
+    # A diferenca e que aqui a historia e de quem edita, nao de quem migrou
+    # para o video depois - e isso e o argumento, nao um detalhe biografico.
+    "autor_eyebrow": "Quem fez",
+    "autor_h2": "Feito por quem passa o dia editando",
+    "autor_iniciais": "DM",
+    "autor_nome": "Douglas Mendes",
+    "autor_cargo": "Editor e autor do Sincou",
+    "autor_p": [
+        "Sou o Douglas Mendes, editor. O Sincou nasceu de uma diária como tantas "
+        "outras: duas câmeras, dois gravadores, sete horas de material e uma "
+        "tarde inteira arrastando forma de onda antes de conseguir começar a "
+        "editar de verdade.",
+        "Testei o que existia. As ferramentas boas cobram assinatura; as que "
+        "cabiam no orçamento engasgavam justamente no material grande, que é "
+        "onde a sincronização deixa de ser conveniência e vira o gargalo do "
+        "dia. Então escrevi a minha.",
+        "O Sincou foi construído contra material de produção, não contra "
+        "exemplo de laboratório. A diária mais pesada que passou por ele tem "
+        "242 clipes e 7,6 horas, e é a mesma que eu uso para testar cada "
+        "alteração: se ele errar nela, eu descubro antes de você.",
+    ],
+    "autor_promessa": "São sete dias com tudo liberado, e depois disso ele "
+                      "continua seu, sincronizando até 10 clipes por vez, sem "
+                      "prazo. Se travar em alguma coisa, escreva: quem lê o "
+                      "suporte sou eu, e respondo em até dois dias úteis.",
     "faq_eyebrow": "Perguntas",
     "faq_h2": "Antes de baixar",
     "faq": [
         ("Preciso de claquete ou de timecode casado?",
-         "O Alinhavo trabalha com o som que as câmeras e o gravador captaram do "
+         "O Sincou trabalha com o som que as câmeras e o gravador captaram do "
          "mesmo evento, então basta que cada arquivo tenha áudio. Quando há "
          "timecode, ele entra como conferência e avisa se discordar do áudio."),
         ("E se o áudio da câmera for ruim?",
@@ -239,28 +273,40 @@ T = {
          "dele, que é o que garante o link dentro do NLE."),
         ("O que acontece com o que fica fora do sync?",
          "Vai para o fim da timeline, marcado em cor, separado do material que "
-         "fechou. O Alinhavo prefere apontar o clipe duvidoso a entregar um "
+         "fechou. O Sincou prefere apontar o clipe duvidoso a entregar um "
          "alinhamento que você descobriria errado na sala de exibição."),
         ("Quantos clipes ele aguenta de uma vez?",
          "A validação mais pesada até agora foi uma diária de 242 clipes, 7,6 "
          "horas de material, duas câmeras e dois gravadores, processada de uma "
          "vez num MacBook."),
         ("Preciso instalar mais alguma coisa?",
-         "Nada. O Alinhavo já vem com tudo o que precisa para ler mídia, "
+         "Nada. O Sincou já vem com tudo o que precisa para ler mídia, "
          "inclusive o decodificador. Baixe, arraste para Aplicativos e abra."),
         ("O que acontece quando os 7 dias acabam?",
-         "O Alinhavo continua funcionando. Ele passa para o modo gratuito, que "
+         "O Sincou continua funcionando. Ele passa para o modo gratuito, que "
          "sincroniza projetos de até 10 clipes por vez, sem prazo e sem marca "
          "no XML. Diárias maiores pedem a licença, e ela é comprada uma vez."),
         ("A licença expira ou vira assinatura?",
          "Nem uma coisa nem outra. Você compra uma vez e ela é sua, com as "
-         "atualizações da versão 1.x incluídas. A ativação acontece no seu "
-         "computador e o app abre offline: não existe servidor que possa "
-         "deixar de responder e impedir o seu trabalho."),
+         "atualizações da versão 1.x incluídas."),
+        ("Como recebo a chave depois de comprar?",
+         "Ela chega no seu e-mail em segundos, automaticamente, junto com o "
+         "recibo. Cole no app, aperte Ativar e pronto. Se não achar a "
+         "mensagem, confira a caixa de promoções antes de escrever para nós."),
+        ("Perdi minha chave. E agora?",
+         "Ela está no e-mail da compra, e continua disponível na página de "
+         "gerenciamento que veio junto com ele. Não é preciso pedir uma nova."),
+        ("Preciso de internet para trabalhar?",
+         "Só uma vez, no momento de ativar. Depois disso o Sincou trabalha "
+         "offline por 30 dias seguidos entre uma conferência e outra, e a "
+         "conferência acontece sozinha quando você estiver conectado. Nenhuma "
+         "diária dura 30 dias, então na prática você nunca esbarra nisso."),
         ("Posso instalar em mais de um computador?",
-         "A licença Alinhavo vale para um Mac, e a Estúdio para três. "
-         "Trocar de máquina é livre: você libera a vaga dentro do próprio app "
-         "e ativa no outro computador. Reinstalar o sistema no mesmo Mac não "
+         "A licença Sincou vale para um Mac, e a Estúdio para três. "
+         "Trocar de máquina é livre: você libera a vaga dentro do próprio app, "
+         "em Licença > Liberar este Mac, e ativa no outro computador. Dá para "
+         "fazer o mesmo pela página de gerenciamento, se o Mac antigo não "
+         "estiver mais com você. Reinstalar o sistema no mesmo Mac não "
          "consome uma vaga nova."),
         ("Tem versão para Windows?",
          "Em desenvolvimento. O motor já é multiplataforma, e a versão "

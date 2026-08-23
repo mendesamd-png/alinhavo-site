@@ -1,6 +1,9 @@
 """All site copy in English. Same keys as `copy_pt.py`."""
 
 VERSION = "1.0"
+# Data da versao publicada. Atualize junto com VERSION: uma data velha
+# no hero diz o contrario do que a linha existe para dizer.
+RELEASE = "23 August 2026"
 UPDATED = "August 21, 2026"
 
 T = {
@@ -24,7 +27,7 @@ T = {
     "url_terms": "/terms/",
     "url_privacy": "/privacy/",
     "url_refunds": "/refunds/",
-    "email": "contato@alinhavo.app",
+    "email": "contato@sincou.com.br",
 
     # --------------------------------------------------------- footer ------
     "foot_tagline": "Syncs the whole shoot day by sound, organizes your cards "
@@ -37,7 +40,7 @@ T = {
     "made_in": "Made in Brazil",
 
     # =========================================================== HOME =======
-    "home_title": "Alinhavo",
+    "home_title": "Sincou",
     "home_tagline": "sync your shoot day by sound",
     "home_desc": "Sync a whole shoot day by sound and import into Premiere, "
                  "DaVinci Resolve or Final Cut with the timeline already "
@@ -50,6 +53,7 @@ T = {
     "hero_cta": "Download for Mac",
     "hero_cta2": "See how it works",
     "hero_note": "macOS 11+ · Apple Silicon and Intel · nothing else to install",
+    "hero_versao": "Version {v} · {d}",
     "stage_clips": "242 clips",
     "stage_srcs": "2 cameras · 2 recorders",
     "stage_dur": "7.6 h of footage",
@@ -68,7 +72,7 @@ T = {
                  "that pays the same attention to clip 1 and clip 242.",
     "flow1_h": "Drop the footage",
     "flow1_p": "Whole folders, mixed frame rates, cameras and recorders "
-               "together. Alinhavo reads the metadata right away and draws the "
+               "together. Sincou reads the metadata right away and draws the "
                "timeline before analyzing anything.",
     "flow2_h": "Press Sync",
     "flow2_p": "The engine compares waveforms and aligns every clip to the "
@@ -84,13 +88,13 @@ T = {
     "pe_eyebrow": "Continuity",
     "pe_h2": "You already know this flow",
     "pe_lede": "PluralEyes taught a generation of editors to trust sound for "
-               "syncing. Alinhavo follows that path and runs native on today's "
+               "syncing. Sincou follows that path and runs native on today's "
                "Macs.",
     "pe_same_h": "What stays the same",
     "pe_same": ["Drop the whole day and let the audio resolve the alignment",
                 "One timeline per recording block, every angle on its own track",
                 "XML that opens straight into Premiere and DaVinci Resolve"],
-    "pe_new_h": "What Alinhavo adds",
+    "pe_new_h": "What Sincou adds",
     "pe_new": ["Native on Apple Silicon, with audio processed on your own Mac",
                "Verified card backup inside the same application",
                "A player to check the sync by ear before exporting",
@@ -106,7 +110,7 @@ T = {
          "Every file enters the XML at the rate it was shot, which is exactly "
          "what keeps media online when a project mixes cameras."),
         ("Review", "Listen before you export",
-         "Click anywhere on the timeline and hit play: Alinhavo mixes the "
+         "Click anywhere on the timeline and hit play: Sincou mixes the "
          "cameras under the cursor in real time. Aligned sounds like one "
          "source, and your ear confirms the sync before the footage ever "
          "reaches the NLE."),
@@ -118,7 +122,7 @@ T = {
          "builds the timelines from inside Resolve, with clips linked to the "
          "Media Pool and triage already colored."),
         ("Timecode", "Matching TC for multicam",
-         "On export, Alinhavo writes the same timecode across every camera and "
+         "On export, Sincou writes the same timecode across every camera and "
          "your editor's native multicam groups them on its own. Your files "
          "stay untouched."),
         ("Privacy", "Everything happens on your Mac",
@@ -130,7 +134,7 @@ T = {
     "ing_eyebrow": "Step zero",
     "ing_h2": "The card arrives whole, and you have proof",
     "ing_lede": "Before any syncing comes the most fragile moment of the day: "
-                "the footage lives on a single card. Alinhavo copies it, checks "
+                "the footage lives on a single card. Sincou copies it, checks "
                 "it byte for byte, and records what happened to every file.",
     "ing_items": [
         ("Byte-for-byte verification",
@@ -139,7 +143,7 @@ T = {
          "bytes, and reading back is what reveals that while the card is still "
          "in the reader."),
         ("Space checked before the first byte",
-         "Alinhavo adds up what it is about to copy and compares it against the "
+         "Sincou adds up what it is about to copy and compares it against the "
          "disk before starting. Finding out the drive is full on file 15 of 63 "
          "is the worst possible moment, so the math comes first."),
         ("Structure built as you type",
@@ -179,7 +183,7 @@ T = {
     "price_eyebrow": "License",
     "price_h2": "Buy once, it's yours",
     "price_lede": "Start with seven days fully unlocked. When they run out "
-                  "Alinhavo stays yours, syncing projects of up to 10 clips, "
+                  "Sincou stays yours, syncing projects of up to 10 clips, "
                   "with no expiry date. The license lifts the cap and is "
                   "bought once.",
     "plan1_name": "Free",
@@ -210,11 +214,34 @@ T = {
     "soon_p": "The engine already runs cross-platform. The packaged Windows "
               "version comes next.",
 
+    "autor_eyebrow": "Who made it",
+    "autor_h2": "Built by someone who edits all day",
+    "autor_iniciais": "DM",
+    "autor_nome": "Douglas Mendes",
+    "autor_cargo": "Editor and author of Sincou",
+    "autor_p": [
+        "I am Douglas Mendes, a video editor. Sincou came out of a shoot day like "
+        "any other: two cameras, two recorders, seven hours of footage, and a "
+        "whole afternoon dragging waveforms around before I could start "
+        "actually editing.",
+        "I tried what was out there. The good tools charge a subscription; "
+        "the ones I could afford choked on exactly the big days, which is "
+        "where syncing stops being a convenience and becomes the bottleneck.",
+        "Sincou was built against production footage, not against "
+        "laboratory samples. The heaviest day that has gone through it holds "
+        "242 clips and 7.6 hours, and it is the same one I run every change "
+        "against: if it gets that wrong, I find out before you do.",
+    ],
+    "autor_promessa": "Seven days with everything unlocked, and after that it "
+                      "stays yours, syncing up to 10 clips at a time, with no "
+                      "deadline. If anything trips you up, write in: I read "
+                      "the support mail myself, and I answer within two "
+                      "business days.",
     "faq_eyebrow": "Questions",
     "faq_h2": "Before you download",
     "faq": [
         ("Do I need a slate or jam-synced timecode?",
-         "Alinhavo works with the sound your cameras and recorder captured from "
+         "Sincou works with the sound your cameras and recorder captured from "
          "the same event, so all it needs is audio on every file. When "
          "timecode exists, it comes in as a cross-check and warns you if it "
          "disagrees with the audio."),
@@ -230,7 +257,7 @@ T = {
          "own rate, which is what guarantees the link inside the NLE."),
         ("What happens to footage that falls out of sync?",
          "It goes to the end of the timeline, marked in color, separate from "
-         "the material that locked. Alinhavo would rather point at a doubtful "
+         "the material that locked. Sincou would rather point at a doubtful "
          "clip than hand you an alignment you'd discover was wrong in the "
          "screening room."),
         ("How many clips can it handle at once?",
@@ -238,23 +265,37 @@ T = {
          "hours of footage, two cameras and two recorders, processed in one "
          "pass on a MacBook."),
         ("Do I need to install anything else?",
-         "Nothing. Alinhavo ships with everything it needs to read media, "
+         "Nothing. Sincou ships with everything it needs to read media, "
          "decoder included. Download it, drag it to Applications, open it."),
         ("What happens when the 7 days are up?",
-         "Alinhavo keeps working. It moves to free mode, which syncs projects "
+         "Sincou keeps working. It moves to free mode, which syncs projects "
          "of up to 10 clips at a time, with no deadline and no watermark on "
          "the XML. Bigger shoot days call for the license, and that is bought "
          "once."),
         ("Does the license expire or turn into a subscription?",
          "Neither. You buy it once and it is yours, with version 1.x updates "
-         "included. Activation happens on your computer and the app opens "
-         "offline: no server exists that could stop responding and keep you "
-         "from working."),
+         "included."),
+        ("How do I get my key after buying?",
+         "It arrives in your inbox within seconds, automatically, alongside "
+         "the receipt. Paste it into the app, press Activate, and you are "
+         "done. If you cannot find the message, check your promotions folder "
+         "before writing to us."),
+        ("I lost my key. What now?",
+         "It is in your purchase email, and it stays available on the "
+         "management page that came with it. There is no need to request a "
+         "new one."),
+        ("Do I need internet to work?",
+         "Only once, when you activate. After that Sincou works offline for "
+         "30 days at a stretch between checks, and the check happens on its "
+         "own whenever you are connected. No shoot day lasts 30 days, so in "
+         "practice you never run into it."),
         ("Can I install it on more than one computer?",
-         "The Alinhavo license covers one Mac, and Studio covers three. "
-         "Moving machines is free: you release the seat from inside the app "
-         "and activate on the other computer. Reinstalling the system on the "
-         "same Mac does not cost a seat."),
+         "The Sincou license covers one Mac, and Studio covers three. "
+         "Moving machines is free: you release the seat from inside the app, "
+         "under License > Release this Mac, and activate on the other "
+         "computer. You can do the same from the management page if the old "
+         "Mac is no longer with you. Reinstalling the system on the same Mac "
+         "does not cost a seat."),
         ("Is there a Windows version?",
          "In development. The engine is already cross-platform, and the "
          "packaged Windows version comes next."),
