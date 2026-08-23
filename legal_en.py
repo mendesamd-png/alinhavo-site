@@ -22,11 +22,10 @@ L = {
             "belonging to the holder. The <strong>Studio</strong> license "
             "covers up to three workstations at the same company. Moving "
             "machines is allowed: deactivate on one and activate on the other.",
-            "Activation requires a connection once, to register the machine "
-            "and honour the seat count you bought. After that Sincou works "
-            "without internet for up to 30 days at a stretch between checks, "
-            "and the check happens on its own whenever a connection is "
-            "available.",
+            "Activation requires a connection once, and only to register the "
+            "machine and honour the seat count you bought. After that Sincou "
+            "works without internet, with no time limit: the key is signed "
+            "and verified on your own computer.",
             "You may use Sincou on commercial work at no cost beyond the "
             "license.",
         ]),

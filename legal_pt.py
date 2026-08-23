@@ -38,11 +38,10 @@ L = {
             "titular. A licença <strong>Estúdio</strong> cobre até três "
             "estações da mesma empresa. Trocar de máquina é permitido: "
             "desative em uma e ative na outra.",
-            "A ativação pede conexão uma única vez, para registrar a "
+            "A ativação pede conexão uma única vez, e apenas para registrar a "
             "máquina e respeitar o limite contratado. Depois disso o "
-            "Sincou trabalha sem internet por até 30 dias seguidos entre "
-            "uma conferência e outra, e a conferência acontece sozinha "
-            "quando houver conexão.",
+            "Sincou funciona sem internet, sem prazo: a chave é assinada "
+            "e conferida no seu próprio computador.",
         ]),
         ("2. O que você produz com ele", [
             "Tudo o que sai do Sincou é seu: os arquivos XML, os relatórios, "

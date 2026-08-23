@@ -59,12 +59,13 @@ def _serve(root: Path):
 def main() -> int:
     base = shell.BASE.strip("/")
     tmp = Path(tempfile.mkdtemp())
-    raiz = tmp / base if base else tmp
+    servir = tmp / "raiz"
+    raiz = servir / base if base else servir
     raiz.parent.mkdir(parents=True, exist_ok=True)
     shutil.copytree(HERE, raiz,
                     ignore=shutil.ignore_patterns("*.py", "__pycache__"))
 
-    srv, porta = _serve(tmp)
+    srv, porta = _serve(servir)
     origem = f"http://127.0.0.1:{porta}"
     inicio = f"{origem}{shell.BASE}/"
 

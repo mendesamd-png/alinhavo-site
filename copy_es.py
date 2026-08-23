@@ -301,20 +301,21 @@ T = {
          "recibo. Pégala en la app, pulsa Activar y listo. Si no encuentras "
          "el mensaje, revisa la carpeta de promociones antes de escribirnos."),
         ("Perdí mi clave. ¿Y ahora?",
-         "Está en el correo de la compra, y sigue disponible en la página de "
-         "gestión que vino con él. No hace falta pedir una nueva."),
+         "Está en el correo de la compra. Si no encuentras el mensaje, "
+         "escribe al soporte desde la dirección con la que compraste y te "
+         "lo reenviamos al instante."),
         ("¿Necesito internet para trabajar?",
-         "Solo una vez, al activar. Después Sincou trabaja sin conexión "
-         "durante 30 días seguidos entre una verificación y otra, y la "
-         "verificación ocurre sola cuando estés conectado. Ninguna jornada "
-         "dura 30 días, así que en la práctica nunca te topas con esto."),
+         "Solo una vez, al activar, y únicamente para contar en cuántas "
+         "máquinas está la clave. Después, nunca más: la clave está "
+         "firmada y Sincou la verifica dentro de tu propio Mac, sin plazo "
+         "y sin servidor. Puedes pasar la jornada entera en modo avión."),
         ("¿Puedo instalarlo en más de un ordenador?",
          "La licencia Sincou vale para un Mac, y la Estudio para tres. "
          "Cambiar de máquina es libre: liberas la plaza dentro de la propia "
          "app, en Licencia > Liberar este Mac, y activas en el otro equipo. "
-         "Puedes hacer lo mismo desde la página de gestión si el Mac antiguo "
-         "ya no está contigo. Reinstalar el sistema en el mismo Mac no "
-         "consume una plaza nueva."),
+         "Si el Mac antiguo ya no está contigo, el soporte libera la "
+         "plaza. Reinstalar el sistema en el mismo Mac no consume una "
+         "plaza nueva."),
         ("¿Hay versión para Windows?",
          "En desarrollo. El motor ya es multiplataforma, y la versión "
          "empaquetada para Windows entra en seguida."),

@@ -7,14 +7,14 @@ monta o texto depois do script chega vazia no rastreador.
 """
 from __future__ import annotations
 
-SITE = "https://mendesamd-png.github.io/sincou-site"
+SITE = "https://sincou.com.br"
 
 # Prefixo de TODO caminho interno. O GitHub Pages serve um repositorio de
 # projeto sob /nome-do-repo/, entao um href="/como-funciona/" cai fora do
 # site e devolve 404. Num dominio proprio (sincou.com.br) isto vira "" e nada
 # mais precisa mudar: `build.rebase()` reescreve os caminhos na hora de
 # gravar, em vez de espalhar o prefixo por cada link.
-BASE = "/sincou-site"
+BASE = ""
 
 # ---------------------------------------------------------------- paleta ---
 CSS = """

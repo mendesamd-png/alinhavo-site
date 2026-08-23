@@ -294,20 +294,21 @@ T = {
          "recibo. Cole no app, aperte Ativar e pronto. Se não achar a "
          "mensagem, confira a caixa de promoções antes de escrever para nós."),
         ("Perdi minha chave. E agora?",
-         "Ela está no e-mail da compra, e continua disponível na página de "
-         "gerenciamento que veio junto com ele. Não é preciso pedir uma nova."),
+         "Ela está no e-mail da compra. Se você não achar a mensagem, "
+         "escreva para o suporte com o e-mail usado na compra e reenviamos "
+         "na hora."),
         ("Preciso de internet para trabalhar?",
-         "Só uma vez, no momento de ativar. Depois disso o Sincou trabalha "
-         "offline por 30 dias seguidos entre uma conferência e outra, e a "
-         "conferência acontece sozinha quando você estiver conectado. Nenhuma "
-         "diária dura 30 dias, então na prática você nunca esbarra nisso."),
+         "Só uma vez, no momento de ativar, e é só para contar em quantas "
+         "máquinas a chave está. Depois disso, nunca mais: a chave é "
+         "assinada e o Sincou a confere dentro do seu próprio Mac, sem "
+         "prazo e sem servidor. Você pode passar a diária inteira em modo "
+         "avião."),
         ("Posso instalar em mais de um computador?",
          "A licença Sincou vale para um Mac, e a Estúdio para três. "
          "Trocar de máquina é livre: você libera a vaga dentro do próprio app, "
-         "em Licença > Liberar este Mac, e ativa no outro computador. Dá para "
-         "fazer o mesmo pela página de gerenciamento, se o Mac antigo não "
-         "estiver mais com você. Reinstalar o sistema no mesmo Mac não "
-         "consome uma vaga nova."),
+         "em Licença > Liberar este Mac, e ativa no outro computador. Se o "
+         "Mac antigo não estiver mais com você, o suporte libera a vaga. "
+         "Reinstalar o sistema no mesmo Mac não consome uma vaga nova."),
         ("Tem versão para Windows?",
          "Em desenvolvimento. O motor já é multiplataforma, e a versão "
          "empacotada para Windows entra em seguida."),

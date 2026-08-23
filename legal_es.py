@@ -30,10 +30,10 @@ L = {
             "titular. La licencia <strong>Estudio</strong> cubre hasta tres "
             "estaciones de la misma empresa. Cambiar de máquina está "
             "permitido: desactiva en una y activa en la otra.",
-            "La activación pide conexión una sola vez, para registrar la "
-            "máquina y respetar el límite contratado. Después Sincou trabaja "
-            "sin internet hasta 30 días seguidos entre una verificación y "
-            "otra, y la verificación ocurre sola cuando haya conexión.",
+            "La activación pide conexión una sola vez, y solo para registrar la "
+            "máquina y respetar el límite contratado. Después Sincou "
+            "funciona sin internet, sin plazo: la clave está firmada y se "
+            "verifica en tu propio ordenador.",
         ]),
         ("2. Qué produces con él", [
             "Todo lo que sale de Sincou es tuyo: los archivos XML, los "

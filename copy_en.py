@@ -281,21 +281,21 @@ T = {
          "done. If you cannot find the message, check your promotions folder "
          "before writing to us."),
         ("I lost my key. What now?",
-         "It is in your purchase email, and it stays available on the "
-         "management page that came with it. There is no need to request a "
-         "new one."),
+         "It is in your purchase email. If you cannot find the message, "
+         "write to support from the address you bought with and we resend "
+         "it right away."),
         ("Do I need internet to work?",
-         "Only once, when you activate. After that Sincou works offline for "
-         "30 days at a stretch between checks, and the check happens on its "
-         "own whenever you are connected. No shoot day lasts 30 days, so in "
-         "practice you never run into it."),
+         "Only once, when you activate, and only to count how many machines "
+         "the key is on. After that, never again: the key is signed and "
+         "Sincou checks it inside your own Mac, with no deadline and no "
+         "server. You can spend the whole shoot in airplane mode."),
         ("Can I install it on more than one computer?",
          "The Sincou license covers one Mac, and Studio covers three. "
          "Moving machines is free: you release the seat from inside the app, "
          "under License > Release this Mac, and activate on the other "
-         "computer. You can do the same from the management page if the old "
-         "Mac is no longer with you. Reinstalling the system on the same Mac "
-         "does not cost a seat."),
+         "computer. If the old Mac is no longer with you, support frees the "
+         "seat. Reinstalling the system on the same Mac does not cost a "
+         "seat."),
         ("Is there a Windows version?",
          "In development. The engine is already cross-platform, and the "
          "packaged Windows version comes next."),
