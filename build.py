@@ -550,7 +550,17 @@ def build_home(lang: str) -> str:
     # entao o site nunca fica com um quadro vazio esperando alguem lembrar.
     foto = next((n for n in ("autor.jpg", "autor.jpeg", "autor.png",
                              "autor.webp") if (HERE / "img" / n).exists()), None)
-    retrato = (f'<img src="/img/{foto}" alt="{t["autor_nome"]}" '
+    # O nome do arquivo nao muda quando a foto muda, entao o navegador de
+    # quem ja visitou continua servindo a antiga - e a pessoa jura que nada
+    # aconteceu. O sufixo com o hash do CONTEUDO muda junto com a imagem, o
+    # que torna a URL nova e o cache irrelevante. Foto igual, sufixo igual:
+    # nao gera download a toa.
+    marca = ""
+    if foto:
+        import hashlib
+        dados = (HERE / "img" / foto).read_bytes()
+        marca = "?v=" + hashlib.blake2b(dados, digest_size=5).hexdigest()
+    retrato = (f'<img src="/img/{foto}{marca}" alt="{t["autor_nome"]}" '
                f'width="260" height="260" loading="lazy">' if foto
                else f'<div class="mono-face" aria-hidden="true">'
                     f'{t["autor_iniciais"]}</div>')
