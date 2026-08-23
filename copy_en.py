@@ -8,8 +8,8 @@ UPDATED = "August 21, 2026"
 
 T = {
     # ----------------------------------------------------- navigation ------
-    "lang_other": "PT",
-    "lang_switch_aria": "View this site in Portuguese",
+    "lang_other": "ES",
+    "lang_switch_aria": "View this site in Spanish",
     "theme_aria": "Switch between light and dark",
     "nav_howto": "How it works",
     "nav_pluraleyes": "From PluralEyes",

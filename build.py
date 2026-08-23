@@ -17,13 +17,15 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-import copy_en, copy_pt, legal_en, legal_pt, pages_en, pages_pt  # noqa: E402
+import copy_en, copy_es, copy_pt, legal_en, legal_es, legal_pt  # noqa: E402
+import pages_en, pages_es, pages_pt  # noqa: E402
 import shell  # noqa: E402
 from shell import page  # noqa: E402
 
 LANGS = {
     "pt": (copy_pt.T, pages_pt.P, legal_pt.L, legal_pt.UPDATED),
     "en": (copy_en.T, pages_en.P, legal_en.L, legal_en.UPDATED),
+    "es": (copy_es.T, pages_es.P, legal_es.L, legal_es.UPDATED),
 }
 
 
@@ -34,14 +36,19 @@ def check_keys() -> None:
     Sem isso a pagina sai com um buraco silencioso, que e o jeito mais facil
     de publicar meia traducao sem ninguem perceber.
     """
-    for nome, a, b in (("copy", copy_pt.T, copy_en.T),
-                       ("pages", pages_pt.P, pages_en.P),
-                       ("legal", legal_pt.L, legal_en.L)):
-        so_pt, so_en = set(a) - set(b), set(b) - set(a)
-        if so_pt or so_en:
-            raise SystemExit(
-                f"{nome}: chaves so em pt {sorted(so_pt)}, "
-                f"so em en {sorted(so_en)}")
+    base = {"copy": copy_pt.T, "pages": pages_pt.P, "legal": legal_pt.L}
+    outros = {
+        "en": {"copy": copy_en.T, "pages": pages_en.P, "legal": legal_en.L},
+        "es": {"copy": copy_es.T, "pages": pages_es.P, "legal": legal_es.L},
+    }
+    for lang, grupos in outros.items():
+        for nome, b in grupos.items():
+            a = base[nome]
+            falta, sobra = set(a) - set(b), set(b) - set(a)
+            if falta or sobra:
+                raise SystemExit(
+                    f"{nome} [{lang}]: falta {sorted(falta)}, "
+                    f"sobra {sorted(sobra)}")
 
 
 def esc(s: str) -> str:
@@ -72,13 +79,17 @@ def write(rel: str, html: str) -> None:
     print(f"  {rel}  ({len(html) // 1024} KB)")
 
 
-def alt_of(lang: str, key: str, t_pt: dict, t_en: dict) -> str:
-    """URL da mesma pagina no outro idioma."""
-    if key == "home":
-        return "/en/" if lang == "pt" else "/"
-    if lang == "pt":
-        return "/en" + t_en["url_" + key]
-    return t_pt["url_" + key]
+def alts_of(key: str) -> dict:
+    """Mapa idioma -> URL desta mesma pagina, para hreflang e para o botao.
+
+    Cada idioma tem a SUA rota ("/termos/", "/terms/", "/terminos/"), entao
+    a URL nao sai de uma regra: sai da tabela de textos daquele idioma.
+    """
+    out = {}
+    for lang, (t, _P, _L, _u) in LANGS.items():
+        prefixo = shell.LANG_BASE.get(lang, "")
+        out[lang] = f"{prefixo}/" if key == "home" else prefixo + t["url_" + key]
+    return out
 
 
 # ------------------------------------------------------------ componentes ---
@@ -112,7 +123,7 @@ def shot(src: str, alt: str, base_img: str) -> str:
 def doc_page(lang: str, t: dict, L: dict, updated: str, key: str,
              url_key: str, alt_url: str) -> str:
     """Pagina de texto corrido (licenca, termos, privacidade, reembolso)."""
-    base = "" if lang == "pt" else "/en"
+    base = shell.LANG_BASE[lang]
     blocos = []
     for titulo, paras in L[f"{key}_body"]:
         corpo = "".join(f"<p>{p.format(email=t['email'])}</p>"
@@ -123,7 +134,11 @@ def doc_page(lang: str, t: dict, L: dict, updated: str, key: str,
             corpo = f"<ul>{itens}</ul>"
         blocos.append(f"<h2>{titulo}</h2>{corpo}")
 
-    label = {"pt": "Atualizado em", "en": "Last updated"}[lang]
+    # Um dicionario por idioma direto no codigo quebra silenciosamente ao
+    # acrescentar o proximo - foi assim que o espanhol parou o build. O
+    # .get com padrao mantem a pagina de pe e mostra ingles no lugar.
+    label = {"pt": "Atualizado em", "en": "Last updated",
+             "es": "Actualizado el"}.get(lang, "Last updated")
     ent = legal_pt.ENTITY
     if ent.get("name"):
         linhas = [f"{ent['name']}"]
@@ -152,7 +167,7 @@ def doc_page(lang: str, t: dict, L: dict, updated: str, key: str,
   </div>
 </div></section>"""
     return page(t, lang=lang, path=f"{base}{t['url_' + url_key]}",
-                alt_path=alt_url, title=f"{L[f'{key}_title']} · Sincou",
+                alts=alt_url, title=f"{L[f'{key}_title']} · Sincou",
                 desc=L[f"{key}_desc"], body=body, extra_css=DOC_CSS)
 
 
@@ -485,8 +500,8 @@ TL_JS = r"""
 # ------------------------------------------------------------- as paginas ---
 def build_home(lang: str) -> str:
     t, P, L, _ = LANGS[lang]
-    base = "" if lang == "pt" else "/en"
-    alt = alt_of(lang, "home", copy_pt.T, copy_en.T)
+    base = shell.LANG_BASE[lang]
+    alt = alts_of("home")
 
     stats = "".join(
         f'<div class="stat"><div class="v{" grad" if i < 2 else ""} mono">'
@@ -540,7 +555,9 @@ def build_home(lang: str) -> str:
                else f'<div class="mono-face" aria-hidden="true">'
                     f'{t["autor_iniciais"]}</div>')
     autor_p = "".join(f"<p>{x}</p>" for x in t["autor_p"])
-    mod = copy_pt if lang == "pt" else copy_en
+    # VERSION e RELEASE vivem no modulo de cada idioma porque a data e
+    # escrita por extenso ("23 de agosto" / "23 August").
+    mod = {"pt": copy_pt, "en": copy_en, "es": copy_es}[lang]
     versao = t["hero_versao"].format(v=mod.VERSION, d=mod.RELEASE)
 
     pe_same = "".join(f"<li>{x}</li>" for x in t["pe_same"])
@@ -652,7 +669,7 @@ def build_home(lang: str) -> str:
 
 {cta(t, base, t['close_h2'], t['close_lede'], t['close_note'])}"""
 
-    return page(t, lang=lang, path=f"{base}/", alt_path=alt,
+    return page(t, lang=lang, path=f"{base}/", alts=alt,
                 title=f"Sincou · {t['home_tagline']}",
                 desc=t["home_desc"], body=body, here="home",
                 extra_css=HOME_CSS, extra_js=TL_JS)
@@ -660,9 +677,9 @@ def build_home(lang: str) -> str:
 
 def build_howto(lang: str) -> str:
     t, P, L, _ = LANGS[lang]
-    base = "" if lang == "pt" else "/en"
+    base = shell.LANG_BASE[lang]
     img = "/img/"   # as imagens moram so na raiz, servem os dois idiomas
-    alt = alt_of(lang, "howto", copy_pt.T, copy_en.T)
+    alt = alts_of("howto")
 
     colors = "".join(
         f'<div class="glass"><b>{h}</b><p>{p}</p></div>'
@@ -743,15 +760,15 @@ def build_howto(lang: str) -> str:
 
 {cta(t, base, P['howto_cta_h'], P['howto_cta_p'])}"""
 
-    return page(t, lang=lang, path=f"{base}{t['url_howto']}", alt_path=alt,
+    return page(t, lang=lang, path=f"{base}{t['url_howto']}", alts=alt,
                 title=f"{P['howto_title']} · Sincou", desc=P["howto_desc"],
                 body=body, here="howto", extra_css=HOWTO_CSS)
 
 
 def build_pluraleyes(lang: str) -> str:
     t, P, L, _ = LANGS[lang]
-    base = "" if lang == "pt" else "/en"
-    alt = alt_of(lang, "pluraleyes", copy_pt.T, copy_en.T)
+    base = shell.LANG_BASE[lang]
+    alt = alts_of("pluraleyes")
 
     why = "".join(f'<div class="glass"><h3>{h}</h3><p>{p}</p></div>'
                   for h, p in P["pe_why"])
@@ -788,15 +805,15 @@ def build_pluraleyes(lang: str) -> str:
 
 {cta(t, base, P['pe_page_cta_h'], P['pe_page_cta_p'])}"""
 
-    return page(t, lang=lang, path=f"{base}{t['url_pluraleyes']}", alt_path=alt,
+    return page(t, lang=lang, path=f"{base}{t['url_pluraleyes']}", alts=alt,
                 title=f"{P['pe_title']} · Sincou", desc=P["pe_desc"],
                 body=body, here="pluraleyes", extra_css=HOWTO_CSS)
 
 
 def build_whatsnew(lang: str) -> str:
     t, P, L, _ = LANGS[lang]
-    base = "" if lang == "pt" else "/en"
-    alt = alt_of(lang, "whatsnew", copy_pt.T, copy_en.T)
+    base = shell.LANG_BASE[lang]
+    alt = alts_of("whatsnew")
 
     rel = ""
     for v, date, title, items in P["wn_releases"]:
@@ -823,7 +840,7 @@ def build_whatsnew(lang: str) -> str:
 
 {cta(t, base, t['close_h2'], t['close_lede'], t['close_note'])}"""
 
-    return page(t, lang=lang, path=f"{base}{t['url_whatsnew']}", alt_path=alt,
+    return page(t, lang=lang, path=f"{base}{t['url_whatsnew']}", alts=alt,
                 title=f"{P['wn_title']} · Sincou", desc=P["wn_desc"],
                 body=body, here="whatsnew", extra_css=HOWTO_CSS)
 
@@ -832,7 +849,7 @@ def sitemap() -> str:
     urls = []
     for lang in ("pt", "en"):
         t = LANGS[lang][0]
-        base = "" if lang == "pt" else "/en"
+        base = shell.LANG_BASE[lang]
         urls.append(f"{base}/")
         for k in ("howto", "pluraleyes", "whatsnew", "eula", "terms",
                   "privacy", "refunds"):
@@ -846,16 +863,17 @@ def sitemap() -> str:
 def main() -> None:
     check_keys()
     print("gerando o site:")
-    for lang in ("pt", "en"):
+    for lang in shell.LANG_ORDER:
         t, P, L, updated = LANGS[lang]
-        d = "" if lang == "pt" else "en/"
+        d = shell.LANG_BASE[lang].lstrip("/")
+        d = f"{d}/" if d else ""
         write(f"{d}index.html", build_home(lang))
         write(f"{d}{t['url_howto'].strip('/')}/index.html", build_howto(lang))
         write(f"{d}{t['url_pluraleyes'].strip('/')}/index.html", build_pluraleyes(lang))
         write(f"{d}{t['url_whatsnew'].strip('/')}/index.html", build_whatsnew(lang))
         for key, url_key in (("eula", "eula"), ("terms", "terms"),
                              ("privacy", "privacy"), ("refunds", "refunds")):
-            alt = alt_of(lang, url_key, copy_pt.T, copy_en.T)
+            alt = alts_of(url_key)
             write(f"{d}{t['url_' + url_key].strip('/')}/index.html",
                   doc_page(lang, t, L, updated, key, url_key, alt))
     write("sitemap.xml", sitemap())

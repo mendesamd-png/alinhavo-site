@@ -235,17 +235,40 @@ FLAG = """<svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true">
 </svg>"""
 
 
-def head(title: str, desc: str, lang: str, path: str, alt_path: str) -> str:
-    """<head> completo, com o alternate do outro idioma para o buscador."""
-    other = "en" if lang == "pt" else "pt"
+# Ordem de exibicao e de rodizio dos idiomas. O botao do topo leva ao
+# PROXIMO da lista: com tres idiomas, um botao que alterna entre dois
+# deixaria o terceiro inalcancavel.
+LANG_ORDER = ("pt", "en", "es")
+
+# prefixo de URL de cada idioma. O portugues mora na raiz porque foi o
+# primeiro e os links ja publicados apontam para la.
+LANG_BASE = {"pt": "", "en": "/en", "es": "/es"}
+
+HTML_LANG = {"pt": "pt-BR", "en": "en", "es": "es"}
+
+
+def head(title: str, desc: str, lang: str, path: str,
+         alts: dict) -> str:
+    """<head> completo, com um alternate por idioma para o buscador.
+
+    `alts` mapeia idioma -> caminho equivalente. Uma pagina que exista em
+    dois idiomas e nao no terceiro simplesmente nao aparece no mapa, em vez
+    de apontar para um 404 - alternate quebrado e pior que alternate
+    ausente, porque o buscador leva o leitor para la.
+    """
+    linhas = "\n".join(
+        f'<link rel="alternate" hreflang="{l}" href="{SITE}{u}">'
+        for l, u in alts.items())
+    # x-default e para quem nao casa com nenhum idioma: o ingles alcanca
+    # mais gente do que o portugues.
+    padrao = alts.get("en", path)
     return f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{SITE}{path}">
-<link rel="alternate" hreflang="{lang}" href="{SITE}{path}">
-<link rel="alternate" hreflang="{other}" href="{SITE}{alt_path}">
-<link rel="alternate" hreflang="x-default" href="{SITE}{alt_path if lang != 'en' else path}">
+{linhas}
+<link rel="alternate" hreflang="x-default" href="{SITE}{padrao}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
@@ -256,8 +279,14 @@ def head(title: str, desc: str, lang: str, path: str, alt_path: str) -> str:
 <style>{CSS}</style>"""
 
 
-def header(t: dict, base: str, alt_url: str, here: str = "") -> str:
-    """Barra do topo. `base` prefixa os links internos ('' no pt, '/en' no en)."""
+def header(t: dict, base: str, alt_url: str, here: str = "",
+           prox_lang: str = "en") -> str:
+    """Barra do topo. `base` prefixa os links internos ('' no pt, '/en' no en).
+
+    `prox_lang` e o idioma para onde o botao leva, e vai no hreflang do
+    link: sem ele o atributo mentiria assim que existisse um terceiro
+    idioma.
+    """
     def link(key, url, cls="hide-sm"):
         mark = ' aria-current="page"' if here == key else ""
         return f'<a href="{base}{url}" class="{cls}"{mark}>{t["nav_" + key]}</a>'
@@ -268,7 +297,7 @@ def header(t: dict, base: str, alt_url: str, here: str = "") -> str:
     {link("pluraleyes", t["url_pluraleyes"])}
     {link("whatsnew", t["url_whatsnew"])}
     <a href="{base}/#preco">{t["nav_price"]}</a>
-    <a class="pillbtn" href="{alt_url}" hreflang="{'en' if base == '' else 'pt'}"
+    <a class="pillbtn" href="{alt_url}" hreflang="{prox_lang}"
        aria-label="{t['lang_switch_aria']}">{t["lang_other"]}</a>
     <button class="pillbtn" id="theme" type="button" aria-label="{t['theme_aria']}">&#9680;</button>
     <a class="btn" href="{base}/#preco">{t["nav_download"]}</a>
@@ -309,22 +338,31 @@ def footer(t: dict, base: str) -> str:
 </div></footer>"""
 
 
-def page(t: dict, *, lang: str, path: str, alt_path: str, title: str,
+def proximo_idioma(lang: str) -> str:
+    """O idioma seguinte no rodizio, voltando ao inicio no fim da lista."""
+    i = LANG_ORDER.index(lang) if lang in LANG_ORDER else 0
+    return LANG_ORDER[(i + 1) % len(LANG_ORDER)]
+
+
+def page(t: dict, *, lang: str, path: str, alts: dict, title: str,
          desc: str, body: str, here: str = "", extra_css: str = "",
          extra_js: str = "") -> str:
-    base = "" if lang == "pt" else "/en"
-    alt_base = "/en" if lang == "pt" else ""
+    base = LANG_BASE.get(lang, "")
+    prox = proximo_idioma(lang)
+    # se a pagina nao existir no proximo idioma, o botao leva a home dele:
+    # melhor mudar de idioma e cair na capa do que nao poder mudar
+    alt_url = alts.get(prox, f"{LANG_BASE.get(prox, '')}/")
     css = f"<style>{extra_css}</style>" if extra_css else ""
     js = f"<script>{extra_js}</script>" if extra_js else ""
     return f"""<!doctype html>
-<html lang="{'pt-BR' if lang == 'pt' else 'en'}">
+<html lang="{HTML_LANG.get(lang, lang)}">
 <head>
-{head(title, desc, lang, path, alt_path)}
+{head(title, desc, lang, path, alts)}
 {css}
 </head>
 <body>
 <div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
-{header(t, base, alt_path, here)}
+{header(t, base, alt_url, here, prox)}
 <main>
 {body}
 </main>
