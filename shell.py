@@ -158,12 +158,25 @@ header { position: sticky; top: 16px; z-index: 30; }
   padding: 3px; font-size: .72rem; font-weight: 500; letter-spacing: .04em;
 }
 .langs a, .langs b {
-  display: block; padding: 4px 9px; border-radius: 999px;
-  color: var(--ink-faint); font-weight: 500; line-height: 1;
+  display: block; padding: 4px; border-radius: 5px; line-height: 0;
+  transition: transform .14s ease, box-shadow .14s ease, opacity .14s ease;
 }
-.langs a:hover { color: var(--ink); background: var(--glass); }
-.langs b { color: var(--ink); background: var(--glass); }
-@media (max-width: 560px) { .langs { font-size: .68rem; } .langs a, .langs b { padding: 4px 7px; } }
+.langs svg { display: block; width: 21px; height: 15px; border-radius: 2px; }
+/* As inativas ficam recuadas: dessaturadas e um pouco menores, para que a
+   ativa se destaque por CONTRASTE e nao so por um contorno. */
+.langs a { opacity: .5; filter: saturate(.55); transform: scale(.92); }
+.langs a:hover { opacity: 1; filter: none; transform: scale(1); }
+/* A ativa sobe: cor cheia, escala normal e uma sombra que a levanta do
+   trilho. E o "afundado x elevado" que o olho le antes de qualquer texto. */
+.langs b {
+  opacity: 1; transform: scale(1);
+  box-shadow: 0 2px 6px rgba(23,23,28,.22), 0 0 0 1.5px var(--ground-2);
+}
+:root[data-theme="dark"] .langs b {
+  box-shadow: 0 2px 8px rgba(0,0,0,.6), 0 0 0 1.5px rgba(255,255,255,.22);
+}
+.langs a:focus-visible, .langs b:focus-visible { outline: 2px solid var(--g1); outline-offset: 2px; }
+@media (max-width: 560px) { .langs svg { width: 18px; height: 13px; } }
 @media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
 
 /* --------------------------------------------------------------- rodape --- */
@@ -244,6 +257,36 @@ LOGO = """<svg width="22" height="22" viewBox="0 0 1024 1024" aria-hidden="true"
 
 # bandeira do Brasil desenhada em SVG: um emoji nao renderiza igual em todo
 # sistema (no Windows sai como as letras "BR")
+# Bandeiras do seletor de idioma, desenhadas em SVG e nao em emoji: emoji
+# de bandeira nao renderiza igual em todo sistema (no Windows sai como as
+# letras "BR"). Mesmo motivo do FLAG do rodape.
+#
+# Uma bandeira NAO e um idioma - o espanhol tem vinte paises, e a bandeira
+# da Espanha nao representa um editor mexicano. Por isso cada uma vem com o
+# nome do idioma no title/aria: quem olha ve a bandeira, quem depende de
+# leitor de tela ouve "Espanol", e a ambiguidade nao vira barreira.
+BANDEIRAS = {
+    "pt": """<svg viewBox="0 0 28 20" aria-hidden="true">
+  <rect width="28" height="20" fill="#009B3A"/>
+  <path d="M14 2.6 25.4 10 14 17.4 2.6 10Z" fill="#FEDF00"/>
+  <circle cx="14" cy="10" r="4.3" fill="#002776"/>
+  <path d="M9.9 8.6a4.3 4.3 0 0 0 8.2 1.5 9 9 0 0 0-8.2-1.5Z" fill="#fff"/>
+</svg>""",
+    # Reino Unido, e nao Estados Unidos: as listras da bandeira americana
+    # viram um borrao cinza em 20px, e a cruz do Union Jack continua legivel.
+    "en": """<svg viewBox="0 0 28 20" aria-hidden="true">
+  <rect width="28" height="20" fill="#012169"/>
+  <path d="M0 0 28 20M28 0 0 20" stroke="#fff" stroke-width="4"/>
+  <path d="M0 0 28 20M28 0 0 20" stroke="#C8102E" stroke-width="2.2"/>
+  <path d="M14 0V20M0 10H28" stroke="#fff" stroke-width="6.6"/>
+  <path d="M14 0V20M0 10H28" stroke="#C8102E" stroke-width="4"/>
+</svg>""",
+    "es": """<svg viewBox="0 0 28 20" aria-hidden="true">
+  <rect width="28" height="20" fill="#AA151B"/>
+  <rect y="5" width="28" height="10" fill="#F1BF00"/>
+</svg>""",
+}
+
 FLAG = """<svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true">
   <rect width="28" height="20" fill="#009B3A"/>
   <path d="M14 2.6 25.4 10 14 17.4 2.6 10Z" fill="#FEDF00"/>
@@ -322,15 +365,19 @@ def header(t: dict, base: str, here: str = "", lang: str = "pt",
     alts = alts or {}
     partes = []
     for code in LANG_ORDER:
-        rotulo = LANG_LABEL[code]
+        bandeira = BANDEIRAS[code]
+        nome = t["lang_name_" + code]
         if code == lang:
             # o idioma atual nao e link: clicar no que ja se esta lendo nao
-            # leva a lugar nenhum, e marca-lo diz onde voce esta
-            partes.append(f'<b aria-current="true">{rotulo}</b>')
+            # leva a lugar nenhum. Ele fica em relevo, e o title/aria diz o
+            # nome por extenso - a bandeira sozinha nao nomeia idioma.
+            partes.append(f'<b aria-current="true" title="{nome}">'
+                          f'{bandeira}</b>')
         else:
             destino = alts.get(code, f"{LANG_BASE.get(code, '')}/")
             partes.append(f'<a href="{destino}" hreflang="{code}" '
-                          f'lang="{code}">{rotulo}</a>')
+                          f'lang="{code}" title="{nome}" '
+                          f'aria-label="{nome}">{bandeira}</a>')
     idiomas = "".join(partes)
 
     return f"""<header><div class="wrap"><div class="bar glass">
