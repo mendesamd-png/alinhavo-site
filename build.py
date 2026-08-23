@@ -550,7 +550,7 @@ def build_home(lang: str) -> str:
     # entao o site nunca fica com um quadro vazio esperando alguem lembrar.
     foto = next((n for n in ("autor.jpg", "autor.jpeg", "autor.png",
                              "autor.webp") if (HERE / "img" / n).exists()), None)
-    retrato = (f'<img src="{base}/img/{foto}" alt="{t["autor_nome"]}" '
+    retrato = (f'<img src="/img/{foto}" alt="{t["autor_nome"]}" '
                f'width="260" height="260" loading="lazy">' if foto
                else f'<div class="mono-face" aria-hidden="true">'
                     f'{t["autor_iniciais"]}</div>')
