@@ -242,20 +242,20 @@ T = {
     "autor_h2": "Hecho por alguien que edita todo el día",
     "autor_iniciais": "DM",
     "autor_nome": "Douglas Mendes",
-    "autor_cargo": "Editor y autor de Sincou",
+    "autor_cargo": "Director, DoP y editor · autor de Sincou",
     "autor_p": [
-        "Soy Douglas Mendes, editor. Sincou nació de una jornada como tantas "
-        "otras: dos cámaras, dos grabadoras, siete horas de material y una "
-        "tarde entera arrastrando formas de onda antes de poder empezar a "
-        "editar de verdad.",
-        "Probé lo que había. Las herramientas buenas cobran suscripción; las "
-        "que entraban en el presupuesto se atragantaban justo con el material "
-        "grande, que es donde sincronizar deja de ser una comodidad y se "
-        "vuelve el cuello de botella del día. Así que escribí la mía.",
-        "Sincou fue construido contra material de producción, no contra "
-        "ejemplos de laboratorio. La jornada más pesada que pasó por él tiene "
-        "242 clips y 7,6 horas, y es la misma que uso para probar cada "
-        "cambio: si falla ahí, me entero antes que tú.",
+        "Soy Douglas Mendes: director, DoP y editor. Sincou nació de un día "
+        "como tantos otros: algunas cámaras, una grabadora, unas horas de "
+        "material y una tarde entera arrastrando formas de onda antes de "
+        "poder empezar a editar de verdad.",
+        "Probé lo que había. Las buenas herramientas exigen suscripción; las "
+        "que entraban en mi presupuesto se atascaban con los archivos "
+        "grandes, y ahí es justo donde sincronizar deja de ser práctico y se "
+        "vuelve el cuello de botella del día. Así que hice la mía.",
+        "Sincou se desarrolló sobre material de producción. La sesión más "
+        "pesada que ha procesado tuvo 242 clips y duró 7,6 horas, y es la "
+        "misma que uso para probar cada cambio: si falla ahí, me entero "
+        "antes que tú.",
     ],
     "autor_promessa": "Son siete días con todo desbloqueado, y después sigue "
                       "siendo tuyo, sincronizando hasta 10 clips por vez, sin "

@@ -222,19 +222,20 @@ T = {
     "autor_h2": "Built by someone who edits all day",
     "autor_iniciais": "DM",
     "autor_nome": "Douglas Mendes",
-    "autor_cargo": "Editor and author of Sincou",
+    "autor_cargo": "Director, DoP and editor · author of Sincou",
     "autor_p": [
-        "I am Douglas Mendes, a video editor. Sincou came out of a shoot day like "
-        "any other: two cameras, two recorders, seven hours of footage, and a "
-        "whole afternoon dragging waveforms around before I could start "
-        "actually editing.",
-        "I tried what was out there. The good tools charge a subscription; "
-        "the ones I could afford choked on exactly the big days, which is "
-        "where syncing stops being a convenience and becomes the bottleneck.",
-        "Sincou was built against production footage, not against "
-        "laboratory samples. The heaviest day that has gone through it holds "
-        "242 clips and 7.6 hours, and it is the same one I run every change "
-        "against: if it gets that wrong, I find out before you do.",
+        "I am Douglas Mendes — director, DoP and editor. Sincou came out of a "
+        "day like so many others: a few cameras, a recorder, some hours of "
+        "footage, and a whole afternoon dragging waveforms around before I "
+        "could actually start editing.",
+        "I tried what was out there. The good tools require a subscription; "
+        "the ones that fit my budget struggled with large files, and that is "
+        "exactly where syncing stops being practical and becomes the "
+        "bottleneck of the day. So I built my own.",
+        "Sincou was developed against production footage. The heaviest "
+        "session it has handled held 242 clips over 7.6 hours, and it is the "
+        "same one I run every change against: if it fails there, I find out "
+        "before you do.",
     ],
     "autor_promessa": "Seven days with everything unlocked, and after that it "
                       "stays yours, syncing up to 10 clips at a time, with no "

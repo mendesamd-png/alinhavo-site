@@ -156,25 +156,25 @@ header { position: sticky; top: 16px; z-index: 30; }
   padding: 3px; font-size: .72rem; font-weight: 500; letter-spacing: .04em;
 }
 .langs a, .langs b {
-  display: block; padding: 4px; border-radius: 5px; line-height: 0;
-  transition: transform .14s ease, box-shadow .14s ease, opacity .14s ease;
+  display: block; padding: 5px 10px; border-radius: 999px; line-height: 1;
+  font-weight: 600; letter-spacing: .05em;
+  transition: color .14s ease, background .14s ease, box-shadow .14s ease;
 }
-.langs svg { display: block; width: 21px; height: 15px; border-radius: 2px; }
-/* As inativas ficam recuadas: dessaturadas e um pouco menores, para que a
-   ativa se destaque por CONTRASTE e nao so por um contorno. */
-.langs a { opacity: .5; filter: saturate(.55); transform: scale(.92); }
-.langs a:hover { opacity: 1; filter: none; transform: scale(1); }
-/* A ativa sobe: cor cheia, escala normal e uma sombra que a levanta do
-   trilho. E o "afundado x elevado" que o olho le antes de qualquer texto. */
+/* As inativas recuam e a ativa sobe. Nao e so um contorno: com tres
+   opcoes iguais lado a lado, o par "elevado x apagado" e o que o olho le
+   antes de decifrar as letras. */
+.langs a { color: var(--ink-faint); }
+.langs a:hover { color: var(--ink); background: var(--glass); }
 .langs b {
-  opacity: 1; transform: scale(1);
-  box-shadow: 0 2px 6px rgba(23,23,28,.22), 0 0 0 1.5px var(--ground-2);
+  color: var(--ink); background: var(--ground-2);
+  box-shadow: 0 1px 3px rgba(23,23,28,.18), 0 0 0 1px var(--glass-line);
 }
 :root[data-theme="dark"] .langs b {
-  box-shadow: 0 2px 8px rgba(0,0,0,.6), 0 0 0 1.5px rgba(255,255,255,.22);
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 1px 4px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.14);
 }
 .langs a:focus-visible, .langs b:focus-visible { outline: 2px solid var(--g1); outline-offset: 2px; }
-@media (max-width: 560px) { .langs svg { width: 18px; height: 13px; } }
+@media (max-width: 560px) { .langs { font-size: .68rem; } .langs a, .langs b { padding: 5px 8px; } }
 @media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
 
 /* --------------------------------------------------------------- rodape --- */
@@ -389,21 +389,7 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
     <a href="/en/pluraleyes-alternative/" class="hide-sm">From PluralEyes</a>
     <a href="/en/whats-new/" class="hide-sm">What's new</a>
     <a href="/en/#preco">Pricing</a>
-    <span class="langs" role="group" aria-label="Choose the site language"><a href="/" hreflang="pt" lang="pt" title="Portuguese" aria-label="Portuguese"><svg viewBox="0 0 28 20" aria-hidden="true">
-  <rect width="28" height="20" fill="#009B3A"/>
-  <path d="M14 2.6 25.4 10 14 17.4 2.6 10Z" fill="#FEDF00"/>
-  <circle cx="14" cy="10" r="4.3" fill="#002776"/>
-  <path d="M9.9 8.6a4.3 4.3 0 0 0 8.2 1.5 9 9 0 0 0-8.2-1.5Z" fill="#fff"/>
-</svg></a><b aria-current="true" title="English"><svg viewBox="0 0 28 20" aria-hidden="true">
-  <rect width="28" height="20" fill="#012169"/>
-  <path d="M0 0 28 20M28 0 0 20" stroke="#fff" stroke-width="4"/>
-  <path d="M0 0 28 20M28 0 0 20" stroke="#C8102E" stroke-width="2.2"/>
-  <path d="M14 0V20M0 10H28" stroke="#fff" stroke-width="6.6"/>
-  <path d="M14 0V20M0 10H28" stroke="#C8102E" stroke-width="4"/>
-</svg></b><a href="/es/" hreflang="es" lang="es" title="Spanish" aria-label="Spanish"><svg viewBox="0 0 28 20" aria-hidden="true">
-  <rect width="28" height="20" fill="#AA151B"/>
-  <rect y="5" width="28" height="10" fill="#F1BF00"/>
-</svg></a></span>
+    <span class="langs" role="group" aria-label="Choose the site language"><a href="/" hreflang="pt" lang="pt" title="Portuguese" aria-label="Portuguese">PT</a><b aria-current="true" title="English">EN</b><a href="/es/" hreflang="es" lang="es" title="Spanish" aria-label="Spanish">ES</a></span>
     <button class="pillbtn" id="theme" type="button" aria-label="Switch between light and dark">&#9680;</button>
     <a class="btn" href="/en/#preco">Download</a>
   </nav>
@@ -486,11 +472,11 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
   <div class="autor">
     <div class="retrato"><div class="mono-face" aria-hidden="true">DM</div></div>
     <div class="diz">
-      <p>I am Douglas Mendes, a video editor. Sincou came out of a shoot day like any other: two cameras, two recorders, seven hours of footage, and a whole afternoon dragging waveforms around before I could start actually editing.</p><p>I tried what was out there. The good tools charge a subscription; the ones I could afford choked on exactly the big days, which is where syncing stops being a convenience and becomes the bottleneck.</p><p>Sincou was built against production footage, not against laboratory samples. The heaviest day that has gone through it holds 242 clips and 7.6 hours, and it is the same one I run every change against: if it gets that wrong, I find out before you do.</p>
+      <p>I am Douglas Mendes — director, DoP and editor. Sincou came out of a day like so many others: a few cameras, a recorder, some hours of footage, and a whole afternoon dragging waveforms around before I could actually start editing.</p><p>I tried what was out there. The good tools require a subscription; the ones that fit my budget struggled with large files, and that is exactly where syncing stops being practical and becomes the bottleneck of the day. So I built my own.</p><p>Sincou was developed against production footage. The heaviest session it has handled held 242 clips over 7.6 hours, and it is the same one I run every change against: if it fails there, I find out before you do.</p>
       <div class="promessa"><p>Seven days with everything unlocked, and after that it stays yours, syncing up to 10 clips at a time, with no deadline. If anything trips you up, write in: I read the support mail myself, and I answer within two business days.</p></div>
       <div class="assina">
         <b>Douglas Mendes</b>
-        <span>Editor and author of Sincou</span>
+        <span>Director, DoP and editor · author of Sincou</span>
       </div>
     </div>
   </div>

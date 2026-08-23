@@ -239,20 +239,21 @@ T = {
     "autor_h2": "Feito por quem passa o dia editando",
     "autor_iniciais": "DM",
     "autor_nome": "Douglas Mendes",
-    "autor_cargo": "Editor e autor do Sincou",
+    "autor_cargo": "Diretor, DoP e Editor · autor do Sincou",
     "autor_p": [
-        "Sou o Douglas Mendes, editor. O Sincou nasceu de uma diária como tantas "
-        "outras: duas câmeras, dois gravadores, sete horas de material e uma "
-        "tarde inteira arrastando forma de onda antes de conseguir começar a "
-        "editar de verdade.",
-        "Testei o que existia. As ferramentas boas cobram assinatura; as que "
-        "cabiam no orçamento engasgavam justamente no material grande, que é "
-        "onde a sincronização deixa de ser conveniência e vira o gargalo do "
-        "dia. Então escrevi a minha.",
-        "O Sincou foi construído contra material de produção, não contra "
-        "exemplo de laboratório. A diária mais pesada que passou por ele tem "
-        "242 clipes e 7,6 horas, e é a mesma que eu uso para testar cada "
-        "alteração: se ele errar nela, eu descubro antes de você.",
+        "Eu sou Douglas Mendes, Diretor, DoP e Editor. O Sincou nasceu de um "
+        "dia como tantos outros: algumas câmeras, gravador, algumas horas de "
+        "filmagem e uma tarde inteira arrastando waveforms antes que eu "
+        "pudesse realmente começar a editar.",
+        "Experimentei as opções disponíveis. As boas ferramentas exigem "
+        "assinatura; as que cabiam no meu orçamento tinham dificuldades com "
+        "arquivos grandes, e é aí que a sincronização deixa de ser prática e "
+        "se torna o gargalo do dia a dia. Então criei a minha própria "
+        "solução.",
+        "O Sincou foi desenvolvido com base em filmagens de produção. A "
+        "sessão mais pesada que ele já realizou teve 242 clipes e durou 7,6 "
+        "horas, e é a mesma que eu uso para testar cada alteração: se falhar "
+        "lá, eu fico sabendo antes de você.",
     ],
     "autor_promessa": "São sete dias com tudo liberado, e depois disso ele "
                       "continua seu, sincronizando até 10 clipes por vez, sem "
