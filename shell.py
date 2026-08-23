@@ -7,6 +7,8 @@ monta o texto depois do script chega vazia no rastreador.
 """
 from __future__ import annotations
 
+from typing import Optional
+
 SITE = "https://sincou.com.br"
 
 # Prefixo de TODO caminho interno. O GitHub Pages serve um repositorio de
@@ -147,6 +149,21 @@ header { position: sticky; top: 16px; z-index: 30; }
   display: inline-flex; align-items: center; gap: 6px;
 }
 .pillbtn:hover { background: var(--glass); }
+/* Seletor de idioma: os tres visiveis, o atual marcado. Um botao que
+   alterna esconde as opcoes, e opcao escondida e opcao que nao existe
+   para quem esta olhando. */
+.langs {
+  display: inline-flex; align-items: center; gap: 2px;
+  border: 1px solid var(--glass-line); border-radius: 999px;
+  padding: 3px; font-size: .72rem; font-weight: 500; letter-spacing: .04em;
+}
+.langs a, .langs b {
+  display: block; padding: 4px 9px; border-radius: 999px;
+  color: var(--ink-faint); font-weight: 500; line-height: 1;
+}
+.langs a:hover { color: var(--ink); background: var(--glass); }
+.langs b { color: var(--ink); background: var(--glass); }
+@media (max-width: 560px) { .langs { font-size: .68rem; } .langs a, .langs b { padding: 4px 7px; } }
 @media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
 
 /* --------------------------------------------------------------- rodape --- */
@@ -240,6 +257,10 @@ FLAG = """<svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true">
 # deixaria o terceiro inalcancavel.
 LANG_ORDER = ("pt", "en", "es")
 
+# O que aparece no seletor. Codigo de duas letras, e nao a bandeira:
+# bandeira e pais, nao idioma - e o espanhol tem vinte paises.
+LANG_LABEL = {"pt": "PT", "en": "EN", "es": "ES"}
+
 # prefixo de URL de cada idioma. O portugues mora na raiz porque foi o
 # primeiro e os links ja publicados apontam para la.
 LANG_BASE = {"pt": "", "en": "/en", "es": "/es"}
@@ -279,17 +300,39 @@ def head(title: str, desc: str, lang: str, path: str,
 <style>{CSS}</style>"""
 
 
-def header(t: dict, base: str, alt_url: str, here: str = "",
-           prox_lang: str = "en") -> str:
-    """Barra do topo. `base` prefixa os links internos ('' no pt, '/en' no en).
+def header(t: dict, base: str, here: str = "", lang: str = "pt",
+           alts: Optional[dict] = None) -> str:
+    """Barra do topo. `base` prefixa os links internos ('' no pt, '/es' no es).
 
-    `prox_lang` e o idioma para onde o botao leva, e vai no hreflang do
-    link: sem ele o atributo mentiria assim que existisse um terceiro
-    idioma.
+    O seletor de idioma mostra os TRES de uma vez. Ele era um botao de
+    rodizio, que levava ao proximo da lista - e com dois idiomas isso
+    funcionava, porque "o proximo" era "o outro". Com tres virou armadilha:
+    quem estava em portugues e queria espanhol via um botao escrito "EN",
+    ia parar no ingles, e so entao descobria que existia espanhol. Nada na
+    tela dizia que havia uma terceira lingua.
+
+    Tres links, com o atual marcado, resolvem sem JavaScript - o que
+    importa num site estatico que precisa funcionar antes de qualquer
+    script carregar.
     """
     def link(key, url, cls="hide-sm"):
         mark = ' aria-current="page"' if here == key else ""
         return f'<a href="{base}{url}" class="{cls}"{mark}>{t["nav_" + key]}</a>'
+
+    alts = alts or {}
+    partes = []
+    for code in LANG_ORDER:
+        rotulo = LANG_LABEL[code]
+        if code == lang:
+            # o idioma atual nao e link: clicar no que ja se esta lendo nao
+            # leva a lugar nenhum, e marca-lo diz onde voce esta
+            partes.append(f'<b aria-current="true">{rotulo}</b>')
+        else:
+            destino = alts.get(code, f"{LANG_BASE.get(code, '')}/")
+            partes.append(f'<a href="{destino}" hreflang="{code}" '
+                          f'lang="{code}">{rotulo}</a>')
+    idiomas = "".join(partes)
+
     return f"""<header><div class="wrap"><div class="bar glass">
   <a class="brand" href="{base}/">{LOGO} Sincou</a>
   <nav>
@@ -297,8 +340,7 @@ def header(t: dict, base: str, alt_url: str, here: str = "",
     {link("pluraleyes", t["url_pluraleyes"])}
     {link("whatsnew", t["url_whatsnew"])}
     <a href="{base}/#preco">{t["nav_price"]}</a>
-    <a class="pillbtn" href="{alt_url}" hreflang="{prox_lang}"
-       aria-label="{t['lang_switch_aria']}">{t["lang_other"]}</a>
+    <span class="langs" role="group" aria-label="{t['lang_group_aria']}">{idiomas}</span>
     <button class="pillbtn" id="theme" type="button" aria-label="{t['theme_aria']}">&#9680;</button>
     <a class="btn" href="{base}/#preco">{t["nav_download"]}</a>
   </nav>
@@ -348,10 +390,6 @@ def page(t: dict, *, lang: str, path: str, alts: dict, title: str,
          desc: str, body: str, here: str = "", extra_css: str = "",
          extra_js: str = "") -> str:
     base = LANG_BASE.get(lang, "")
-    prox = proximo_idioma(lang)
-    # se a pagina nao existir no proximo idioma, o botao leva a home dele:
-    # melhor mudar de idioma e cair na capa do que nao poder mudar
-    alt_url = alts.get(prox, f"{LANG_BASE.get(prox, '')}/")
     css = f"<style>{extra_css}</style>" if extra_css else ""
     js = f"<script>{extra_js}</script>" if extra_js else ""
     return f"""<!doctype html>
@@ -362,7 +400,7 @@ def page(t: dict, *, lang: str, path: str, alts: dict, title: str,
 </head>
 <body>
 <div class="halo a"></div><div class="halo b"></div><div class="halo c"></div>
-{header(t, base, alt_url, here, prox)}
+{header(t, base, here, lang, alts)}
 <main>
 {body}
 </main>

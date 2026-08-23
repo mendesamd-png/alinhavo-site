@@ -22,6 +22,7 @@ T = {
     # ------------------------------------------------------ navegación -----
     "lang_other": "PT",
     "lang_switch_aria": "Ver este sitio en portugués",
+    "lang_group_aria": "Elige el idioma del sitio",
     "theme_aria": "Alternar tema claro y oscuro",
     "nav_howto": "Cómo funciona",
     "nav_pluraleyes": "Vienes de PluralEyes",

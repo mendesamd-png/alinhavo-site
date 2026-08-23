@@ -147,6 +147,21 @@ header { position: sticky; top: 16px; z-index: 30; }
   display: inline-flex; align-items: center; gap: 6px;
 }
 .pillbtn:hover { background: var(--glass); }
+/* Seletor de idioma: os tres visiveis, o atual marcado. Um botao que
+   alterna esconde as opcoes, e opcao escondida e opcao que nao existe
+   para quem esta olhando. */
+.langs {
+  display: inline-flex; align-items: center; gap: 2px;
+  border: 1px solid var(--glass-line); border-radius: 999px;
+  padding: 3px; font-size: .72rem; font-weight: 500; letter-spacing: .04em;
+}
+.langs a, .langs b {
+  display: block; padding: 4px 9px; border-radius: 999px;
+  color: var(--ink-faint); font-weight: 500; line-height: 1;
+}
+.langs a:hover { color: var(--ink); background: var(--glass); }
+.langs b { color: var(--ink); background: var(--glass); }
+@media (max-width: 560px) { .langs { font-size: .68rem; } .langs a, .langs b { padding: 4px 7px; } }
 @media (max-width: 900px) { .bar nav a.hide-sm { display: none; } }
 
 /* --------------------------------------------------------------- rodape --- */
@@ -361,8 +376,7 @@ details p { padding-bottom: 24px; color: var(--ink-soft); max-width: var(--measu
     <a href="/alternativa-pluraleyes/" class="hide-sm">Vem do PluralEyes</a>
     <a href="/novidades/" class="hide-sm">Novidades</a>
     <a href="/#preco">Preço</a>
-    <a class="pillbtn" href="/en/" hreflang="en"
-       aria-label="Ver este site em inglês">EN</a>
+    <span class="langs" role="group" aria-label="Escolha o idioma do site"><b aria-current="true">PT</b><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></span>
     <button class="pillbtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">&#9680;</button>
     <a class="btn" href="/#preco">Baixar</a>
   </nav>

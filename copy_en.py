@@ -10,6 +10,7 @@ T = {
     # ----------------------------------------------------- navigation ------
     "lang_other": "ES",
     "lang_switch_aria": "View this site in Spanish",
+    "lang_group_aria": "Choose the site language",
     "theme_aria": "Switch between light and dark",
     "nav_howto": "How it works",
     "nav_pluraleyes": "From PluralEyes",

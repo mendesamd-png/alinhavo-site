@@ -19,6 +19,7 @@ T = {
     # ------------------------------------------------------- navegação -----
     "lang_other": "EN",
     "lang_switch_aria": "Ver este site em inglês",
+    "lang_group_aria": "Escolha o idioma do site",
     "theme_aria": "Alternar tema claro e escuro",
     "nav_howto": "Como funciona",
     "nav_pluraleyes": "Vem do PluralEyes",
