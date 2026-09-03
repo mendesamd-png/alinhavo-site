@@ -18,6 +18,13 @@ SITE = "https://sincou.com.br"
 # gravar, em vez de espalhar o prefixo por cada link.
 BASE = ""
 
+# O instalador vive num GitHub Release do proprio repositorio do site.
+# O alias `latest` sempre serve o release PUBLICADO mais novo: publicar um
+# Sincou 1.1 nao exige mexer no site, e um release em rascunho nao muda
+# nada ate alguem apertar publish.
+DOWNLOAD_URL = ("https://github.com/mendesamd-png/sincou-site"
+                "/releases/latest/download/Sincou.dmg")
+
 # ---------------------------------------------------------------- paleta ---
 CSS = """
 :root {
@@ -350,6 +357,7 @@ def header(t: dict, base: str, here: str = "", lang: str = "pt",
                           f'aria-label="{nome}">{rotulo}</a>')
     idiomas = "".join(partes)
 
+    download = DOWNLOAD_URL
     return f"""<header><div class="wrap"><div class="bar glass">
   <a class="brand" href="{base}/">{LOGO} Sincou</a>
   <nav>
@@ -359,7 +367,7 @@ def header(t: dict, base: str, here: str = "", lang: str = "pt",
     <a href="{base}/#preco">{t["nav_price"]}</a>
     <span class="langs" role="group" aria-label="{t['lang_group_aria']}">{idiomas}</span>
     <button class="pillbtn" id="theme" type="button" aria-label="{t['theme_aria']}">&#9680;</button>
-    <a class="btn" href="{base}/#preco">{t["nav_download"]}</a>
+    <a class="btn" href="{download}">{t["nav_download"]}</a>
   </nav>
 </div></div></header>"""
 

@@ -98,7 +98,7 @@ def cta(t: dict, base: str, h: str, p: str, note: str = "") -> str:
     return f"""<section class="closing"><div class="wrap">
   <h2>{h}</h2>
   <p class="lede" style="margin-inline:auto">{p}</p>
-  <div class="cta-row"><a class="btn" href="{base}/#preco">{t['hero_cta']}</a>{extra}</div>
+  <div class="cta-row"><a class="btn" href="{shell.DOWNLOAD_URL}">{t['hero_cta']}</a>{extra}</div>
 </div></section>"""
 
 
@@ -535,11 +535,17 @@ def build_home(lang: str) -> str:
         itens = "".join(f"<li>{x}</li>" for x in t[f"plan{i}_items"])
         cls = "plan glass hi" if hi else "plan glass"
         btn = "btn" if hi else "btn quiet"
+        # 1 = teste gratis (baixa o app), 2 = comprar (aponta o e-mail ate o
+        # checkout do Paddle existir - "Comprar" para o nada e pior), 3 =
+        # licenca de estudio, que e conversa mesmo
+        destino = {1: shell.DOWNLOAD_URL,
+                   2: f"mailto:{t['email']}?subject={t[f'plan2_name']}",
+                   3: f"mailto:{t['email']}?subject={t[f'plan3_name']}"}[i]
         return f"""<div class="{cls}">
   <span class="name">{t[f'plan{i}_name']}</span>
   <div class="price">{t[f'plan{i}_price']} <small>{t[f'plan{i}_unit']}</small></div>
   <ul>{itens}</ul>
-  <a class="{btn}" href="#">{t[f'plan{i}_cta']}</a>
+  <a class="{btn}" href="{destino}">{t[f'plan{i}_cta']}</a>
 </div>"""
 
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>"
@@ -578,7 +584,7 @@ def build_home(lang: str) -> str:
     <h1>{t['hero_h1_a']}<br><span>{t['hero_h1_b']}</span></h1>
     <p class="lede">{t['hero_lede']}</p>
     <div class="cta-row">
-      <a class="btn" href="#preco">{t['hero_cta']}</a>
+      <a class="btn" href="{shell.DOWNLOAD_URL}">{t['hero_cta']}</a>
       <a class="btn quiet" href="{base}{t['url_howto']}">{t['hero_cta2']}</a>
       <span class="cta-note">{t['hero_note']}<br><b class="ver">{versao}</b></span>
     </div>
@@ -792,7 +798,7 @@ def build_pluraleyes(lang: str) -> str:
     <h1>{P['pe_page_h1']}</h1>
     <p class="lede">{P['pe_page_lede']}</p>
     <div class="cta-row">
-      <a class="btn" href="{base}/#preco">{t['hero_cta']}</a>
+      <a class="btn" href="{shell.DOWNLOAD_URL}">{t['hero_cta']}</a>
       <a class="btn quiet" href="{base}{t['url_howto']}">{t['hero_cta2']}</a>
     </div>
   </div>
