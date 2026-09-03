@@ -233,6 +233,9 @@ T = {
                     "Factura a nombre de la empresa",
                     "Soporte por correo con prioridad"],
     "plan3_cta": "Hablar con nosotros",
+    "price_launch": "Precio de lanzamiento: acompaña a la primera versión "
+                    "y subirá con las siguientes. La licencia es perpetua: "
+                    "quien compra ahora no paga la diferencia después.",
     "price_intl": "En Brasil: R$ 249 y R$ 599, con el mismo contenido.",
     "soon_h": "Versión para Windows en desarrollo.",
     "soon_p": "El motor ya corre multiplataforma. La versión empaquetada "
@@ -291,6 +294,11 @@ T = {
          "Nada. Sincou ya viene con todo lo que necesita para leer material, "
          "incluido el decodificador. Descarga, arrastra a Aplicaciones y "
          "abre."),
+        ("¿Cuál es la diferencia entre Pro y Estudio?",
+         "Pro vale para un Mac: el tuyo. Estudio cubre hasta tres "
+         "estaciones trabajando al mismo tiempo, a nombre de la empresa — "
+         "tres puestos simultáneos, con factura y soporte prioritario, y "
+         "no la misma persona alternando de máquina."),
         ("¿Qué pasa cuando se acaban los 7 días?",
          "Sincou sigue funcionando. Pasa al modo gratuito, que sincroniza "
          "proyectos de hasta 10 clips por vez, sin plazo y sin marca en el "

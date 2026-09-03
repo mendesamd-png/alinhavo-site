@@ -213,6 +213,9 @@ T = {
                     "Company invoice",
                     "Priority email support"],
     "plan3_cta": "Get in touch",
+    "price_launch": "Launch pricing — it ships with the first version and "
+                    "rises with the next ones. The license is perpetual: "
+                    "buy now and you never pay the difference.",
     "price_intl": "In Brazil: R$ 249 and R$ 599, with the same contents.",
     "soon_h": "Windows version in development.",
     "soon_p": "The engine already runs cross-platform. The packaged Windows "
@@ -270,6 +273,11 @@ T = {
         ("Do I need to install anything else?",
          "Nothing. Sincou ships with everything it needs to read media, "
          "decoder included. Download it, drag it to Applications, open it."),
+        ("What is the difference between Pro and Studio?",
+         "Pro covers one Mac: yours. Studio covers up to three "
+         "workstations running at the same time, in the company's name — "
+         "three simultaneous seats, with an invoice and priority support, "
+         "not one person switching between machines."),
         ("What happens when the 7 days are up?",
          "Sincou keeps working. It moves to free mode, which syncs projects "
          "of up to 10 clips at a time, with no deadline and no watermark on "

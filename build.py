@@ -670,6 +670,7 @@ def build_home(lang: str) -> str:
   <div class="eyebrow">{t['price_eyebrow']}</div>
   <div class="col"><h2>{t['price_h2']}</h2><p class="lede">{t['price_lede']}</p></div>
   <div class="plans">{plan(1)}{plan(2, hi=True)}{plan(3)}</div>
+  <p class="intl">{t['price_launch']}</p>
   <p class="intl">{t['price_intl']}</p>
   <div class="soon glass">
     <span class="soon-mark"></span>
