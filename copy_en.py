@@ -3,7 +3,7 @@
 VERSION = "1.0"
 # Data da versao publicada. Atualize junto com VERSION: uma data velha
 # no hero diz o contrario do que a linha existe para dizer.
-RELEASE = "23 August 2026"
+RELEASE = "3 September 2026"
 UPDATED = "August 21, 2026"
 
 T = {

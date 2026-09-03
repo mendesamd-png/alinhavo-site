@@ -15,7 +15,7 @@ Argentina y "ordenador" o "computadora" delatan de dónde salió el texto.
 """
 
 VERSION = "1.0"
-RELEASE = "23 de agosto de 2026"
+RELEASE = "3 de septiembre de 2026"
 UPDATED = "21 de agosto de 2026"
 
 T = {

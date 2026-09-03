@@ -12,7 +12,7 @@ quando alguém cola o link.
 VERSION = "1.0"
 # Data da versao publicada. Atualize junto com VERSION: uma data velha
 # no hero diz o contrario do que a linha existe para dizer.
-RELEASE = "23 de agosto de 2026"
+RELEASE = "3 de setembro de 2026"
 UPDATED = "21 de agosto de 2026"
 
 T = {
